@@ -1,0 +1,64 @@
+
+
+body {
+	overflow: hidden;
+}
+#glossary-reference-form input[type="text"] {
+    margin-bottom: 1em;
+	width: 50%;
+}
+#glossary-reference-form .content-continer {
+	margin: 0.5em 0.5em 0;
+}
+#glossary-reference-form ul li {
+	margin:0;
+}
+#glossary-reference-form .label,
+#glossary-reference-form #nav {
+	text-align: center;
+}
+#glossary-reference-form .content-continer #current-reference-container {
+	display: none;
+}
+#glossary-reference-form .content-continer #current-reference-container .reference-name {
+	color: #0088FF;
+}
+#glossary-reference-form .content-continer #search-container {
+	margin-top: 0.5em;
+	text-align: center;
+}
+#glossary-reference-form .content-continer #result-container {
+	margin: 0.5em 0 0 0.6em;
+}
+#glossary-reference-form .content-continer #result-container #local-references,
+#glossary-reference-form .content-continer #result-container #remote-references {
+	border: 1px solid #AAA;
+	width: 260px;
+	display: inline-block;
+}
+#glossary-reference-form .content-continer #result-container .results_box {
+	list-style: none;
+}
+#glossary-reference-form .content-continer #result-container #list {
+	height: 210px;
+}
+#glossary-reference-form .content-continer #result-container #list li:hover {
+	background-color: #CCE4FF;
+	cursor: pointer;
+}
+#glossary-reference-form .content-continer #result-container #list li p {
+	padding: 0 5px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#glossary-reference-form #nav {
+	border-top: 1px solid #AAA;
+	padding: 0.5em 0;
+	text-align: center;
+}
+#glossary-reference-form #nav button {
+	margin: 0 10px;
+	padding: 5px;
+    width: 50px;
+	vertical-align: baseline;
+}

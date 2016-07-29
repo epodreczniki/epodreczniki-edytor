@@ -1,0 +1,71 @@
+
+
+.metadata-container {
+	margin: 1em auto 0;
+	max-width: 980px;
+	word-break: break-all;	
+}
+.metadata-container .node-container {
+	margin: 0px 10px;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	background: #fff;
+	box-shadow: 1px 1px 2px #A5A5A5;
+}
+.metadata-container .node-container:hover {
+	border: 1px solid #0088FF;
+	transition: all linear 0.35s;
+}
+.metadata-container .header {
+	font-weight: bold;
+	color: #0088FF;
+	display: inline;
+}
+.metadata-container .contents {
+	margin-left: 5px;
+	display: inline;
+}
+.metadata-container .person-header,
+.metadata-container .keyword-header,
+.metadata-container .role{
+	display: none !important;
+}
+.metadata-container table td {
+	border: none;
+	padding: 0;
+}
+.metadata-container .person,
+.metadata-container .person:hover,
+.metadata-container .core-curriculum-entries .core-curriculum-entry,
+.metadata-container .core-curriculum-entries .core-curriculum-entry:hover {
+	border: none;
+	box-shadow: none;
+}
+.metadata-container .person .person-contents {
+	margin: 0;
+	display: block;
+}
+.metadata-container .person-contents .node-container,
+.metadata-container .core-curriculum-entry-contents .node-container,
+.metadata-container .keywordlist-contents .node-container {
+	display: inline-block;
+}
+.metadata-container .person .person-contents div,
+.metadata-container .keywordlist-contents div,
+.metadata-container .presentation-contents div,
+.metadata-container .core-curriculum-entry-contents div {
+	margin: 1px 1px 1px 5px;
+	box-shadow: none;
+}
+.metadata-container .person .person-contents .firstname,
+.metadata-container .person .person-contents .surname {
+	display: none;
+}
+.metadata-container .add-curriculum-entry {
+	position: relative;
+	left: 4px;
+	top: 2px;
+}
+.metadata-container .core-curriculum-entry-header {
+	display: block;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:svg='http://www.w3.org/2000/svg'>
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple example</title>
+        <link rel="stylesheet" type="text/css" href="css/fonts.css"/>
+        <link rel="stylesheet" type="text/css" href="css/columns.css"/>
+        <link rel="stylesheet" type="text/css" href="css/columns-ext.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/metadata.css"/>
+        <link rel="stylesheet" type="text/css" href="css/reviews.css"/>
+    <script type="text/javascript" src="../xopus/xopus.js"></script>
+    <script src="js/libs/jquery-1.11.1.min.js"></script>
+    <script src="js/libs/underscore-min.js"></script>
+      <script type="text/javascript" src="js/xopus-ext.js"></script>
+
+  </head>
+  <body>
+    <div xopus="true" autostart="true">
+      <xml>
+        <config version="1.0" xmlns="http://www.xopus.com/xmlns/config">
+          
+          <pipeline xml="document_reading.xml" xsd="schema/epeditor.xsd">
+            <view name="WYSIWYG View">
+              <transform xsl="stylesheet.xsl"/>
+            </view>
+            <view name="XML View">
+              <treeTransform/>
+            </view>
+          </pipeline>
+
+          <import src="config.xml"/>
+
+          <javascript src="js/libs/jquery-1.11.1.min.js"/>
+          <javascript src="js/libs/vkbeautify.0.99.00.beta.js"/>
+
+		  <javascript src="js/add-instertlist-scrolling.js"/>
+          <javascript src="js/utils.js"/>
+          <javascript src="js/reformat-reviews.js"/>
+          <javascript src="js/custom-menu.js"/>
+          <javascript src="js/id-generator.js"/>
+		  <javascript src="js/insert-review.js"/>
+		  <javascript src="js/remove-review.js"/>
+		  <javascript src="js/review-states.js"/>
+          <javascript src="js/attribute-validator.js"/>
+          <javascript src="js/node-validator.js"/>
+          <javascript src="js/prevent-subtree-changing.js"/>
+          <javascript src="js/epo-api.js"/>
+		  <javascript src="js/add-subnodes.js"/>
+    	  <javascript src="js/columns.js"/>
+    	  <javascript src="js/new-page.js"/>
+    	  <javascript src="js/module-title.js"/>
+    	  <javascript src="js/extra-validation-on-save.js"/>
+          <javascript src="js/set-view-after-redraw.js"/>
+          <javascript src="js/load-womi-metadata.js"/>
+          <javascript src="js/mml-math-insert.js"/>
+          <javascript src="js/exercise-dialog-insert.js"/>
+		  <javascript src="js/gallery-split-blocker.js"/>
+		  <javascript src="js/bookmark-dialog-insert.js"/>
+		  <javascript src="js/exercise-process.js"/>
+		  <javascript src="js/exercise-handlers.js"/>
+          <javascript src="js/glossary-reference-dialog-insert.js"/>
+		  <javascript src="js/handlers.js"/>
+          <javascript src="js/main.js"/>
+          <javascript src="js/metadata.js"/>
+          <javascript src="js/review-commands.js"/>
+		  <javascript src="js/metadata-view-command.js"/>
+		  <javascript src="js/editable-content.js"/>
+		  <javascript src="js/service-command.js"/>
+		  <javascript src="js/add-bookmark-command.js"/>
+      <javascript src="js/add-fold-point-command.js"/>
+      <javascript src="js/add-zebra-point-command.js"/>
+		  <javascript src="js/alternatives.js"/>
+		  <javascript src="js/exercise-alternative-generator.js"/>
+		  <javascript src="js/exercise-validation.js"/>
+		  <javascript src="js/concept-definition-swap-functions.js"/>
+		  <javascript src="js/concept-definition-swap-command.js"/>
+		  <javascript src="js/section-parameters.js"/>
+		  <javascript src="js/consistency-check.js"/>
+		  <javascript src="js/set-symbols.js"/>
+		  <javascript src="js/whitespace-view-command.js"/>
+		  <javascript src="js/bib-utils.js"/>
+        </config>
+      </xml>
+    </div>
+
+  </body>
+</html>

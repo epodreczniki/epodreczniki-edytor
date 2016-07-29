@@ -1,0 +1,46 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="../js/libs/jquery-1.11.1.min.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/dialog-utils.js"></script>
+<script src="../js/curriculum-entry-dialog.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+<link rel="stylesheet" type="text/css" href="../css/dialogs.css"/>
+
+<form id="curriculum-entry-form">
+	<div class="content-continer">
+		<div id="column1">
+			<div>
+				<label>Szkoła</label>
+				<div class="dropdown">
+					<select id="school"></select>
+				</div>
+			</div>
+			<div>
+				<label>Przedmiot</label>
+				<div class="dropdown">
+					<select id="subject"></select>
+				</div>
+			</div>
+			<div>
+				<label>Wyszukaj podstawę programową</label>
+				<input type="text" placeholder="Wpisz szukane słowo" id="search"/>
+			</div>
+		</div>
+		<div id="column2">
+			<div>
+            <ul id="list" class="results_box"/>
+            </div>
+			<div id="nav">
+				<button class="prev"><</button>
+				<span class="current-page"></span>
+				<button class="next">></button>
+			</div>
+        </div>
+		<div class="functional_buttons">
+			<button class="save">Dodaj</button>
+			<button class="cancel">Odrzuć</button>
+		</div>
+	</div>
+</form>
+

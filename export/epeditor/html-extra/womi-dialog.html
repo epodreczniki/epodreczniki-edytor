@@ -1,0 +1,82 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="../js/libs/jquery-1.11.1.min.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/dialog-utils.js"></script>
+<script src="../js/womi-reference.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+<link rel="stylesheet" type="text/css" href="../css/dialogs.css"/>
+
+<form id="womi_form">
+	<div class="form_grid">
+		<div class="womi_type">
+		</div>
+		<div class="identifier">
+			<span class="id_value">ID&nbsp </span>
+		</div>
+        <div class="preview_area">
+            <button class="preview">Podgląd</button>
+        </div>
+        <div class="title">
+			<span class="title_value">Tytuł:&nbsp </span>
+		</div>
+		<div class="category max_width">
+			<div class="label">Maksymalna szerokość (%)</div>
+			<div class="value">
+				<input id="width_slider" type="range" name="width" min="25" max="100">
+				<input id="width_value" type="text" name="width_value" placeholder="25 - 100%">
+			</div>
+		</div>
+		<div class="category avatar">
+			<div class="label">WOMI avatar</div>
+			<div class="value">
+				<input type="checkbox" name="checkbox01" id="checkbox01" class="checkbox">
+				<label for="checkbox01" class="checkbox_label"></label>
+			</div>
+		</div>
+		<div class="category reading_room">
+			<div class="label">WOMI do czytelni/galerii</div>
+			<div class="value">
+				<input type="checkbox" name="checkbox02" id="checkbox02" class="checkbox">
+				<label for="checkbox02" class="checkbox_label"></label>
+			</div>
+		</div>
+		<div class="category context_embeded">
+			<div class="label">Lokalizacja WOMI</div>
+			<div class="value">
+				<button name="embedded">Treść</button>
+				<button name="context">Przypinka</button>
+				<button name="embedded&context">Treść i przypinka</button>
+			</div>
+		</div>
+		<div class="category zoomable">
+			<div class="label">Powiększenie</div>
+			<div class="value">
+				<button name="no">Brak</button>
+				<button name="magnifier">Zwykłe</button>
+				<button name="zoom">Lupa</button>
+			</div>
+		</div>
+		<div class="category hide-caption">
+			<div class="label">Wyświetlanie numerowania, tytułu, etykiety</div>
+			<div class="value">
+				<button name="none">Wszystko</button>
+				<button name="title">Numerowanie</button>
+				<button name="number">Tytuł</button>
+				<button name="all">Nic</button>
+			</div>
+		</div>
+		<div class="category aside">
+			<div class="label">Położenie</div>
+			<div class="value">
+				<button name="left">Wypchnięte na lewo</button>
+				<button name="normal">Normalne</button>
+				<button name="right">Wypchnięte na prawo</button>
+			</div>
+		</div>
+	</div>
+	<div class="functional_buttons">
+		<button class="save">Zapisz</button>
+		<button class="cancel">Odrzuć</button>
+	</div>
+</form>

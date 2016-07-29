@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Bookmarks</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link type="text/css" rel="stylesheet" href="../css/libs/jstree/themes/default/style.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/libs/chosen.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type='text/css' href="../css/dialogs.css"/>
+        <link rel="stylesheet" type='text/css' href="../css/bookmark-dialog.css"/>
+
+        <script type="text/javascript" src="../js/libs/jquery-1.11.1.min.js"></script>
+        <script src="../js/libs/chosen.jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../js/libs/underscore-min.js"></script>
+        <script type="text/javascript" src="../js/utils.js"></script>
+        <script type="text/javascript" src="../js/dialog-utils.js"></script>
+        <script type="text/javascript" src="../js/id-generator.js"></script>
+        <script type="text/javascript" src="../js/libs/jstree.min.js"></script>
+        <script type="text/javascript" src="../js/bookmark-dialog.js"></script>
+
+	</head>
+	<body>
+		<div id="noCollection">
+            <h2>Nie można wstawić ani edytować łącza,<br />ponieważ moduł jest otwarty bez kontekstu kolekcji.</h2>
+        </div>
+        <div id="loader">
+            <h2>Proszę czekać...</h2>
+        </div>
+        <div id="dialog" style="display: none;">
+            <div id="column1">
+                <div class="ajaxable-content">
+                    <select id="coll-list" data-placeholder="Wybierz kolekcje" class="chosen-select hidden" tabindex="2"></select>
+                    <img class="ajax-loader" src="../css/libs/images/ajax-loader.gif"/>
+                </div>
+                <div id="colltree">
+                    
+                    <div id="collTreeTitle">Struktura kolekcji:</div>
+                    <div id="collection">
+                        <div id="jstree_main" >
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="column2">
+                <div id="result-container">
+                    <div>
+                        <div class="label">Aktualne łącze do:</div>
+                        <span id="currentLink"></span>
+                    </div>
+
+                    <div id="module-references" style="display: none;">
+                        <div class="label">Wybrany moduł:</div>
+                        <ul id="list" class="results_box">
+                            <li>
+                                <p id="selectedModuleTitle" data-id=""></p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="local-references">
+                        <div class="label">Zakładki lokalne:</div>
+                        <ul id="list" class="results_box"></ul>
+                        <div id="nav">
+                            <button class="prev"><</button>
+                            <span class="current-page"></span>
+                            <button class="next">></button>
+                        </div>
+                    </div>
+
+                    <div id="remote-references">
+                        <div class="label">Zakładki w wybranym module:</div>
+                        <ul id="list" class="results_box"></ul>
+                        <div id="nav">
+                            <button class="prev"><</button>
+                            <span class="current-page"></span>
+                            <button class="next">></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="functional_buttons">
+                    <button class="save">Dodaj</button>
+                    <button class="cancel">Odrzuć</button>
+                </div>
+            </div>
+
+        </div>
+
+	</body>
+</html>

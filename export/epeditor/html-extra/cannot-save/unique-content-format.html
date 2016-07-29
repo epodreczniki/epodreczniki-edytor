@@ -1,0 +1,26 @@
+<script src="../../js/libs/jquery-1.11.1.min.js"></script>
+<script src="../../js/utils.js"></script>
+<script src="../../js/dialog-utils.js"></script>
+<script src="../../js/extra-validation-on-save-dialog.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/dialogs.css"/>
+
+<div id="cannot-save-dialog">
+	<p>
+		Nie można zapisać modułu.
+		Element <span class="element-name"/> jest niepoprawny.
+	</p>
+	<p>
+		Element <span class="element-name"/> nie może zawierać dwóch 
+		<span class="other-element-name">tekstów skojarzonych</span>
+		tego samego rodzaju.
+	</p>
+</div>
+<script>
+	var dialogNode = getWindow().dialogNode;
+	if(dialogNode.localName == "gallery")
+		$(".element-name").text("galeria");
+	else
+		$(".element-name").text("referencja WOMI");
+</script>

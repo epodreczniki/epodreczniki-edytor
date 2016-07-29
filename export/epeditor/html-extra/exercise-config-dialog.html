@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/dialogs.css"/>
+    <script src="../js/libs/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript" src="../js/utils.js"></script>
+    <script type="text/javascript" src="../js/dialog-utils.js"></script>
+    <script type="text/javascript" src="../js/exercise-config-dialog.js"></script>
+<head>
+<body>
+	<form id="exercise_form">
+		<div class="form_grid">
+			<div class="quiz-group">
+				
+				<div class="category type">
+					<div class="label">Rodzaj pytania testowego</div>
+					
+					<div class="value">
+						<button name="single-response" class="single-response">Jednokrotny wybór</button>
+						<button name="multiple-response" class="multiple-response">Wielokrotny wybór</button>
+					</div>
+				</div>
+				<div class="category behaviour">
+					<div class="label">Opcja prezentacji</div>
+					
+					<div class="value">
+						<button name="randomize" class="randomize">Wygeneruj jeden zestaw losowo</button>
+						<button name="randomize-sets" class="randomize-sets">Podziel na zestawy i wylosuj jeden</button>
+						<button name="all-sets" class="all-sets">Podziel na zestawy i pokaż wszystkie razem</button>
+					</div>
+				</div>
+				<div class="category presented-answers">
+					<div class="label">Liczba prezentowanych odpowiedzi</div>
+					
+					<div class="value">
+						<input type="number" min="2" name="presented-answers" value="2"></input>
+					</div>
+				</div>
+				<div class="category correct-in-set hidden">
+					<div class="label">Zakres poprawnych odpowiedzi</div>
+					
+					
+					<div class="value">
+						<input type="text" name="correct-in-set" value="1"></input>
+					</div>
+				</div>
+				<div class="category presentation-style hidden">
+					<div class="label">Prezentacja prawda/fałsz</div>
+					<div class="value">
+						<input type="checkbox" id="presentation-style" name="presentation-style" class="checkbox"></input>
+						<label for="presentation-style" class="checkbox_label"></label>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	<div class="functional_buttons">
+		<button class="save">Zapisz</button>
+		<button class="cancel">Odrzuć</button>
+	</div>
+	</form>
+</body>

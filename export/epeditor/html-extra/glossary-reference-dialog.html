@@ -1,0 +1,46 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="../js/libs/jquery-1.11.1.min.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/dialog-utils.js"></script>
+<script src="../js/glossary-reference-dialog.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+<link rel="stylesheet" type="text/css" href="../css/dialogs.css"/>
+<link rel="stylesheet" type="text/css" href="../css/glossary-reference-dialog.css"/>
+
+<form id="glossary-reference-form">
+    <div class="content-continer">
+        <div id="current-reference-container">
+            <div class="label">Aktualne odwołanie: <span class="reference-name"></span></div>
+        </div>
+        <div id="search-container">
+            <div class="label">Wyszukaj <span class="element-name"></span>:</div>
+            <input type="text" placeholder="Wpisz szukane słowo" id="search"/>
+        </div>
+        <div id="result-container">
+            <div id="local-references">
+                <div class="label">W tym module:</div>
+                <ul id="list" class="results_box"></ul>
+                <div id="nav">
+                    <button class="prev"><</button>
+                    <span class="current-page"></span>
+                    <button class="next">></button>
+                </div>
+            </div>
+            <div id="remote-references">
+                <div class="label">W innych modułach:</div>
+                <ul id="list" class="results_box"></ul>
+                <div id="nav">
+                    <button class="prev"><</button>
+                    <span class="current-page"></span>
+                    <button class="next">></button>
+                </div>
+            </div>
+        </div>
+        <div class="functional_buttons">
+            <button class="save">Dodaj</button>
+            <button class="cancel">Odrzuć</button>
+        </div>
+    </div>
+</form>
+

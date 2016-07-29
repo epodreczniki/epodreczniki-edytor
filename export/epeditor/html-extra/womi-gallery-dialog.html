@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<head>
+    <title>Parametry galerii</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/dialogs.css"/>
+    <script src="../js/libs/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript" src="../js/dialog-utils.js"></script>
+    <script type="text/javascript" src="../js/utils.js"></script>
+    <script type="text/javascript" src="../js/id-generator.js"></script>
+    <script type="text/javascript" src="../js/womi-gallery-dialog.js"></script>
+<head>
+<body>
+	<form id="womi_gallery_form">
+		<div class="form_grid">
+			<div class="gallery_type">
+				<div class="label">Typ galerii&nbsp</div>
+				<span class="value">
+					<button id="gallery_A_bt">A</button>
+					<button id="gallery_B_bt">B</button>
+					<button id="gallery_C_bt">C</button>
+					<button id="gallery_D_bt">D</button>
+				</span>
+			</div>
+
+			<div class="gallery_A">
+				<div class="gallery_label"></div>
+				<div class="category start-on">
+                    <div class="label">Zacznij od:</div>
+					<span class="value">
+						<input id="start-on_A_value" type="text" name="start-on_A_value" placeholder="np. 3" value="1">
+					</span>
+				</div>
+				<div class="category ib thumbnails">
+					<div class="label">Miniaturki</div>
+					<div class="value">
+                        <button class="all active" name="all">Zawsze</button>
+                        <button class="hide-fullscreen" name="hide-fullscreen">Ukryj (pełny ekran)</button>
+						<button class="hide-normal" name="hide-normal">Ukryj (normalnie)</button>
+						<button class="hide" name="hide">Nigdy</button>
+					</div>
+				</div>
+				<div class="category ib titles">
+					<div class="label">Tytuły</div>
+                    <div class="value">
+                        <button class="all active" name="all">Zawsze</button>
+                        <button class="hide-fullscreen" name="hide-fullscreen">Ukryj (pełny ekran)</button>
+                        <button class="hide-normal" name="hide-normal">Ukryj (normalnie)</button>
+						<button class="hide" name="hide">Nigdy</button>
+					</div>
+				</div>
+				<div class="category ib format-contents">
+					<div class="label">Teksty skojarzone</div>
+					<div class="value">
+						<button class="all active" name="all">Zawsze</button>
+						<button class="hide-fullscreen" name="hide-fullscreen">Ukryj (pełny ekran)</button>
+						<button class="hide-normal" name="hide-normal">Ukryj (normalnie)</button>
+						<button class="hide" name="hide">Nigdy</button>
+                    </div>
+				</div>
+			</div>
+
+			<div class="gallery_B">
+				<div class="gallery_label"></div>
+				<div class="category view-width">
+					<div class="label">Szerokość</div>
+					<span class="value">
+						<input id="view-width_value" type="text" name="view-width_value" placeholder="1-8" value="1">
+					</span>
+				</div>
+				<div class="category ib view-height">
+					<div class="label">Wysokość</div>
+					<span class="value">
+						<input id="view-height_value" type="text" name="view-height_value" placeholder="1-8" value="1">
+					</span>
+				</div>
+			</div>
+
+			<div class="gallery_C">
+				<div class="gallery_label"></div>
+				<div class="category miniatures-only">
+					<div class="label">Tylko-miniaturki</div>
+					<div class="value">
+                        <input type="checkbox" name="miniatures-only" id="miniatures-only" class="checkbox"
+                               disabled="disabled" checked="checked">
+                        <label for="miniatures-only" class="checkbox_label"></label>
+					</div>
+				</div>
+				<div class="category ib thumbnails">
+					<div class="label">Miniaturki</div>
+					<div class="value">
+                        <button class="all" name="all">Zawsze</button>
+						<button class="hide-fullscreen" name="hide-fullscreen">Ukryj (pełny ekran)</button>
+						<button class="hide-normal" name="hide-normal">Ukryj (normalnie)</button>
+						<button class="hide" name="hide">Nigdy</button>
+                    </div>
+                </div>
+                <div class="category ib titles">
+                    <div class="label">Tytuły</div>
+                    <div class="value">
+                        <button class="all" name="all">Zawsze</button>
+                        <button class="hide-fullscreen" name="hide-fullscreen">Ukryj (pełny ekran)</button>
+						<button class="hide-normal" name="hide-normal">Ukryj (normalnie)</button>
+						<button class="hide" name="hide">Nigdy</button>
+					</div>
+				</div>
+				<div class="category ib format-contents">
+					<div class="label">Teksty skojarzone</div>
+					<div class="value">
+						<button class="all" name="all">Zawsze</button>
+						<button class="hide-fullscreen" name="hide-fullscreen">Ukryj (pełny ekran)</button>
+						<button class="hide-normal" name="hide-normal">Ukryj (normalnie)</button>
+						<button class="hide" name="hide">Nigdy</button>
+                    </div>
+				</div>
+			</div>
+
+			<div class="gallery_D">
+				<div class="gallery_label"></div>
+				<div class="category start-on">
+					<div class="label">Zacznij od:</div>
+					<span class="value">
+						<input id="start-on_D_value" type="text" name="start-on_D_value" placeholder="np. 3">
+					</span>
+				</div>
+				<div class="category ib thumbnails">
+					<div class="label">Miniaturki</div>
+					<div class="value">
+                        <button class="all" name="all">Zawsze</button>
+                        <button class="hide-fullscreen" name="hide-fullscreen">Ukryj (pełny ekran)</button>
+                        <button class="hide-normal" name="hide-normal">Ukryj (normalnie)</button>
+                        <button class="hide" name="hide">Nigdy</button>
+                    </div>
+				</div>
+				<div class="category ib titles">
+					<div class="label">Tytuły</div>
+					<div class="value">
+                        <button class="all" name="all">Zawsze</button>
+                        <button class="hide-fullscreen" name="hide-fullscreen">Ukryj (pełny ekran)</button>
+                        <button class="hide-normal" name="hide-normal">Ukryj (normalnie)</button>
+                        <button class="hide" name="hide">Nigdy</button>
+                    </div>
+				</div>
+				<div class="category ib format-contents">
+					<div class="label">Teksty skojarzone</div>
+					<div class="value">
+                        <button class="all" name="all">Zawsze</button>
+                        <button class="hide-fullscreen" name="hide-fullscreen">Ukryj (pełny ekran)</button>
+                        <button class="hide-normal" name="hide-normal">Ukryj (normalnie)</button>
+                        <button class="hide" name="hide">Nigdy</button>
+                    </div>
+				</div>
+				<div class="category ib playlist">
+					<div class="label">Playlista</div>
+					<div class="value">
+                        <button class="autoplay active" name="autoplay">Odtwarzaj po kolei</button>
+                        <button class="pause" name="pause">Pauzuj po każdym materiale</button>
+                    </div>
+				</div>
+			</div>
+			
+		</div>
+	<div class="functional_buttons">
+		<button class="save">Zapisz</button>
+		<button class="cancel">Odrzuć</button>
+	</div>
+	</form>
+</body>

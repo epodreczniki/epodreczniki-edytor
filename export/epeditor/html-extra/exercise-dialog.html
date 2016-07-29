@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <title>Parametry galerii</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/dialogs.css"/>
+    <script src="../js/libs/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript" src="../js/utils.js"></script>
+    <script type="text/javascript" src="../js/dialog-utils.js"></script>
+    <script type="text/javascript" src="../js/id-generator.js"></script>
+    <script type="text/javascript" src="../js/exercise-dialog.js"></script>
+<head>
+<body>
+	<form id="exercise_form">
+		<div class="form_grid">
+			<div class="exercise_type">
+				<div class="label">Typ zadania</div>
+				<span class="value">
+					<button name="ex" class="active">Ćwiczenie</button>
+					<button name="womi1">Ćwiczenie interaktywne WOMI #1</br>(Alternatywa statyczna zawarta w WOMI)</button>
+					<button name="womi2">Ćwiczenie interaktywne WOMI #2</br>(Alternatywna statyczna zawarta w treści modułu)</button>
+					<button name="random_quiz">Zadanie quizowe z losowaniem odpowiedzi</button>
+				</span>
+			</div>
+			<div class="">
+				<div class="category interactivity">
+					<div class="label">Interaktywność</div>
+                    <div class="value">
+                        <button name="static" class="static active" name="static">Statyczne</button>
+                        <button name="random" class="foto_static" name="foto_static">Statyczne ze zmiennymi elementami</button>
+                        <button name="interactive" class="interactive" name="interactive">Interaktywne</button>
+					</div>
+				</div>
+				
+				<div class="quiz-group">
+					
+					<div class="category type hidden">
+						<div class="label">Typ</div>
+						
+						<div class="value">
+							<button name="single-response" class="single-response active">Jedna poprawna odpowiedź</button>
+							<button name="multiple-response" class="multiple-response">Wiele poprawnych odpowiedzi</button>
+						</div>
+					</div>
+					<div class="category behaviour hidden">
+						<div class="label">Sposób przetwarzania</div>
+						
+						<div class="value">
+							<button name="randomize" class="randomize active">Losuj odpowiedzi z całej puli</button>
+							<button name="randomize-sets" class="randomize-sets">Podziel na zestawy i wylosuj</button>
+							<button name="all-sets" class="all-sets">Podziel na zestawy i zaprezentuj wszystkie</button>
+						</div>
+					</div>
+					<div class="category presented-answers hidden">
+						<div class="label">Liczba prezentowanych odpowiedzi</div>
+						
+						<div class="value">
+							<input type="number" min="2" name="presented-answers" value="2"></input>
+						</div>
+					</div>
+					<div class="category correct-in-set hidden">
+						<div class="label">Liczba poprawnych odpowiedzi</div>
+						
+						
+						<div class="value">
+							<input type="text" name="correct-in-set" value="1"></input>
+						</div>
+					</div>
+					<div class="category presentation-style hidden">
+						<div class="label">Styl prezentacji</div>
+						<div class="value">
+							<input type="checkbox" id="presentation-style" name="presentation-style" class="checkbox"></input>
+							<label for="presentation-style" class="checkbox_label"></label>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	<div class="functional_buttons">
+		<button class="save">Zapisz</button>
+		<button class="cancel">Odrzuć</button>
+	</div>
+	</form>
+</body>

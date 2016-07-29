@@ -1,0 +1,179 @@
+<reference-table collection-id="83809" collection-version="1" collection-title="Przykłady UP – elementy inline">
+    <bookmarks>
+    
+        <module id="iGyDab7j8K" title="Przykłady UP – elementy inline">
+        
+        </module>
+    
+        <module id="iWUp86feCO" title="Przykłady UP – proste bloki">
+        
+        </module>
+    
+        <module id="iOQVhnA69t" title="Przykłady UP – polecenia/praca domowa">
+        
+        </module>
+    
+        <module id="iWCf7wuRMy" title="Przykłady UP – zestaw zadań/zadanie">
+        
+        </module>
+    
+        <module id="i3bYvbPrjI" title="Przykłady UP – biogram">
+        
+        </module>
+    
+        <module id="iB6IOy5h3S" title="Przykłady UP – ćwiczenie, cytat, definicja, pojęcie, reguła">
+        
+        </module>
+    
+        <module id="iszANtlGsm" title="Przykłady UP – doświadczenie, obserwacja">
+        
+        </module>
+    
+        <module id="iQpxkmDIu4" title="Przykłady UP – instrukcja postępowania, wydarzenie">
+        
+        </module>
+    
+        <module id="iMUWccQ08A" title="Przykłady UP – dymki, zapisy bibliograficzne">
+        
+        </module>
+    
+        <module id="i3M2IsqEk6" title="Przykłady UP – odwołania">
+        
+        </module>
+    
+        <module id="iohYyvR5RX" title="Przykłady UP – łącza [1]">
+        
+            <bookmark id="ixKMPrwDW5" name="LOREM_1" />
+        
+            <bookmark id="iyYK6uFCL2" name="LOREM_2" />
+        
+            <bookmark id="ipzGsobRkV" name="LOREM_2B" />
+        
+            <bookmark id="i8Kt6npunJ" name="LOREM_3" />
+        
+        </module>
+    
+        <module id="iB9Z8vL0t3" title="Przykłady UP – łącza [2], paginacja">
+        
+            <bookmark id="irQh46DiAI" name="LOREM_1" />
+        
+            <bookmark id="i2DZZN1xIY" name="LOREM_2" />
+        
+            <bookmark id="iBoeIcCLEZ" name="LOREM_2B" />
+        
+            <bookmark id="i8cFK7QP1V" name="LOREM_3" />
+        
+        </module>
+    
+        <module id="iAnzwhSc0z" title="Przykłady UP – zadania silnikowe">
+        
+        </module>
+    
+        <module id="idpNt9Q9sW" title="Przykłady UP – WOMI">
+        
+        </module>
+    
+        <module id="iQdgbvIiUy" title="Przykłady UP – galerie">
+        
+        </module>
+    
+        <module id="iPZ1ehJTkU" title="Przykłady UP – treść rozszerzająca">
+        
+        </module>
+    
+        <module id="idKLpPXtDv" title="Przykłady UP – treść nauczycielska">
+        
+        </module>
+    
+        <module id="iLPPcicTWm" title="Przykłady UP – treść nauczycielska/rozszerzająca">
+        
+        </module>
+    
+        <module id="iAnMOFAaKH" title="Przykłady UP – paginacja/treść rozszerzająca i nauczycielska">
+        
+        </module>
+    
+        <module id="iBXftNR20j" title="Słowniczek">
+        
+        </module>
+    
+        <module id="iksmG6tbSc" title="Pojęcia">
+        
+        </module>
+    
+        <module id="ixYW72TER6" title="Biogramy">
+        
+        </module>
+    
+        <module id="iJFJSUVa7Y" title="Wydarzenia">
+        
+        </module>
+    
+        <module id="iwC7PPyufL" title="Bibliografia">
+        
+        </module>
+    
+    </bookmarks>
+    <bibliographies>
+    
+        <bibliography id="bibliography_iMUWccQ08A_d254t124" name="hobbit1" sorting-key="hobbit1" module="iMUWccQ08A" />
+    
+        <bibliography id="bibliography_iMUWccQ08A_d254t185" name="kodeks_wyborczy" sorting-key="kodeks_wyborczy" module="iMUWccQ08A" />
+    
+        <bibliography id="bibliography_iMUWccQ08A_d254t67" name="patora2013" sorting-key="patora2013" module="iMUWccQ08A" />
+    
+    </bibliographies>
+    <biographies>
+    
+        <biography id="biography_i3bYvbPrjI_d441e222" name="Grzegorz Brzęczyszczykiewicz" sorting-key="Brzęczyszczykiewicz, Grzegorz" module="i3bYvbPrjI" />
+    
+        <biography id="biography_i3bYvbPrjI_d441e45" name="Jan Kowalski" sorting-key="Kowalski, Jan" module="i3bYvbPrjI" />
+    
+        <biography id="biography_i3bYvbPrjI_d441e97" name="Dmitrij Iwanowicz Mendelejew, Дмитрий Иванович Менделеев" sorting-key="Mendelejew, Dmitrij" module="i3bYvbPrjI" />
+    
+        <biography id="biography_i3bYvbPrjI_d441e72" name="Adam Mickiewicz" sorting-key="Mickiewicz, Adam" module="i3bYvbPrjI" />
+    
+        <biography id="biography_i3bYvbPrjI_d441e273" name="Mikołaj z Radomia" sorting-key="Mikołaj z Radomia" module="i3bYvbPrjI" />
+    
+        <biography id="biography_i3bYvbPrjI_d441e137" name="Jan Nowak" sorting-key="Nowak, Jan" module="i3bYvbPrjI" />
+    
+        <biography id="biography_i3bYvbPrjI_d441e246" name="Pliniusz Młodszy" sorting-key="Pliniusz Młodszy" module="i3bYvbPrjI" />
+    
+    </biographies>
+    <concepts>
+    
+        <concept id="glossary_iB6IOy5h3S_d206e82" name="Opady deszczu" sorting-key="Opady deszczu" module="iB6IOy5h3S" />
+    
+    </concepts>
+    <definitions>
+    
+        <definition id="glossary_iB6IOy5h3S_d206e72" name="Chmura" sorting-key="Chmura" module="iB6IOy5h3S" />
+    
+    </definitions>
+    <events>
+    
+        <event id="event_iQpxkmDIu4_d450e59" name="Wydarzenie 1" sorting-key="Wydarzenie 1" module="iQpxkmDIu4" />
+    
+        <event id="event_iQpxkmDIu4_d450e86" name="Wydarzenie 2" sorting-key="Wydarzenie 2" module="iQpxkmDIu4" />
+    
+        <event id="event_iQpxkmDIu4_d450e110" name="Wydarzenie 3" sorting-key="Wydarzenie 3" module="iQpxkmDIu4" />
+    
+        <event id="event_iQpxkmDIu4_d450e150" name="Wydarzenie 4" sorting-key="Wydarzenie 4" module="iQpxkmDIu4" />
+    
+        <event id="event_iQpxkmDIu4_d450e250" name="Wydarzenie 5" sorting-key="Wydarzenie 5" module="iQpxkmDIu4" />
+    
+    </events>
+    <rules>
+    
+        <rule id="glossary_iB6IOy5h3S_d206e118" name="Lemat" sorting-key="Lemat" module="iB6IOy5h3S" />
+    
+        <rule id="glossary_iB6IOy5h3S_d206e130" name="Prawo" sorting-key="Prawo" module="iB6IOy5h3S" />
+    
+        <rule id="glossary_iB6IOy5h3S_d206e94" name="Reguła" sorting-key="Reguła" module="iB6IOy5h3S" />
+    
+        <rule id="glossary_iB6IOy5h3S_d206e106" name="Twierdzenie" sorting-key="Twierdzenie" module="iB6IOy5h3S" />
+    
+        <rule id="glossary_iB6IOy5h3S_d206e142" name="Własność" sorting-key="Własność" module="iB6IOy5h3S" />
+    
+    </rules>
+</reference-table>

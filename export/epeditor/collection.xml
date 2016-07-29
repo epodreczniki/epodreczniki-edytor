@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<col:collection xmlns:col="http://cnx.rice.edu/collxml" xmlns:cnxsi="http://cnx.rice.edu/system-info" xmlns:ep="http://epodreczniki.pl/" xmlns:md="http://cnx.rice.edu/mdml">
+<col:metadata mdml-version="1.2">
+	<md:content-id>83809</md:content-id>
+	<md:repository>http://epodreczniki.pcss.pl/repo/collxml</md:repository>
+	<md:version>2</md:version>
+	<md:created>2014-09-16 09:11 CEST</md:created>
+	<md:revised>2015-04-01 16:26 CEST</md:revised>
+	<md:title/>
+	<md:subtitle/>
+	<md:language>pl-PL</md:language>
+	<md:abstract/>
+	<md:license url="http://creativecommons.org/licenses/by/3.0/pl/legalcode"/>
+	<md:education-levellist>		
+			<md:education-level>II</md:education-level>
+	</md:education-levellist>
+	<md:subjectlist>
+        <md:subject>biologia</md:subject>
+	</md:subjectlist>
+	<ep:e-textbook ep:content-status="canon" ep:recipient="student" ep:version="1.5">
+		<ep:class>4</ep:class>
+		<ep:stylesheet>biologia</ep:stylesheet>
+		<ep:environment-type>normal</ep:environment-type>
+		<ep:signature/>
+		<ep:cover ep:cover-type=""/>
+        <ep:show-technical-remarks>true</ep:show-technical-remarks>
+	</ep:e-textbook>
+	<md:actors>
+		
+		<md:person userid="1">
+			<md:fullname>Tomasz Kuczyński 123</md:fullname>
+			<md:firstname>Tomasz</md:firstname>
+			<md:surname>Kuczyński</md:surname>
+			<md:email>docentt@man.poznan.pl</md:email>
+		</md:person>
+		
+        
+	</md:actors>
+	<md:roles>
+		
+		<md:role type="author">1</md:role>
+		
+	</md:roles>
+</col:metadata>
+    <col:content>
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iAnzwhSc0z" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – zadania silnikowe</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="m3af66e3faad4341b" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – elementy inline</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="idpNt9Q9sW" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – WOMI</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iOQVhnA69t" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – polecenia/praca domowa</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iBXftNR20j" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Słowniczek</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iAnMOFAaKH" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – paginacja/treść rozszerzająca i nauczycielska</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iLPPcicTWm" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – treść nauczycielska/rozszerzająca</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="idKLpPXtDv" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – treść nauczycielska</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iPZ1ehJTkU" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – treść rozszerzająca</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iQdgbvIiUy" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – galerie</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="ic5judHi05" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – łącza [1]</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="2" document="iB9Z8vL0t3" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="2">
+			<md:title>Przykłady UP – łącza [2], paginacja</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iWUp86feCO" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – proste bloki</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iB6IOy5h3S" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – ćwiczenie, cytat, definicja, pojęcie, reguła</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iwC7PPyufL" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Bibliografia</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iJFJSUVa7Y" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Wydarzenia</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="ixYW72TER6" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Biogramy</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iksmG6tbSc" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Pojęcia</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iWCf7wuRMy" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – zestaw zadań/zadanie</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="i3bYvbPrjI" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – biogram</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iszANtlGsm" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – doświadczenie, obserwacja</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iQpxkmDIu4" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – instrukcja postępowania, wydarzenie</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="iMUWccQ08A" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – dymki, zapisy bibliograficzne</md:title>
+		</col:module>
+            
+        
+            
+        <col:module cnxsi:version-at-this-collection-version="1" document="i3M2IsqEk6" repository="http://epodreczniki.pcss.pl/repo/collxml/module/" version="1">
+			<md:title>Przykłady UP – odwołania</md:title>
+		</col:module>
+            
+        
+    </col:content>
+</col:collection>

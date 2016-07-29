@@ -1,0 +1,26 @@
+#womiForm { 
+margin: 20px;
+}
+
+#womiForm .formGrid tr td.inputName{
+	border-bottom: solid 1px #ADD8E6;
+}
+
+button.arrow {
+	border-radius: 10px;
+	border-width: 0;
+	width: 20px;
+	height: 20px;
+	
+	background: #00036F;
+	color: white;
+}
+
+.inputShown button.arrow:after {
+	content: "<";
+	font-weight: bold;
+}
+.inputHidden button.arrow:after {
+	content: ">";
+	font-weight: bold;
+}

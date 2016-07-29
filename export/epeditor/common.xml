@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <locale key="month_1">stycznia</locale>
+    <locale key="month_2">lutego</locale>
+    <locale key="month_3">marca</locale>
+    <locale key="month_4">kwietnia</locale>
+    <locale key="month_5">maja</locale>
+    <locale key="month_6">czerwca</locale>
+    <locale key="month_7">lipca</locale>
+    <locale key="month_8">sierpnia</locale>
+    <locale key="month_9">września</locale>
+    <locale key="month_10">października</locale>
+    <locale key="month_11">listopada</locale>
+    <locale key="month_12">grudnia</locale>
+
+    <locale key="label_description">Opis: </locale>
+    <locale key="label_revision_date">Data wydania: </locale>
+    <locale key="label_book_title">Tytuł: </locale>
+    <locale key="label_book_subtitle">Podtytuł: </locale>
+    <locale key="license_list_title">Lista licencji</locale>
+    <locale key="button_zoom_img">Powiększ</locale>
+    <locale key="button_zoom_in_out_img">Powiększ / Pomniejsz</locale>
+    <locale key="button_close">Zamknij</locale>
+    <locale key="button_show_author_license">Pokaż autora i licencje</locale>
+    <locale key="button_hide_author_license">Ukryj autora i licencje</locale>
+    <locale key="womi_cover_title">Okładka</locale>
+    <locale key="womi_title">Tytuł: </locale>
+    <locale key="womi_author">Autor: </locale>
+    <locale key="womi_license">Licencja: </locale>
+    <locale key="womi_information_undefined">Informacja niezdefiniowana</locale>
+    <locale key="label_womi_answers_licenses">Informacje o licencjach osadzonych obiektów w
+        odpowiedziach (w kolejności występowania w treści e-podręcznika)</locale>
+
+    <locale key="label_author_of_book_1">Autor podręcznika: </locale>
+    <locale key="label_author_of_book_x">Autorzy podręcznika: </locale>
+    <locale key="label_education_level_1">Etap edukacyjny: </locale>
+    <locale key="label_education_level_x">Etapy edukacyjne: </locale>
+    <locale key="label_school_type_1">Typ szkoły: </locale>
+    <locale key="label_school_type_x">Typy szkoły: </locale>
+    <locale key="label_module_title">Moduł: </locale>
+    <locale key="label_module_author_1">Autor: </locale>
+    <locale key="label_module_author_x">Autorzy: </locale>
+    <locale key="label_module_license">Licencja: </locale>
+    <locale key="label_module_contact">Kontakt: </locale>
+    <locale key="label_module_www">Wersja WWW: </locale>
+    <locale key="label_module_core_curriculum">Hasła podstawy programowej: </locale>
+    <locale key="text_hpp_outside_ability">Treść spoza podstawy programowej.</locale>
+    <locale key="label_about_author_generatedType">Moduł wygenerowany przez platformę</locale>
+
+    <locale key="label_second_page_content_status_receipient">Format treści: </locale>
+    <locale key="label_second_page_content_status_student">E-podręcznik dla ucznia</locale>
+    <locale key="label_second_page_content_status_teacher">E-podręcznik dla nauczyciela</locale>
+
+    <locale key="school_type_primary">szkoła podstawowa</locale>
+    <locale key="school_type_high">gimnazjum</locale>
+    <locale key="school_type_secondary">szkoła ponadgimnazjalna</locale>
+
+    <locale key="subject_mathematics">matematyka</locale>
+    <locale key="subject_polishLanguage">język polski</locale>
+    <locale key="subject_physics">fizyka</locale>
+    <locale key="subject_chemistry">chemia</locale>
+    <locale key="subject_biology">biologia</locale>
+    <locale key="subject_geography">geografia</locale>
+    <locale key="subject_natureScience">przyroda</locale>
+    <locale key="subject_earlySchoolEducation">edukacja wczesnoszkolna</locale>
+    <locale key="subject_historyAndSociety">historia i społeczeństwo</locale>
+    <locale key="subject_history">historia</locale>
+    <locale key="subject_computerScience">informatyka</locale>
+    <locale key="subject_computerClasses">zajęcia komputerowe</locale>
+    <locale key="subject_civicsEducation">wiedza o społeczeństwie</locale>
+    <locale key="subject_educationForSafety">edukacja dla bezpieczeństwa</locale>
+
+    <locale key="label_mark_tasks">Oznaczenie zadań: </locale>
+    <locale key="mark_taks_table_desc">Tabela zawierająca oznaczenia zadań.</locale>
+    <locale key="mark_taks_label_level_min">A</locale>
+    <locale key="mark_taks_label_level_general">B</locale>
+    <locale key="mark_taks_label_level_creative">C</locale>
+    <locale key="mark_taks_label_level_competence">K</locale>
+    <locale key="mark_taks_desc_level_min">zadanie z minimalnego poziomu osiągnięcia efektu
+        kształcenia</locale>
+    <locale key="mark_taks_desc_level_general">zadanie z ogólnego poziomu osiągnięcia efektu
+        kształcenia</locale>
+    <locale key="mark_taks_desc_level_creative">zadania z kreatywnego osiągnięcia efektu
+        kształcenia</locale>
+    <locale key="mark_taks_desc_level_competence">zadanie do osiągnięcia kompetencji</locale>
+
+    <locale key="label_status_content">Oznaczenia treści: </locale>
+    <locale key="label_status_content_table_desc">Tabela zawierająca oznaczenia treści.</locale>
+    <locale key="label_content_status_teacher">oprawa metodyczna</locale>
+    <locale key="label_content_status_expanding">treści rozszerzające</locale>
+    <locale key="shortcut_content_status_teacher">[N]</locale>
+    <locale key="shortcut_content_status_expanding">[R]</locale>
+
+    <locale key="about_etextbook">O e-podręczniku</locale>
+    <locale key="about_description_table">Tabela z informacjami o epodręczniku</locale>
+    <locale key="second_page">Strona tytułowa</locale>
+    <locale key="title_second_page">Tytuł strony drugiej</locale>
+    <locale key="title_module_second_page">Informacje szczegółowe</locale>
+    <locale key="title_module_answers_licenses">Informacje o licencjach osadzonych obiektów (w
+        kolejności występowania w treści modułu):</locale>
+    <locale key="answers">Odpowiedzi</locale>
+    <locale key="back_to_exercise">(Wróć do zadania)</locale>
+    <locale key="Footnotes">Przypisy</locale>
+    <locale key="Glossary">Glosariusz</locale>
+    <locale key="TableofContents">Spis treści</locale>
+    <locale key="chapterPrev">Poprzedni rozdział</locale>
+    <locale key="chapterNext">Następny rozdział</locale>
+    <locale key="fontBigger">Większa czcionka</locale>
+    <locale key="fontSmaller">Mniejsza czcionka</locale>
+    <locale key="Strength">Siła</locale>
+    <locale key="Figure">Figura</locale>
+    <locale key="Reference">Referencja</locale>
+    <locale key="Listing">Listing</locale>
+    
+    <locale key="list"></locale>
+    <locale key="ShowNote">Pokaż sekcję do zapamiętania</locale>
+    <locale key="HideNote">Ukryj sekcję do zapamiętania</locale>
+    <locale key="Note">Notka</locale>
+    <locale key="Remember">Zapamiętaj</locale>
+    <locale key="Example">Przykład</locale>
+    <locale key="example">Przykład</locale>
+    <locale key="GlossSeeAlso">Zobacz również</locale>
+    <locale key="Citelink">Odsyłacz</locale>
+    <locale key="Rule">Reguła</locale>
+    <locale key="rule">Reguła</locale>
+    <locale key="Proof">Dowód</locale>
+    <locale key="proof">Dowód</locale>
+    <locale key="statement">Twierdzenie</locale>
+    <locale key="Step">Krok</locale>
+    <locale key="Diagnosis">Diagnoza</locale>
+    <locale key="Answer">Odpowiedź</locale>
+    <locale key="ShowSolution">Pokaż odpowiedź</locale>
+    <locale key="HideSolution">Ukryj odpowiedź</locale>
+    <locale key="DifficultyLevel">Poziom trudności</locale>
+    <locale key="ProblemSet">Zbiór zadań</locale>
+    <locale key="ShowAnswer">Pokaż odpowiedź</locale>
+    <locale key="HideAnswer">Ukryj odpowiedź</locale>
+    <locale key="CheckAnswer">Sprawdź</locale>
+    <locale key="Correct">Prawidłowo</locale>
+    <locale key="Incorrect">Nieprawidłowo</locale>
+    <locale key="Hint">Wskazówka</locale>
+    <locale key="NextHint">Następna wskazówka</locale>
+    <locale key="Recreate">Nowy przykład</locale>
+    <locale key="Truth">Prawda</locale>
+    <locale key="False">Fałsz</locale>
+    <locale key="table_of_content">Spis treści</locale>
+    <locale key="table_of_content_back">Powróć do spisu treści</locale>
+    <locale key="chapter">Rozdział</locale>
+    <locale key="title_page">Strona tytułowa</locale>
+    <locale key="cover_title">Okładka</locale>
+    <locale key="Table">Tabela</locale>
+    
+    <locale key="quote">Cytat</locale>
+    <locale key="source"></locale>
+    <locale key="code">Kod</locale>
+    <locale key="note">Notka</locale>
+    <locale key="problem" type="block">Problem</locale>
+    <locale key="solution" type="block">Odpowiedź</locale>
+    <locale key="commentary" type="block">Rozwiązanie</locale>
+    <locale key="student-work" type="block">Do zrobienia</locale>
+    <locale key="evaluation" type="block">Test sprawdzający</locale>
+    <locale key="homework" type="block">Praca domowa</locale>
+    <locale key="exercise-set" type="block">Zadanie</locale>
+    <locale key="project" type="block">Projekt</locale>
+
+
+    <locale key="lead" type="block"></locale>
+    <locale key="intro" type="block">Przedmiot lekcji</locale>
+    <locale key="prerequisite" type="block">Przygotuj przed lekcją:</locale>
+    <locale key="command" type="block">Polecenie</locale>
+    <locale key="experiment" type="block">Doświadczenie</locale>
+    <locale key="observation" type="block">Obserwacja</locale>
+    <locale key="experiment-problem">Problem badawczy</locale>
+    <locale key="hypothesis">Hipoteza</locale>
+    <locale key="instruments">Co będzie potrzebne:</locale>
+    <locale key="instructions">Instrukcja</locale>
+    <locale key="conclusions">Podsumowanie</locale>
+    <locale key="demonstration">Demonstracja</locale>
+    <locale key="objective">Cel</locale>
+    <locale key="biography">Biogram</locale>
+    <locale key="name"></locale>
+    <locale key="birth"/>
+    <locale key="date"></locale>
+    <locale key="date-birth">Data urodzenia</locale>
+    <locale key="date-death">Data śmierci</locale>
+    <locale key="date-event-start">Data rozpoczęcia</locale>
+    <locale key="date-start">Data rozpoczęcia</locale>
+    <locale key="date-event-occur">Data</locale>
+    <locale key="date-occur">Data</locale>
+    <locale key="date-event-end">Data zakończenia</locale>
+    <locale key="date-end">Data zakończenia</locale>
+    <locale key="debate">Debata</locale>
+
+    <locale key="zoomable">Zoomable</locale>
+    <locale key="aside">Obok</locale>
+    <locale key="remember">Zapamiętaj</locale>
+    <locale key="theorem">Twierdzenie</locale>
+    <locale key="lemma">Lemat</locale>
+    <locale key="corollary">Wynik</locale>
+    <locale key="law">Prawo</locale>
+    <locale key="proposition">Propozycja</locale>
+
+
+
+    <locale key="location">Miejsce</locale>
+    <locale key="location-event">Miejsce</locale>
+    <locale key="location-birth">Miejsce urodzenia</locale>
+    <locale key="location-death">Miejsce śmierci</locale>
+    <locale key="location-event-start">Miejsce rozpoczęcia</locale>
+    <locale key="location-event-occur">Miejsce</locale>
+    <locale key="location-event-end">Miejsce zakończenia</locale>
+    <locale key="location-start">Miejsce rozpoczęcia</locale>
+    <locale key="location-occur">Miejsce</locale>
+    <locale key="location-end">Miejsce zakończenia</locale>
+
+    <locale key="death"/>
+    <locale key="gallery">Galeria</locale>
+    <locale key="gallery-legend-title">Opisy ilustracji: </locale>
+    <locale key="glossary">Słowniczek</locale>
+    <locale key="entry">Wpis</locale>
+    <locale key="content">Treść</locale>
+    <locale key="author">Autor</locale>
+    <locale key="event">Wydarzenie</locale>
+    <locale key="literary-work-summary">Streszczenie</locale>
+    <locale key="literary-work-description">O dziele</locale>
+    <locale key="womi-title-label">Obiekt multimedialny</locale>
+    <locale key="womi-attachment-label">Załącznik</locale>
+    <locale key="procedure-instructions">Instrukcja</locale>
+    <locale key="tooltip">Dymek</locale>
+    <locale key="step">Krok</locale>
+    <locale key="comment"/>
+    <locale key="concept">Pojęcie</locale>
+    <locale key="bookmark">[zakładka]</locale>
+
+    <locale key="BC">p.n.e.</locale>
+    <locale key="AD">n.e.</locale>
+    <locale key="short-year">r.</locale>
+    <locale key="short-century">w.</locale>
+    <locale key="and">i</locale>
+    <locale key="beginning-of-century">początek</locale>
+    <locale key="middle-of-century">połowa</locale>
+    <locale key="turn-of-century">przełom</locale>
+    <locale key="around-year">ok.</locale>
+
+    <locale key="interactive_exercise_link_label">Zobacz aplikację interaktywną na portalu
+        epodreczniki.pl</locale>
+    <locale key="audio_womi_link_label">Nagranie audio dostępne na portalu epodreczniki.pl</locale>
+    <locale key="movie_womi_link_label">Film dostępny na portalu epodreczniki.pl</locale>
+    <locale key="attachment_womi_link_label">Załącznik dostępny na portalu epodreczniki.pl</locale>
+    <locale key="gallery_link_label">Pełna galeria dostępna na portalu epodreczniki.pl</locale>
+    <locale key="womi-gallery-element-label">Element</locale>
+    <locale key="womi-image-label">Ilustracja</locale>
+    <locale key="womi-interactive-label">Aplikacja</locale>
+    <locale key="womi-movie-label">Nagranie wideo</locale>
+    <locale key="womi-sound-label">Nagranie audio</locale>
+
+    <locale key="A">A</locale>
+    <locale key="B">B</locale>
+    <locale key="C">C</locale>
+    <locale key="K">K</locale>
+
+    <locale key="JPOL3_poziom1"/>
+    <locale key="JPOL3_poziom2"/>
+    <locale key="JPOL3_simple">Zadanie</locale>
+    <locale key="JPOL3_pairs">Praca w parach</locale>
+    <locale key="JPOL3_play">Zabawa / gra</locale>
+    <locale key="JPOL3_sorceress">Czarownica</locale>
+    <locale key="JPOL3_imp">Chochlik</locale>
+    <locale key="JPOL3_reading">Czytanie ze zrozumieniem</locale>
+    <locale key="JPOL3_challenge">Wyzwanie</locale>
+    <locale key="JPOL3_interactive">Ćwiczenie interaktywne</locale>
+
+    <locale key="textarea_text_static_format">Odpowiedź zapisz w zeszycie.</locale>
+    <locale key="no-correct-answer">Żadna z odpowiedzi nie jest poprawna.</locale>
+    <locale key="Bibliography">Bibliografia</locale>
+    <locale key="file">Bibliografia</locale>
+    <locale key="no-alternative-reason">Element niedostępny: </locale>
+
+    <locale key="section"></locale>
+    <locale key="para"></locale>
+    <locale key="exercise">Zadanie</locale>
+    <locale key="Exercise">Zadanie</locale>
+    <locale key="SubExercise">Podzadanie</locale>
+    <locale key="WOMI">Zadanie</locale>
+    <locale key="ShowCommentary">Pokaż rozwiązanie</locale>
+    <locale key="HideCommentary">Ukryj rozwiązanie</locale>
+    <locale key="ShowCommentaryExample">Pokaż przykład rozwiązania</locale>
+    <locale key="HideCommentaryExample">Ukryj przykład rozwiązania</locale>
+    <locale key="revisal">Już wiesz:</locale>
+    <locale key="effect">Tego się nauczysz:</locale>
+    <locale key="skill">Co potrafię?</locale>
+    <locale key="knowledge">Co wiem?</locale>
+    <locale key="understanding">Co rozumiem?</locale>
+    <locale key="to-be-read">Do przeczytania</locale>
+    <locale key="Definition">Definicja</locale>
+    <locale key="definition">Definicja</locale>
+    <locale key="term"></locale>
+    <locale key="meaning"></locale>
+    <locale key="curiosity">Ciekawostka</locale>
+    <locale key="tip">Wskazówka</locale>
+    <locale key="warning">Uwaga</locale>
+    <locale key="important">Ważne</locale>
+    <locale key="consider">Zastanów się</locale>
+    <locale key="see-also">Zobacz także</locale>
+    <locale key="good-to-know">Warto wiedzieć</locale>
+    <locale key="for-interested">Dla zainteresowanych</locale>
+    <locale key="time-capsule">Kapsuła czasu</locale>
+    <locale key="no-label"></locale>
+    <locale key="gen_bibliography">Bibliografia</locale>
+    <locale key="gen_biography">Biogramy</locale>
+    <locale key="gen_event">Wydarzenia</locale>
+    <locale key="gen_glossary">Słowniczek</locale>
+    <locale key="gen_concept">Pojęcia</locale>
+    <locale key="format">Format</locale>
+    
+    c
+    <locale key="item"></locale>
+    <locale key="question"></locale>
+    <locale key="response"></locale>
+    <locale key="answer">Odpowiedź</locale>
+    <locale key="config"></locale>
+    <locale key="key">Id prawidłowej odpowiedzi</locale>
+    <locale key="feedback">Wyjaśnienie</locale>
+    <locale key="tip">Wskazówka</locale>
+    
+    <locale prefix ="md" key="content-id">Identyfikator modułu</locale> 
+    <locale prefix ="md" key="repository">Repozytorium</locale>
+    <locale prefix ="md" key="version">Wersja</locale>
+    <locale prefix ="ep" key="version">Wersja</locale>
+    <locale prefix ="md" key="created">Data utworzenia</locale>
+    <locale prefix ="md" key="revised">Data modyfikacji</locale>
+    <locale prefix ="md" key="title">Tytuł</locale>
+    <locale prefix ="md" key="presentationTitle">Tytuł do wyświetlenia</locale>
+    <locale prefix ="md" key="language">Język</locale>
+    <locale prefix ="md" key="license">Licencja</locale>
+    <locale prefix ="md" key="actors">Autorzy</locale>
+    <locale prefix ="md" key="person">Osoba</locale>
+    <locale prefix ="md" key="fullname">Pełne imię i nazwisko</locale>
+    <locale prefix ="md" key="firstname">Imię</locale>
+    <locale prefix ="md" key="surname">Nazwisko</locale>
+    <locale prefix ="md" key="email">E-mail</locale>
+    <locale prefix ="md" key="roles">Role</locale>
+    <locale prefix ="md" key="role">Rola</locale>
+    <locale prefix ="md" key="keyword">Słowo kluczowe</locale>
+    <locale prefix ="md" key="keywordlist">Słowa kluczowe</locale>
+    <locale prefix ="md" key="abstract">Abstrakt</locale>
+    <locale prefix ="ep" key="e-textbook-module">Moduł e-podręcznika</locale>
+    <locale prefix ="ep" key="recipient">Odbiorca</locale>
+    <locale prefix ="ep" key="content-status">Status treści</locale>
+    <locale prefix ="ep" key="generated-type">Generowany typ</locale>
+    <locale prefix ="ep" key="core-curriculum-entries">Podstawy programowe</locale>
+    <locale prefix ="ep" key="presentation">Prezentacja</locale>
+    <locale prefix ="ep" key="numbering">Numerowanie</locale>
+    <locale prefix ="cn" key="type">Typ</locale>
+    <locale prefix ="ep" key="template">Szablon</locale>
+    <locale prefix ="ep" key="core-curriculum-entry">Podstawa programowa</locale>
+    <locale prefix ="ep" key="core-curriculum-stage">Etap</locale>
+    <locale prefix ="ep" key="core-curriculum-subject">Przedmiot</locale>
+    <locale prefix ="ep" key="core-curriculum-school">Szkoła</locale>
+    <locale prefix ="ep" key="core-curriculum-version">Wersja</locale>
+    <locale prefix ="ep" key="core-curriculum-ability">Umiejętność</locale>
+    
+    <locale prefix ="bib" key="entry">Pozycja</locale>
+    <locale prefix ="bib" key="article">Artykuł</locale>
+    <locale prefix ="bib" key="manual">Ustawa</locale>
+    <locale prefix ="bib" key="misc">Źródła internetowe</locale>
+    <locale prefix ="bib" key="incollection">Książka</locale>
+    <locale prefix ="bib" key="unpublished">Sprawozdanie</locale>
+    <locale prefix ="bib" key="author">Autorzy</locale>
+    <locale prefix ="bib" key="title">Tytuł</locale>
+    <locale prefix ="bib" key="journal">Czasopismo</locale>
+    <locale prefix ="bib" key="year">Rok publikacji</locale>
+    <locale prefix ="bib" key="number">Numer wydania</locale>
+    <locale prefix ="bib" key="booktitle">Tytuł książki</locale>
+    <locale prefix ="bib" key="publisher">Wydawca</locale>
+    <locale prefix ="bib" key="address">Miejsce publikacji</locale>
+    <locale prefix ="bib" key="editor">Tłumacze</locale>
+    <locale prefix ="bib" key="pages">Zakres stron</locale>
+    <locale prefix ="bib" key="organization">Typ aktu prawnego</locale>
+    <locale prefix ="bib" key="edition">Edycja</locale>
+    <locale prefix ="bib" key="key">Dane publikacji</locale>
+    <locale prefix ="bib" key="howpublished">Adres strony</locale>
+    <locale prefix ="bib" key="series">Seria wydawnicza</locale>    
+    <locale prefix ="ep" key="references">Powiązania modułu z WOMI</locale>
+    <locale prefix ="ep" key="module-header">Nagłówek</locale>
+    <locale prefix ="ep" key="play-and-learn">Baw się i ucz</locale>
+    <locale prefix ="ep" key="external">KZD</locale>
+    <locale prefix ="ep" key="title-presentation">Tytuł prezentacji</locale>
+    <locale prefix ="ep" key="work-area">Pytanie otwarte</locale>
+    
+</locales>

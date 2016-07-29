@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="stylesheet.xsl"?>
+
+<document xmlns:cnxml="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" xmlns:ep="http://epodreczniki.pl/" xmlns="http://cnx.rice.edu/cnxml" xmlns:mml="http://www.w3.org/1998/Math/MathML" id="iHEfFW1pds" module-id="iHEfFW1pds" cnxml-version="0.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="schema.xsd">
+	<title>Pobieranie modułu.........</title>
+	<metadata mdml-version="0.5">
+		<md:content-id>iHEfFW1pds</md:content-id>
+		<md:repository>https://epodreczniki.pcss.pl/</md:repository>
+		<md:version>1</md:version>
+		<md:created>2014-09-26 09:14 CEST</md:created>
+		<md:revised>2014-09-26 15:08 CEST</md:revised>
+		<md:title>Pobieranie modułu.........</md:title>
+		<md:language>pl</md:language>
+		<md:license url="http://creativecommons.org/licenses/by/3.0/pl/legalcode">CC BY 3.0</md:license>
+		<md:actors>
+			<md:person userid="iHEfFW1pds_d4e288">
+				<md:fullname>Piotr Grabowski</md:fullname>
+				<md:firstname>Piotr</md:firstname>
+				<md:surname>Grabowski</md:surname>
+				<md:email>piotrg@man.poznan.pl</md:email>
+			</md:person>
+		</md:actors>
+		<md:roles>
+			<md:role type="author">iHEfFW1pds_d4e288</md:role>
+		</md:roles>
+		<ep:e-textbook-module ep:version="1.5" ep:recipient="student" ep:content-status="canon">
+			<ep:presentation>
+				<ep:template>linear</ep:template>
+			</ep:presentation>
+            <ep:core-curriculum-entries>
+				<ep:core-curriculum-entry>
+					<ep:core-curriculum-stage ep:key="E1">Etap 3</ep:core-curriculum-stage>
+					<ep:core-curriculum-school ep:key="GIM">Gimnazjum</ep:core-curriculum-school>
+					<ep:core-curriculum-subject ep:key="BIOL">Biologia</ep:core-curriculum-subject>
+					<ep:core-curriculum-version ep:key="1.1">Dz.U. 30.05.2014, poz. 803</ep:core-curriculum-version>
+					<ep:core-curriculum-ability ep:key="E3-GIM-BIOL-1.0-III.2">pobiera dokument;</ep:core-curriculum-ability>
+				</ep:core-curriculum-entry>
+			</ep:core-curriculum-entries>
+
+
+		</ep:e-textbook-module>
+	</metadata>
+	<content>
+		<section id="iHEfFW1pds_d5e118">
+			<ep:parameters>
+				<ep:columns>1</ep:columns>
+				<ep:start-new-page>true</ep:start-new-page>
+			</ep:parameters>
+
+
+		</section>
+
+
+
+	</content>
+</document>

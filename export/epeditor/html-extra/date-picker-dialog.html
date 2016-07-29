@@ -1,0 +1,110 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="../js/libs/jquery-1.11.1.min.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/dialog-utils.js"></script>
+<script src="../js/date-picker.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+<link rel="stylesheet" type="text/css" href="../css/dialogs.css"/>
+<form id="date_form">
+	<div class="form_grid">
+		<div class="category date_type">
+			<div class="label">Typ</div>
+			<div class="value">
+				<button id="date">Data</button>
+				<button id="year">Rok</button>
+				<button id="about_year">Około roku</button>
+				<button id="century">Wiek</button>
+				<button id="century_start">Początek wieku</button>
+				<button id="century_end">Koniec wieku</button>
+				<button id="century_middle">Połowa wieku</button>
+				<button id="between_centuries">Na przełomie wieku</button>
+			</div>
+		</div>
+		<div class="category date">
+			<div class="label">Data</div>
+			<div class="value">
+				<input id="date_value" type="text" name="date_value" placeholder="np. 01.01.1999">
+				<span class="e_buttons">
+					<button class="bc">p.n.e.</button>
+					<button class="ad">n.e.</button>
+				</span>
+			</div>
+		</div>
+		<div class="category year">
+			<div class="label">Rok</div>
+			<div class="value">
+				<input id="date_value" type="text" name="date_value" placeholder="np. 1999">
+				<span class="e_buttons">
+					<button class="bc">p.n.e.</button>
+					<button class="ad">n.e.</button>
+				</span>
+			</div>
+		</div>
+		<div class="category about_year">
+			<div class="label">Około roku</div>
+			<div class="value">
+				<input id="date_value" type="text" name="date_value" placeholder="np. 1999">
+				<span class="e_buttons">
+					<button class="bc">p.n.e.</button>
+					<button class="ad">n.e.</button>
+				</span>
+			</div>
+		</div>
+		<div class="category century">
+			<div class="label">Wiek</div>
+			<div class="value">
+				<input id="date_value" type="text" name="date_value" placeholder="np. X">
+				<span class="e_buttons">
+					<button class="bc">p.n.e.</button>
+					<button class="ad">n.e.</button>
+				</span>
+			</div>
+		</div>
+		<div class="category century_start">
+			<div class="label">Początek wieku</div>
+			<div class="value">
+				<input id="date_value" type="text" name="date_value" placeholder="np. X">
+				<span class="e_buttons">
+					<button class="bc">p.n.e.</button>
+					<button class="ad">n.e.</button>
+				</span>
+			</div>
+		</div>
+		<div class="category century_end">
+			<div class="label">Koniec wieku</div>
+			<div class="value">
+				<input id="date_value" type="text" name="date_value" placeholder="np. X">
+				<span class="e_buttons">
+					<button class="bc">p.n.e.</button>
+					<button class="ad">n.e.</button>
+				</span>
+			</div>
+		</div>
+		<div class="category century_middle">
+			<div class="label">Połowa wieku</div>
+			<div class="value">
+				<input id="date_value" type="text" name="date_value" placeholder="np. X">
+				<span class="e_buttons">
+					<button class="bc">p.n.e.</button>
+					<button class="ad">n.e.</button>
+				</span>
+			</div>
+		</div>
+		<div class="category between_centuries">
+			<div class="label">Na przełomie wieku</div>
+			<div class="value">
+				<input id="date_value" type="text" name="date_value" placeholder="np. X">
+				<span class="e_buttons">
+					<button class="bc">p.n.e.</button>
+					<button class="ad">n.e.</button>
+				</span>
+				<div>i wieku następnego.</div>	
+			</div>
+		</div>
+	</div>
+	<div class="functional_buttons">
+		<button class="save">Zapisz</button>
+		<button class="cancel">Odrzuć</button>
+	</div>
+</form>

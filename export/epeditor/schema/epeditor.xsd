@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:ep="http://epodreczniki.pl/" xmlns:cnxml="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:epe="http://epodreczniki.pl/editor" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:xopus="http://www.xopus.com/xmlns/xsd" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://epodreczniki.pl/editor" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:import namespace="http://cnx.rice.edu/cnxml" schemaLocation="cnxml_epeditor.xsd"/>
+	<xs:import namespace="http://cnx.rice.edu/qml/1.0" schemaLocation="qml_epeditor.xsd"/>
+	<xs:include schemaLocation="common_epeditor.xsd"/>
+	<xs:complexType name="reviewCommentType">
+		<xs:annotation>
+			<xs:documentation>Typ elementu zakomentowanej treści</xs:documentation>
+		</xs:annotation>
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="cnxml:para"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="epe:idType" use="required"/>
+		<xs:attribute name="comment-author" type="xs:string" use="required"/>
+		<xs:attribute name="comment-date" type="xs:dateTime" use="required"/>
+		<xs:attribute name="comment-state" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="opened">
+						<xs:annotation>
+							<xs:appinfo>
+								<xopus:documentation>
+									<xopus:name xml:lang="en">Opened</xopus:name>
+									<xopus:name xml:lang="pl">Otwarta</xopus:name>
+								</xopus:documentation>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="resolved">
+						<xs:annotation>
+							<xs:appinfo>
+								<xopus:documentation>
+									<xopus:name xml:lang="en">Resolved</xopus:name>
+									<xopus:name xml:lang="pl">Uwzględniona</xopus:name>
+								</xopus:documentation>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="reopened">
+						<xs:annotation>
+							<xs:appinfo>
+								<xopus:documentation>
+									<xopus:name xml:lang="en">Reopened</xopus:name>
+									<xopus:name xml:lang="pl">Ponownie otwarta</xopus:name>
+								</xopus:documentation>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="closed">
+						<xs:annotation>
+							<xs:appinfo>
+								<xopus:documentation>
+									<xopus:name xml:lang="en">Closed</xopus:name>
+									<xopus:name xml:lang="pl">Zamknięta</xopus:name>
+								</xopus:documentation>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="reviewType" mixed="true">
+		<xs:annotation>
+			<xs:documentation>Typ recenzji.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="cnxml:extendedInlineContentType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="comment" type="epe:reviewCommentType"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="epe:idType" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="review" type="epe:reviewType">
+		<xs:annotation>
+			<xs:documentation>Element recenzji.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:group name="externalWOMIReferenceMetadata">
+		<xs:annotation>
+			<xs:documentation>Grupa zawierające zewnętrzne metadane WOMI reference pobierane z RT i wykorzystywane tylko w celu wspomagania edycji.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="author" type="xs:string"/>
+			<xs:element name="license" type="xs:string"/>
+			<xs:element name="title" type="xs:string"/>
+			<xs:element name="alternativeText" type="xs:string"/>
+			<xs:element name="womiType" type="xs:string"/>
+			<xs:element name="engine" type="xs:string" minOccurs="0"/>
+			<xs:element name="StanWeryfikacji" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:attributeGroup name="qmlAnswerAttributesGroup">
+		<xs:annotation>
+			<xs:documentation>Grupa zawierająca atrybuty odpowiedzi QML wykorzystywane do wspomagania tworzenia zadań z elementami losowości</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="correct" type="xs:boolean" use="optional"/>
+	</xs:attributeGroup>
+	<xs:element name="set">
+		<xs:annotation>
+			<xs:documentation>Element pozwalający na grupowanie odpowiedzi w zadaniach z elementami losowości w zestawy - wykorzystywany tylko w celu wspomagania edycji zadań z elementami losowości.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="q:answer" minOccurs="2" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

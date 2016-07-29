@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Lister</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/libs/chosen.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/libs/tooltipster.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/dialogs.css"/>
+
+		<script src="../js/libs/jquery-1.11.1.min.js"></script>
+		<script src="../js/libs/chosen.jquery.min.js" type="text/javascript"></script>
+		<script src="../js/libs/jquery.tooltipster.min.js" type="text/javascript"></script>
+
+		<script type="text/javascript" src="../js/utils.js"></script>
+		<script type="text/javascript" src="../js/dialog-utils.js"></script>
+		<script type="text/javascript" src="../js/id-generator.js"></script>
+		<script type="text/javascript" src="../js/lister-dialog.js"></script>
+
+	</head>
+	<body>
+		<form id="search">
+			<div id="column1">				
+				<div class="ajaxable-content">
+					<label>Folder główny:</label>
+					<img class="ajax-loader" src="../css/libs/images/ajax-loader.gif"/>
+					<select id="cbmainfolder" data-placeholder="Wybierz folder główny" class="chosen-select" tabindex="2"></select>
+				</div>
+                <div class="ajaxable-content">
+					<label>Folder:</label>
+					<select id="cbfolder" data-placeholder="Wybierz folder" class="chosen-select" tabindex="2"></select>
+				</div>
+				<div class="searchbox">
+					<label for="tags" onclick="cleanup()">Wyszukaj WOMI...</label><br>
+					<input type="text" placeholder="Wpisz szukane słowo" id="tags" value="">
+					<div class="functional_buttons">
+						<button class="search" >Szukaj</button>
+						<button class="save">Wstaw</button>
+                        
+					</div>
+				</div>
+			</div>
+			<div id="column2">
+				<div class="ajaxable-content">
+					<ul id="list" class="results_box"/>
+					<img class="ajax-loader" src="../css/libs/images/ajax-loader.gif"/>
+				</div>
+			</div>
+			<div id="nav">
+				<button class="prev"> < </button>
+				
+				<input type="text" placeholder="nr strony" id="page_number" value="">
+				<span> z </span>
+				<span id="total_pages"></span>
+				
+				<button class="next"> > </button>
+			</div>
+		</form>
+	</body>
+</html>

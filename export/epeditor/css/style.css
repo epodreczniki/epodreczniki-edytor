@@ -1,0 +1,1437 @@
+
+
+* {
+	box-sizing: border-box;	
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	background: #fff;
+	color: #000;
+}
+body {
+	font-family: "Corbel", "Nimbus Sans L", "Arial", sans-serif; 
+	font-size: 1em;
+}
+h1 {
+	margin-bottom: 1em;	
+	padding: 0.5em;
+	color: #08f;	
+	border-bottom: 8px solid #08f;
+	font-size: 1.5em;
+	font-weight: 700;
+	text-align: left;
+}
+h2 {
+	margin-bottom: 0.5em;
+	padding: 0;
+	font-size: 1.25em;
+	font-weight: 700;
+}
+table {
+	border: 1px solid #000;
+	border-collapse: collapse;
+}
+ul li,
+ol * ol li {
+	margin-left: 1em;
+}
+ol {
+	list-style: none;
+}
+ol li {
+	margin-top: 1em;
+}
+ol li > div {
+	display: inline;
+}
+
+
+#xopusBusy {
+  display: none;
+  margin: 0px 0px 0px -50px; 
+  padding: 30px 10px 10px 10px;
+  position: absolute;
+  left: 30%;
+  top: 125px;
+  width: 500px;
+  height: 150px;
+  text-align: center;
+  background: #e8e8e8 url(libs/images/ajax-loader.gif) no-repeat center center;
+  border: 1px solid #000;
+}
+#loading-metadata {
+  display: none;
+  padding: 2px 4px 2px 22px;
+  position: absolute;
+  left: 3;
+  top: 3;
+  text-align: right;
+  background: #e8e8e8 url(libs/images/ajax-loader.gif) no-repeat 2% center / 15px 15px ;
+  border: 1px solid #000;
+  font-size: 10px;
+}
+div.page .xopus-default-cursor {
+	cursor: pointer !important;
+}
+
+
+
+.main-panel {
+    display: block;
+    margin: 0 auto;
+    padding: 0 1em;
+    max-width: 980px;
+    vertical-align: text-top;
+    white-space: pre-wrap;
+}
+.with-reviews {
+	display: inline-block; 
+    width: calc(100% - 320px); 
+    margin: 0 auto;    
+    padding: 0 1em;
+    vertical-align: text-top;
+}
+.page-header { 
+	font-family: 'opensans', sans-serif;
+	font-weight: 700;
+	font-size: 0.8em;	
+}
+.page-header a { 
+	display: inline-block;
+	margin-bottom: 8px;
+	padding: 2px 6px;
+	border: 1px solid #999;
+	border-radius: 3px;
+	background-color: #fff;
+	color: #999;
+	text-decoration: none;
+}
+.page-header:hover a,
+.page-header:focus a { 
+	background-color: #999;
+	color: #fff;
+}
+.page-selected .page-header { 
+	display: inline-block;
+	margin-bottom: 8px;
+	padding: 2px 6px;
+	border: 1px solid #08f;
+	border-radius: 3px;		
+	background-color: #08f;	
+	color: #fff;
+	font-weight: 700;
+}
+.page .section:last-child {
+	border: 0;
+}
+.section {
+	overflow: auto;
+	border-bottom: 1px dotted #aaa;
+}
+
+.section[data-columns] .section {
+	border: 0;
+}
+
+.section[data-columns]:last-child .section {
+	border: 0;
+}
+
+.cmref *{
+    color: red;
+}
+
+.cmref img{
+    border: solid 2px red;
+}
+
+
+
+.column-button-container {
+	display: block;
+	margin-bottom: 1em;
+}
+button.add-column,
+button.rm-column,
+button.edit-columns-width,
+button.open-date-dialog,
+button.review-panel-button,
+button.set-new-page,
+button.unset-new-page,
+button.add-curriculum-entry,
+button.toggle-editable-content,
+button.open-config-dialog,
+button.check,
+button.toggle-foldable,
+button.toggle-stretch,
+button.check,
+span.bookmark,
+span.open-gallery-dialog,
+span.open-metadata-view,
+span.open-womi-dialog,
+span.open-alternative-dialog,
+button.add-womi-content,
+button.rm-womi-content,
+span.correct-response-mark,
+span.incorrect-response-mark,
+div.fold-point,
+div.zebra-point,
+span.section-parameters {
+	width: 22px;
+	height: 22px;	
+	margin-right: 4px;
+	vertical-align: bottom;	
+	background-color: #aaa;
+	background-size: 100% 100%;
+	background-position: center center;  
+	background-repeat: no-repeat;  
+	border: 1px solid transparent;
+	border-radius: 4px;
+	cursor: pointer;
+}
+button.toggle-editable-content {
+	margin-left: 0.5em;
+}
+div.fold-point {
+	margin: 0 auto;
+	border-radius: 50%;
+	background-image: url(../icons/icon-more.svg);
+	cursor: inherit;
+}
+div.zebra-point {
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 1px solid grey;
+	background-image: url(../icons/icon-zebra.svg);
+	cursor: inherit;
+}
+button.set-new-page {
+	background-size: auto 100%;
+	background-position: left center;
+}
+button.unset-new-page {
+	background-size: auto 100%;
+	background-position: right center;
+}
+button.open-date-dialog,
+span.open-metadata-view {
+	margin-left: 5px;	
+	vertical-align: middle;
+}
+span.open-womi-dialog {
+	position: absolute;
+	height: 33px;
+	width: 33px;
+	margin: 5px 0 0 -38px;
+	vertical-align: middle;
+}
+span.open-alternative-dialog {
+	position: absolute;
+	height: 33px;
+	width: 33px;
+	margin: 45px 0 0 -38px;
+	vertical-align: middle;
+}
+span.open-gallery-dialog {
+	display: inline-block;	
+	margin-left: 5px;
+}
+button.check {
+	background-size: auto 100%;
+	background-position: left center;
+}
+
+button.add-column:hover,
+button.rm-column:hover,
+button.edit-columns-width:hover,
+button.open-date-dialog:hover,
+span.open-gallery-dialog:hover,
+span.open-womi-dialog:hover,
+span.open-alternative-dialog:hover,
+button.add-womi-content:hover,
+button.rm-womi-content:hover,
+button.review-panel-button,
+span.open-metadata-view:hover,
+button.set-new-page:hover,
+button.unset-new-page:hover,
+button.add-curriculum-entry:hover,
+button.toggle-editable-content:hover,
+button.open-config-dialog:hover,
+button.check:hover {
+	background-color: #08f;
+}
+button.toggle-foldable:hover {
+	background-color: #aaa;
+}
+button.toggle-stretch:hover {
+	background-color: #aaa;
+}
+
+span.open-metadata-view {
+	display: inline-block;
+}
+span.bookmark,
+span.section-parameters {
+	display: inline-block;
+	cursor: inherit;
+}
+button.review-panel-button {
+	width: 24px;
+	height: 24px;
+}
+button.toggle-foldable {
+	background-color: #ccc;
+}
+button.toggle-stretch {
+	background-position: -40px center;
+	background-color: #ccc;
+}
+button.toggle-foldable.value-true {
+	background-color: #08f;
+}
+button.toggle-stretch.full-width {
+	background-position: left center;
+	background-color: #08f;
+}
+button.toggle-stretch.extended-width {
+	background-position: -20px center;
+	background-color: #08f;
+}
+button.toggle-stretch.extended-shifted-width {
+	background-position: right center;
+	background-color: #08f;
+}
+span.correct-response-mark,
+span.incorrect-response-mark {
+	position: absolute;	
+	margin: 0 0 0 0.5em;
+	border-radius: 50%;
+	cursor: inherit;
+}
+
+span.correct-response-mark,
+span.incorrect-response-mark {
+	background-image: url(../icons/icon-quiz.svg);
+	border-radius: 50%;	
+}
+span.correct-response-mark {
+	background-color: #38c738;
+	background-size: auto 100%;
+	background-position: right center;
+}
+span.incorrect-response-mark {
+	background-color: red;
+	background-size: auto 100%;
+	background-position: left center;	
+}
+button.add-column,
+button.add-curriculum-entry,
+button.add-womi-content {
+	background-image: url(../icons/icon-column-add.svg);
+}
+.womi-container > button.add-womi-content {
+	height: 33px;
+	width: 33px;
+	vertical-align: middle;
+	margin: 0px 0px 35px -38px;
+}
+.womi-gallery .womi-container > button.add-womi-content {
+	margin: 0px 0px 50px -38px;
+}
+button.rm-column,
+button.rm-womi-content {
+	background-image: url(../icons/icon-column-remove.svg);
+}
+button.edit-columns-width {
+	background-image: url(../icons/icon-column-width.svg);
+}
+span.section-parameters {
+	background-image: url(../icons/icon-options.svg);
+}
+button.open-date-dialog,
+button.toggle-editable-content,
+span.open-gallery-dialog,
+span.open-metadata-view,
+button.toggle-editable-content,
+button.open-config-dialog,
+span.open-womi-dialog {
+	background-image: url(../icons/icon-options.svg);
+}
+span.open-alternative-dialog {
+	background-image: url(../icons/icon-back.svg);
+}
+button.review-panel-button {
+	background-image: url(../icons/icon-more.svg);
+}
+button.set-new-page {
+	background-image: url(../icons/icon-pagination.svg);
+}
+button.unset-new-page {
+	background-image: url(../icons/icon-pagination.svg);
+}
+button.toggle-foldable {
+	background-image: url(../icons/icon-foldable.svg);
+}
+button.toggle-stretch {
+	background-size: auto 100%;
+	background-image: url(../icons/icon-section-width.svg);
+}
+span.bookmark {
+	background-image: url(../icons/icon-bookmark.svg);
+}
+button.check {
+	background-size: auto 100%;
+	background-position: left center;
+	background-image: url(../icons/icon-review-status.svg);
+}
+
+button.add-column:hover,
+button.rm-column:hover,
+button.edit-columns-width:hover,
+button.open-date-dialog:hover,
+span.open-gallery-dialog:hover,
+span.open-womi-dialog:hover,
+span.open-alternative-dialog:hover,
+button.review-panel-button,
+span.open-metadata-view:hover,
+button.set-new-page:hover,
+button.unset-new-page:hover,
+button.add-curriculum-entry:hover,
+button.toggle-editable-content:hover,
+button.check:hover {
+	background-color: #08f;
+}
+button.toggle-foldable:hover {
+	background-color: #aaa;
+}
+button.toggle-stretch:hover {
+	background-color: #aaa;
+}
+
+
+
+.attachment span.open-womi-dialog {
+    width: 22px;
+    height: 22px;
+    margin: 0 0 0 5px;
+}
+.attachment span.open-alternative-dialog {
+    width: 22px;
+    height: 22px;
+    margin: 0 0 0 10px;
+}
+.review-panel span.open-womi-dialog {
+	position: absolute;	
+	top: 10px;
+	right: 0px;
+}
+.review-panel span.open-alternative-dialog {
+	position: absolute;	
+	top: 20px;
+	right: 0px;
+}
+.review-panel .womi-container {
+	position: relative;
+}
+
+
+
+table {
+	margin-bottom: 0.5em;
+	border: none;
+}
+td {
+	padding: 0.5em;
+	border: 1px solid black;
+	border-color: #000;	
+}
+th {
+	padding: 0.5em;
+	border: 1px solid black;
+	border-color: #000;	
+}
+.para {
+	margin-bottom: 1em;
+	padding: 0;
+	color: #575757;
+}
+
+
+
+.foreign {
+	font-style: italic;
+}
+.lead {
+	padding: 0.5em 1.5em;
+	font-size: 1.25em;
+}
+.intro {
+	padding: 0 1.5em 0.5em 1.5em;
+}
+.lead-header,
+.intro-header {
+	margin-bottom: 0.5em;
+	font-weight: 700;
+}
+.equation {
+	text-align: center;
+}
+.section .link,
+.section .biography-reference,
+.section .bibliography-reference,
+.section .glossary-reference,
+.section .concept-reference,
+.section .event-reference,
+.section .tooltip-reference {
+	display: inline;
+	color: #08f;
+}
+.section .link,
+.section .biography-reference,
+.section .bibliography-reference,
+.section .glossary-reference,
+.section .concept-reference,
+.section .event-reference,
+.section .tooltip-reference {
+    border-bottom: 1px dotted #08f;
+	cursor: pointer;
+}
+.section .para .quote {
+	margin: 0;
+	padding: 0;
+	color: #08f;	
+	border: none;
+	font-style: italic;
+}
+.section .tooltip {
+	padding: 0.5em 1em;
+	border: 1px solid #08f;
+	border-radius: 4px;
+}
+.section .tooltip-header {
+	color: #08f;	
+	font-weight: 700;
+}
+.section .tooltip-header .label {
+	color: #000;
+}
+
+
+
+.section {
+	font-family: 'opensans', sans-serif;
+	line-height: 1.4;
+	margin-bottom: 1em;
+}
+
+.section em.bold {
+	font-weight: 700;
+}
+
+.section .biography,
+.section .command,
+.section .concept,
+.section .concept .example,
+.section .definition,
+.section .effect,
+.section .exercise,
+.section .example,
+.section .experiment,
+.section .event,
+.section .note,
+.section .observation,
+.section .prerequisite,
+.section .procedure-instructions,
+.section .quote,
+.section .revisal,
+.section .rule {	
+	margin-bottom: 1em;
+	padding: 0 1em;
+}
+
+.section .biography {
+	border-left: 1px solid #d9d9d9;
+}
+.section .command {
+	border-left: 1px solid #d9d9d9;
+}
+.section .concept {
+	border-left: 1px solid #d9d9d9;	
+}
+.section .definition {
+	border-left: 1px solid #d9d9d9;
+}
+.section .effect {
+	border-left: 1px solid #d9d9d9;
+}
+.section .example {
+
+}
+.section .exercise {
+	border-left: 1px solid #d9d9d9;
+}
+.section .experiment {
+	border-left: 1px solid #d9d9d9;
+}
+.section .event {
+	border-left: 1px solid #d9d9d9;	
+}
+.section .procedure-instructions {
+	border-left: 1px solid #d9d9d9;
+}
+.section .quote {
+	border-left: 1px solid #d9d9d9;	
+}
+.section .note {
+	border-left: 1px solid #d9d9d9;
+}
+.section .observation {
+	border-left: 1px solid #d9d9d9;
+}
+.section .revisal {
+	border-left: 1px solid #d9d9d9;
+}
+.section .rule {
+	border-left: 1px solid #d9d9d9;
+}
+
+
+
+.section .command-header,
+.section .concept-header,
+.section .effect-header,
+.section .experiment-header,
+.section .note-header.consider,
+.section .note-header.curiosity,
+.section .note-header.important,
+.section .note-header.remember,
+.section .note-header.see-also,
+.section .note-header.tip,
+.section .note-header.warning,
+.section .observation-header,
+.section .prerequisite-header,
+.section .revisal-header {
+	display: block;
+    margin-bottom: 0.5em;
+    padding: 0 1em 0 1.8em;
+	background-size: 32px; 
+	background-position: left center;
+	background-repeat: no-repeat;
+	font-weight: 300;
+	font-size: 1.5em;
+}
+
+.section .note-header.good-to-know,
+.section .note-header.for-interested,
+.section .note-header.time-capsule {
+	display: block;
+    margin-bottom: 0.5em;
+    padding: 0 1em 0 0;
+	background-size: 32px; 
+	background-position: left center;
+	background-repeat: no-repeat;
+	font-weight: 300;
+	font-size: 1.5em;
+}
+
+
+
+.section .biography-header,
+.section .definition-header,
+.section .exercise-header,
+.section .event-header,
+.section .gallery-header,
+.section .list-header,
+.section .procedure-instructions-header,
+.section .quote-header,
+.section .rule-header,
+.section .student-work-header,
+.section .student-work .title,
+.section .term {
+	margin-bottom: 0.5em;
+	font-weight: 300;
+	font-size: 1.5em;
+}
+
+.section .list-header {
+	margin-bottom: 1em;
+}
+
+.section .term {
+	color: #08f;
+	font-size: inherit;
+}
+
+
+
+.section .biography-header {
+	color: #575757;
+}
+.section .command-header {
+	background-image: url('../icons/portal/ic-polecenie.svg');
+	color: #575757;
+}
+.section .concept-header {
+	background-image: url('../icons/portal/ic-definicja.svg');	
+	color: #575757;
+}
+.section .concept .example-header,
+.section .rule .example-header {
+	color: #575757;
+}
+.section .definition-header {
+	color: #575757;	
+}
+.section .effect-header {
+	background-image: url('../icons/portal/ic-nauczysz-sie.svg');	
+	color: #575757;
+}
+.section .event-header {
+	color: #575757;	
+}
+.section .example-header {
+	color: #0088FF;
+}
+.section .exercise-header {
+	color: #575757;
+}
+.section .experiment-header {
+	background-image: url('../icons/portal/ic-doswiadczenie.svg');
+	color: #575757;
+}
+.section .list-header {
+	color: #575757;
+}
+.section .note-header.consider {
+	background-image: url('../icons/portal/ic-zastanow-sie.svg');
+	color: #575757;
+}
+.section .note-header.curiosity {
+	background-image: url('../icons/portal/ic-ciekawostka.svg');
+	color: #575757;
+}
+.section .note-header.important {
+	background-image: url('../icons/portal/ic-wazne.svg');
+	color: #575757;
+}
+.section .note-header.remember {
+	background-image: url('../icons/portal/ic-obserwacja.svg');
+	color: #575757;
+}
+.section .note-header.see-also {
+	background-image: url('../icons/portal/ic-obserwacja.svg');
+	color: #575757;
+}
+.section .note-header.tip {
+	background-image: url('../icons/portal/ic-wskazowka.svg');
+	color: #575757;
+}
+.section .note-header.warning {
+	background-image: url('../icons/portal/ic-uwaga.svg');
+	color: #575757;
+}
+
+.section .note-header.good-to-know,
+.section .note-header.for-interested,
+.section .note-header.time-capsule {
+	color: #575757;
+}
+
+.section .observation-header {
+	background-image: url('../icons/portal/ic-obserwacja.svg');
+	color: #575757;
+}
+.section .procedure-instructions-header {
+	color: #575757;
+}
+.section .revisal-header {
+	background-image: url('../icons/portal/ic-juz-wiesz.svg');	
+	color: #575757;
+}
+.section .prerequisite-header {
+	background-image: url('../icons/portal/ic-przygotuj.svg');	
+	color: #575757;
+}
+.section .rule-header {
+	color: #575757;
+}
+.section .command .problem-header,
+.section .student-work .problem-header { 
+	background-color: #eaeaea;
+	color: #575757;
+}
+
+
+
+.exposed {
+	background-color: #e8e0bb !important;
+	padding: 1em !important;
+	border-left: 0 !important;
+}
+.exposed .para {
+	margin-bottom: 0;
+}
+
+
+
+.section .experiment .title,
+.section .observation .title,
+.section .procedure-instructions .title,
+.section .rule .title,
+.section .student-work .title {
+	display: block;
+}
+
+
+
+.section .concept .example-header,
+.section .exercise .commentary-header,
+.section .exercise .solution-header,
+.section .experiment .conclusions-header,
+.section .experiment .hypothesis-header,
+.section .experiment .instructions-header,
+.section .experiment .instruments-header,
+.section .experiment .note-header.important,
+.section .experiment .note-header.tip,
+.section .experiment .note-header.warning,
+.section .experiment .objective-header,
+.section .experiment .problem-header,
+.section .observation .conclusions-header,
+.section .observation .instructions-header,
+.section .observation .instruments-header,
+.section .observation .note-header.warning,
+.section .observation .objective-header,
+.section .quote .author-header,
+.section .rule .example-header,
+.section .rule .statement-header,
+.section .rule .proof-header {
+	
+	font-weight: 300;
+	font-size: 1.5em;
+}
+
+
+
+.section .experiment .instruments,
+.section .observation .instruments,
+.section .experiment .objective,
+.section .observation .objective {
+	width: 50%;
+	float: left;
+}
+.section .experiment .note-header.important,
+.section .observation .note-header.important {
+	clear: both;
+}
+.section .concept-header,
+.section .experiment-header,
+.section .observation-header {
+	
+	font-size: 1.5em;
+}
+.section .concept-header .title,
+.section .experiment-header .title,
+.section .observation-header .title {
+	padding-top: 12px;
+}
+.section .concept-header .label,
+.section .experiment-header .label,
+.section .observation-header .label {
+	position: absolute;
+	
+	font-size: 0.5em;
+}
+.concept .term {
+	display: block;
+	padding-top: 12px;
+	font-size: inherit;
+}
+.section .experiment .conclusions,
+.section .observation .conclusions {
+	margin-bottom: 1em;
+	padding: 1em;
+	background: transparent linear-gradient(135deg, #328ECC 1%, #1E557B 100%) repeat scroll 0px 0px;
+	color: #fff;
+}
+.section .experiment .conclusions .para ,
+.section .observation .conclusions .para {
+	color: inherit;
+}
+.section .experiment .conclusions-header ,
+.section .observation .conclusions-header {
+	margin-bottom: 1em;
+	text-align: center;
+	text-transform: uppercase;
+}
+.section .experiment .conclusions-header::before,
+.section .observation .conclusions-header::before {
+	content: "";
+	display: inline-block;
+	width: 1em; 
+	height: 1em;
+	margin-right: 0.5em;
+	background-image: url('../icons/portal/ic-juz-wiesz_white.svg');
+	background-size: 100% 100%;
+}
+.section .demonstration {
+	border: 1px solid #7F7F7F;
+	border-radius: 4px;
+}
+.section .demonstration-header {
+	display: inline-block;
+	width: 100%;
+	padding: 0.5em 0;
+	color: inherit;
+	text-align: center;
+	font-family: 'opensans', sans-serif;
+	font-weight: 300;
+	font-size: 0.75em;
+}
+.section .demonstration-header .label {
+	color: inherit;
+}
+
+.section .experiment .conclusions,
+.section .observation .conclusions {
+	margin-bottom: 1em;
+	padding: 1em;
+	background: transparent linear-gradient(135deg, #328ECC 1%, #1E557B 100%) repeat scroll 0px 0px;
+	color: #fff;
+}
+.section .experiment .conclusions .para ,
+.section .observation .conclusions .para {
+	color: inherit;
+}
+.section .experiment .conclusions-header ,
+.section .observation .conclusions-header {
+	margin-bottom: 1em;
+	text-align: center;
+	text-transform: uppercase;
+}
+.section .experiment .conclusions-header::before,
+.section .observation .conclusions-header::before {
+	content: "";
+	display: inline-block;
+	width: 1em; 
+	height: 1em;
+	margin-right: 0.5em;
+	background-image: url('../icons/portal/ic-juz-wiesz_white.svg');
+	background-size: 100% 100%;
+}
+
+
+
+
+.section .command .note,
+.section .exercise .note,
+.section .experiment .note,
+.section .observation .note {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.section .command .note-header.important,
+.section .command .note-header.tip,
+.section .command .note-header.warning,
+.section .exercise .note-header.important,
+.section .exercise .note-header.tip,
+.section .exercise .note-header.warning,
+.section .experiment .note-header.important,
+.section .experiment .note-header.tip,
+.section .experiment .note-header.warning,
+.section .observation .note-header.warning {
+	margin: 0;
+	padding: 0;
+	background-image: none;
+	color: inherit;
+	font-family: inherit;
+}
+
+.section .command .note-header,
+.section .command .note-header.important,
+.section .command .note-header.tip,
+.section .command .note-header.warning,
+.section .exercise .note-header,
+.section .experiment .note-header,
+.section .observation .note-header,
+.section .womi-gallery .content-header {
+	font-weight: 700;
+	font-size: 1em;
+}
+
+
+
+.section .event-header,
+.section .biography-header {
+	margin-bottom: 0;
+}
+.section .event .name,
+.section .biography .name {
+	margin-bottom: 0.25em;
+	padding: 0;
+	color: #575757;
+	font-size: 1.5em;
+	font-weight: 400;
+	
+	text-align: left;	
+}
+.section .biography .biography-metrics,
+.section .event .event-metrics {
+	display: inline-block;
+	margin-bottom: 1em;
+	padding: 0.5em 1em;
+	border-top: solid 1px lightgray;
+	border-bottom: solid 1px lightgray;
+	font-size: 0.85em;
+}
+.section .biography .birth-date-contents,
+.section .biography .birth-location-contents,
+.section .biography .death-date-contents,
+.section .biography .death-location-contents,
+.section .event .event-start-date-contents,
+.section .event .event-end-date-contents,
+.section .event .event-start-location-contents,
+.section .event .event-end-location-contents {
+	font-weight: 700;
+}
+.section .biography .biography-contents .biography-info .womi-container,
+.section .event .event-contents .event-info .womi-container {
+	margin-bottom: 1em;
+	text-align: left;
+}
+.section .biography-contents .content,
+.section .event-contents .content {
+	margin-left: 1em;
+}
+.section .biography-metrics:empty,
+.section .event-metrics:empty {
+	display: none;
+}
+
+
+
+.section .biography-contents,
+.section .biography-info {
+	padding: 0;
+}
+ 
+
+
+.section .event .year,
+.section .event .month,
+.section .event .day {
+	display: inline-block;
+}
+
+
+
+.section .quote .para {
+	font-style: italic;
+}
+
+
+
+.section .quote .author,
+.section .quote .label {
+	display: block;
+}
+
+.section .quote .author {
+	font-size: 0.8em;
+}
+
+.section .comment-quote {
+	padding: 0 1em;	
+}
+
+
+
+.section .womi-gallery-header {
+	margin-bottom: 1em;
+	font-size: 1.25em;
+	line-height: 1.4;
+	text-align: center;
+}
+
+.section .womi-gallery .content {
+	margin-bottom: 1em;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+.section .womi-gallery .womi-container {
+	text-align: center;
+}
+
+.section .womi-gallery .womi-container img {
+	margin-bottom: 0.5em;
+}
+
+
+
+.section .student-work .problem-header,
+.section .command .problem-header {
+	display: inline-block;
+	margin-bottom: 0.5em;
+	padding: 0px 6px;
+	font-weight: 700;
+}
+
+
+
+.bibliography {
+	margin-bottom: 1em;
+	color: #575757;
+}
+.bibliography-header {
+	margin-bottom: 0.5em;
+	color: #08f;
+	font-weight: 700;
+}
+.bib-entry {
+	margin-bottom: 0.5em;
+}
+
+.bib-entry div {
+	display: inline;
+	margin-right: 0.3em;
+}
+
+.bib-entry .header {
+	display: none;
+}
+
+.bib-entry.bib- {
+	border: solid 1px #F00; 
+	min-height: 1em;
+}
+.bib-entry.bib-:after {
+	content: "Tu możesz wstawić element bibliografii np. Książka, Artykuł itp.";
+}
+
+.bib-entry .author,
+.bib-entry .organization {
+	font-weight: 700;	
+}
+.bib-entry .booktitle,
+.bib-entry .title {
+	color: #575757;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.bib-entry.bib-misc .howpublished-contents {
+	color: #08f;
+}
+
+
+
+.interactive img {
+	width: 25%;
+}
+.womi-container {
+	text-align: center;
+}
+.attachment img {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.no-replace-img img {
+	width: 25%;
+}
+
+.section[data-width] .womi-container img { 
+	width: 100%;
+}
+
+
+
+.style-choose {
+	margin-right: 1em;
+	float: right;
+}
+.dontShowMenuButton {
+	display: inline-block;
+}
+.showMenuButton {}
+.showMenuButton .menuButton {
+	margin-right: 1em;
+	border-radius: 3px;
+	color: white;
+	background-color: #7DB0E5;
+	cursor: pointer;
+}
+.dontShowMenuButton .menuButton {}
+.showMenuButton {
+	display: inline;
+}
+.dontShowMenuButton .menuItemList {
+	background-color: #7DB0E5;
+	width: 100px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-weight: 700;
+	position: absolute;
+}
+.dontShowMenuButton .menuItemList .menuItem {
+	color: white;
+	font-weight: 700;
+	border-color: white;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+}
+.dontShowMenuButton .menuItemList .menuItem:hover{
+	color: black;
+	font-weight: 700;
+	border-color: white;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+}
+
+
+
+.module-not-editable {
+    margin: 20px;
+	border: 2px solid red;
+	padding: 20px;
+	background: url('../icons/exclamation-red.svg');
+	background-repeat: no-repeat;
+	background-position: 10px 50%;
+	background-size: auto 2em;
+    color: red;
+    font-weight: 700;
+    text-align: center;
+}
+
+.alternative-header,
+.formats-header {
+	display: none;
+}
+
+.format-header,
+.format-content {
+	display: inline;
+}
+
+.format-header:after {
+	content: ":";
+}
+
+.format-content {
+	margin-left: 10px;
+}
+
+
+
+.hidden {
+	display:none !important;
+	
+}
+
+.content-contents {
+	margin-left: 15px;
+}
+
+.contents-container {
+	text-align: center;
+}
+
+.editable-contents-container {
+	border: 1px solid #08f;
+	margin-left: 20px;
+	
+	
+}
+
+.contents-container .content-header {
+	font-weight: 700;
+	color: #4D4D4D
+}
+
+.editable-contents-container .content {
+	margin-bottom: 10px;
+}
+
+.editable-contents-container .content:last-child {
+	margin-bottom: 0;
+}
+
+button.toggle-editable-content {
+	display: inline;
+}
+
+img.downloading-content {
+	width: 480px;
+	height: 250px;
+}
+
+.technical-remarks-header {
+	display: none;
+}
+
+.technical-remarks {
+	border: 2px solid red;
+}
+
+.chosen-container .chosen-single {
+	border: 1px solid #08F;
+	border-radius: 4px;
+	background: url("../icons/dropdown.svg") no-repeat scroll 96% 50% / 1em auto transparent;
+	height: 29px;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single {
+	background: url("../icons/dropdown.svg") no-repeat scroll 96% 50% / 1em auto transparent;
+}
+
+.chosen-container-single .chosen-search input[type="text"] {
+	background: url("../icons/lister-dialog/preview.svg") no-repeat scroll 96% 50% / 1em auto transparent;
+}
+
+
+
+.review .quote {
+	margin: 0;
+	border: none;
+	padding: 0;
+    color: #08f;
+    font-style: italic;
+}
+
+.review .term {
+	margin-bottom: 0.5em;
+	font-weight: 700;
+	color: #08f;
+}
+
+
+
+.validation {
+	/*margin: 1em 0;*/
+}
+
+.validation .status {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	border-radius: 4px;	
+	background: #38c738;
+	vertical-align: bottom;
+}
+
+.validation .status.invalid {
+	background: #c73838;
+}
+
+div.validation-messages,
+.alternative div.validation-messages{
+	display: block;
+	padding: 5px;
+	border: 1px solid #a10707;
+	border-radius: 4px;
+	background: #ffa3a3;	
+}
+
+div.validation-messages ul li {}
+
+.alternative .question,
+.alternative .answer-header,
+.alternative .answer-contents .section,
+.alternative .answer-contents .section-contents,
+.alternative span,
+.item-contents .section,
+.item-contents .section-contents {
+	display: inline;
+}
+.alternative .answer-contents .section,
+.alternative .question-contents .section,
+.alternative .answer-contents .para,
+.alternative .question-contents .para {
+	margin-bottom: 0;
+}
+
+.answer-set {
+	display: block;	
+	margin: 12px 0;
+	padding: 1em 1em 0.5em 1em;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.answer {
+	display: block;
+}
+
+.answer-header {
+	position: absolute;
+}
+
+.answer .para {
+	display: inline-block;
+	margin-left: 1.5em;
+	padding-bottom: 0.5em;
+}
+
+.answer .womi-container {
+	min-width: 320px;
+}
+
+.question {
+	font-weight: 700;
+}
+
+.hint {
+	display: block;
+	margin-bottom: 1em;
+	padding: 1em;
+	border: 1px solid #ff9100;
+	font-style: italic;	
+}
+
+.answer .hint {
+	margin-left: 1.5em;
+	margin-bottom: 0.5em;
+	padding: 0.5em 0.75em;
+	font-style: italic;
+}
+
+.hint-header:after,
+.feedback-header:after {
+	content: ': ';
+}
+
+.hint .para {
+	margin: 0;
+	padding-bottom: 0;
+}
+
+.hint .section {
+	margin: 0;
+}
+
+.feedback,
+.feedback-yes,
+.feedback-no {
+	display: block;
+}
+
+.para-end,
+.new-line,
+.nbsp-end {
+}
+
+.show-white-space {
+  font-family: 'opensansWC';
+}
+
+.work-area {
+	background-image: linear-gradient(#FFF, #FFF 30px, #CCC 30px, #CCC 31px, #FFF 31px);
+	background-size: 100% 31px;
+	line-height: 31px;
+	min-height: 93px;
+}
+
+.work-area-header {
+	color: #555;
+}

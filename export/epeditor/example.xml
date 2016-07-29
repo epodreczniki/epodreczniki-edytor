@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:epe="http://epodreczniki.pl/editor" xmlns:cnxml="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" xmlns:ep="http://epodreczniki.pl/" xmlns="http://cnx.rice.edu/cnxml" xmlns:mml="http://www.w3.org/1998/Math/MathML" id="ic5judHi05" module-id="ic5judHi05" cnxml-version="0.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://epodreczniki.pl/editor schema/epeditor.xsd">
+	<title>Tytuł modułu</title>
+	<metadata mdml-version="0.5">
+		<md:content-id>ic5judHi05</md:content-id>
+		<md:repository>https://epodreczniki.pcss.pl/</md:repository>
+		<md:version>1</md:version>
+		<md:created>2014-09-16 12:03 CET</md:created>
+		<md:revised>2014-09-16 12:03 CET</md:revised>
+		<md:title>Tytuł modułu</md:title>
+		<md:language>pl-PL</md:language>
+		<md:license url="https://creativecommons.org/licenses/by/1.0/legalcode">CC BY 1.0</md:license>
+		<md:presentationTitle>zxcv<emphasis effect="bold">zzxcv</emphasis>aaa</md:presentationTitle>
+		<md:actors>
+			<md:person userid="ic5judHi05_d4e299">
+				<md:fullname>Jan Kowalski</md:fullname>
+				<md:firstname>Jan</md:firstname>
+				<md:surname>Kowalski</md:surname>
+				<md:email>jan@kowalski.pl</md:email>
+			</md:person>
+		</md:actors>
+		<md:roles>
+			<md:role type="author">ic5judHi05_d4e299</md:role>
+		</md:roles>
+		<md:abstract>Abstract</md:abstract>
+		<md:keywordlist>
+			<md:keyword>biologia</md:keyword>
+			<md:keyword>historia</md:keyword>
+			<md:keyword>inny key word</md:keyword>
+		</md:keywordlist>
+		<ep:e-textbook-module ep:version="1.5" ep:recipient="student" ep:content-status="canon">
+			<ep:presentation>
+				<ep:template>linear</ep:template>
+			</ep:presentation>
+			<ep:core-curriculum-entries>
+				<ep:core-curriculum-entry>
+					<ep:core-curriculum-stage ep:key="E4">Etap 4</ep:core-curriculum-stage>
+					<ep:core-curriculum-school ep:key="SRE">Szkoły ponadgimnazjalne, których ukończenie umożliwia uzyskanie świadectwa dojrzałości po zdaniu egzaminu maturalnego</ep:core-curriculum-school>
+					<ep:core-curriculum-subject ep:key="EPO">E-podręczniki</ep:core-curriculum-subject>
+					<ep:core-curriculum-version ep:key="E1.0">Testowa podstawa programowa projektu e-podręczniki</ep:core-curriculum-version>
+					<ep:core-curriculum-ability ep:key="E4-SRE-EPO-E1.0-I.1">Uczeń potrafi "ostylować" dokument zawierający źródło modułu e-podręcznika.</ep:core-curriculum-ability>
+				</ep:core-curriculum-entry>
+				<ep:core-curriculum-entry>
+					<ep:core-curriculum-stage ep:key="E3">Etap 3</ep:core-curriculum-stage>
+					<ep:core-curriculum-school ep:key="GIM">Gimnazjum</ep:core-curriculum-school>
+					<ep:core-curriculum-subject ep:key="GEO">Geografia</ep:core-curriculum-subject>
+				</ep:core-curriculum-entry>
+			</ep:core-curriculum-entries>
+		</ep:e-textbook-module>
+	</metadata>
+	<content>
+		<section id="i70srADEFr_d5e7811">
+			<ep:parameters>
+				<ep:columns>1</ep:columns>
+				<ep:start-new-page>true</ep:start-new-page>
+			</ep:parameters>
+			<title>Sekcja 1</title>
+            <para id="iCpdIhEamP_d5e117para1">Tutaj proszę wstawić treść (może się rozciągać na wiele linii).</para>
+		</section>
+
+	</content>
+	<bib:file>
+		<bib:entry id="iCS9PaMvqP_d249t57" ep:target-name="patora2013">
+			<bib:article>
+				<bib:author>Patora Paweł</bib:author>
+				<bib:title>E-podręczniki dla uczniów mają być gotowe w 2015 roku</bib:title>
+				<bib:journal>Dziennik Łódzki</bib:journal>
+				<bib:year>2013</bib:year>
+				<bib:number>2</bib:number>
+			</bib:article>
+		</bib:entry>
+	</bib:file>
+</document>

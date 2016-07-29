@@ -1,0 +1,5270 @@
+﻿<x:config version="1.0" 
+  xmlns:x="http://www.xopus.com/xmlns/config"
+  xmlns:ep="http://epodreczniki.pl/"
+  xmlns:epe="http://epodreczniki.pl/editor"
+  xmlns:cn="http://cnx.rice.edu/cnxml"
+  xmlns="http://cnx.rice.edu/cnxml"
+  xmlns:m="http://www.w3.org/1998/Math/MathML"
+  xmlns:md="http://cnx.rice.edu/mdml"
+  xmlns:bib="http://bibtexml.sf.net/"
+  xmlns:q="http://cnx.rice.edu/qml/1.0">
+  
+  <x:roleMapping>
+    <x:element name="strong"        role="strong" />
+    <x:element name="emphasis"      role="emphasis" />
+    <x:element name="subscript"     role="subscript" />
+    <x:element name="superscript"   role="superscript" />
+    <x:element name="link"          role="hyperlink" />
+    <x:attribute name="href"        role="hyperlinkreference" />
+    <x:element name="linebreak"     role="linebreak" />
+    <x:element name="paragraph"     role="paragraph" />
+    <x:element name="header"        role="header" />
+
+    <x:element name="unorderedlist" role="list" />
+    <x:element name="unorderedlist" role="unorderedlist" />
+    <x:element name="orderedlist"   role="list" />
+    <x:element name="orderedlist"   role="orderedlist" />
+    <x:element name="item"          role="listitem" />
+  </x:roleMapping>
+  
+  <x:nodeConfig>
+    <x:node match="title | footer | caption | td | th | dataItem">
+      <x:placeholder>{name}</x:placeholder>
+    </x:node>
+    <x:node match="@id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="@*[name()='ep:id']">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="cn:document">
+      <x:role>document</x:role>
+      <x:name xml:lang="en">Document</x:name>
+      <x:name xml:lang="pl">Dokument</x:name>
+    </x:node>
+
+    <x:node match="cn:document/@module-id">
+      <x:role>module-id</x:role>
+      <x:name xml:lang="en">Module-id</x:name>
+      <x:name xml:lang="pl">Id modułu</x:name>
+    </x:node>
+    <x:node match="cn:document/@id">
+      <x:role>module-id</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Module-id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+
+    <x:node match="cn:document/@cnxml-version">
+      <x:role>cnxml-version</x:role>
+      <x:name xml:lang="en">Cnxml-version</x:name>
+      <x:name xml:lang="pl">Wersja cnxml</x:name>
+    </x:node>
+
+    <x:node match="bib:file">
+      <x:role>bibliography</x:role>
+      <x:name xml:lang="en">bibliography</x:name>
+      <x:name xml:lang="pl">Bibliografia</x:name>
+    </x:node>
+
+    <x:node match="cn:section">
+      <x:role>section</x:role>
+      <x:name xml:lang="en">Section</x:name>
+      <x:name xml:lang="pl">Sekcja</x:name>
+      <x:placeholder>Tu wstaw zawartość sekcji</x:placeholder>
+      <x:templates>
+        <x:template>
+            <ep:parameters>
+            </ep:parameters>
+            <para><?start?></para>
+        </x:template>
+      </x:templates>
+    </x:node>
+    <x:node match="cn:section/@ep:recipient">
+      <x:role>recipient</x:role>
+      <x:name xml:lang="en">recipient</x:name>
+      <x:name xml:lang="pl">Odbiorca</x:name>
+    </x:node>
+    <x:node match="cn:section/@ep:content-status">
+      <x:role>content-status</x:role>
+      <x:name xml:lang="en">Content-status</x:name>
+      <x:name xml:lang="pl">Status treści</x:name>
+    </x:node>
+    <x:node match="cn:section/@id">
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+      <x:placeholder>Tu wpisz tytuł sekcji</x:placeholder>
+    </x:node>
+    <x:node match="cn:section/cn:title">
+      <x:name xml:lang="en">Section title</x:name>
+      <x:name xml:lang="pl">Tytuł sekcji</x:name>
+      <x:placeholder>Tu wpisz tytuł sekcji</x:placeholder>
+    </x:node>
+    <x:node match="cn:note">
+      <x:role>note</x:role>
+      <x:name xml:lang="en">Note</x:name>
+      <x:name xml:lang="pl">Notka</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+    <x:node match="cn:note/@type">
+      <x:role>type</x:role>
+      <x:name xml:lang="en">Type</x:name>
+      <x:name xml:lang="pl">Typ</x:name>
+    </x:node>
+    <x:node match="cn:note/@ep:recipient">
+      <x:role>recipient</x:role>
+      <x:name xml:lang="en">recipient</x:name>
+      <x:name xml:lang="pl">Odbiorca</x:name>
+    </x:node>
+    <x:node match="cn:note/@ep:presentation-variant">
+      <x:role>presentation-variant</x:role>
+      <x:name xml:lang="en">Presentation variant</x:name>
+      <x:name xml:lang="pl">Rodzaj prezentacji</x:name>
+    </x:node>
+    <x:node match="cn:note/@ep:foldable">
+      <x:role>foldable</x:role>
+      <x:name xml:lang="en">Foldable</x:name>
+      <x:name xml:lang="pl">Zwijalna</x:name>
+    </x:node>
+
+    <x:node match="cn:para">
+      <x:role>paragraph</x:role>
+      <x:name xml:lang="en">Paragraph</x:name>
+      <x:name xml:lang="pl">Paragraf</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+    <x:node match="cn:para/@id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="cn:para/@ep:stretch">
+      <x:role>stretch</x:role>
+      <x:name xml:lang="en">stretch</x:name>
+      <x:name xml:lang="pl">Szerokość</x:name>
+    </x:node>
+    <x:node match="@ep:stretch">
+      <x:role>stretch</x:role>
+      <x:name xml:lang="en">stretch</x:name>
+      <x:name xml:lang="pl">Szerokość</x:name>
+    </x:node>
+    <x:node match="ep:prerequisite">
+      <x:role>prerequisite</x:role>
+      <x:name xml:lang="en">prerequisite</x:name>
+      <x:name xml:lang="pl">Przed lekcją</x:name>
+    </x:node>
+    <x:node match="ep:lead">
+      <x:role>lead</x:role>
+      <x:name xml:lang="en">Lead</x:name>
+      <x:name xml:lang="pl">Lead</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+    <x:node match="ep:lead/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:revisal">
+      <x:role>revisal</x:role>
+      <x:name xml:lang="en">Revisal</x:name>
+      <x:name xml:lang="pl">Już wiesz</x:name>
+    </x:node>
+    <x:node match="ep:revisal/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:intro">
+      <x:role>intro</x:role>
+      <x:name xml:lang="en">Intro</x:name>
+      <x:name xml:lang="pl">Przedmiot lekcji</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+    <x:node match="ep:intro/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:effect">
+      <x:role>effect</x:role>
+      <x:name xml:lang="en">Effect</x:name>
+      <x:name xml:lang="pl">Nauczysz się</x:name>
+    </x:node>
+    <x:node match="ep:effect/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:effect/@ep:type">
+      <x:role>type</x:role>
+      <x:name xml:lang="en">Type</x:name>
+      <x:name xml:lang="pl">Typ</x:name>
+      <x:enumeration value="skill">
+          <x:name xml:lang="en">skill</x:name>
+          <x:name xml:lang="pl">Umiejętność</x:name>
+      </x:enumeration>
+      <x:enumeration value="knowledge">
+          <x:name xml:lang="en">knowledge</x:name>
+          <x:name xml:lang="pl">Wiedza</x:name>
+      </x:enumeration>
+      <x:enumeration value="understanding">
+          <x:name xml:lang="en">understanding</x:name>
+          <x:name xml:lang="pl">Zrozumienie tematu</x:name>
+      </x:enumeration>
+    </x:node>
+
+    <x:node match="ep:procedure-instructions">
+      <x:role>procedure-instructions</x:role>
+      <x:name xml:lang="en">Procedure instructions</x:name>
+      <x:name xml:lang="pl">Instrukcja</x:name>
+    </x:node>
+    <x:node match="cn:emphasis">
+      <x:role>emphasis</x:role>
+      <x:name xml:lang="en">Emphasis</x:name>
+      <x:name xml:lang="pl">Emfaza</x:name>
+    </x:node>
+    <x:node match="cn:sup">
+      <x:role>sup</x:role>
+      <x:name xml:lang="en">Sup</x:name>
+      <x:name xml:lang="pl">Indeks górny</x:name>
+    </x:node>
+    <x:node match="cn:sub">
+      <x:role>sub</x:role>
+      <x:name xml:lang="en">Sub</x:name>
+      <x:name xml:lang="pl">Indeks dolny</x:name>
+    </x:node>
+
+    <x:node match="ep:student-work">
+      <x:role>student-work</x:role>
+      <x:name xml:lang="en">Student work</x:name>
+      <x:name xml:lang="pl">Praca domowa</x:name>
+    </x:node>
+    <x:node match="ep:student-work/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:student-work/@ep:type">
+      <x:role>type</x:role>
+      <x:name xml:lang="en">Type</x:name>
+      <x:name xml:lang="pl">Typ</x:name>
+    </x:node>
+    <x:node match="ep:student-work/@ep:presentation-variant">
+      <x:role>presentation-variant</x:role>
+      <x:name xml:lang="en">Presentation variant</x:name>
+      <x:name xml:lang="pl">Rodzaj prezentacji</x:name>
+    </x:node>
+
+
+    <x:node match="ep:reference">
+      <x:role>reference</x:role>
+      <x:name xml:lang="en">WOMI Reference</x:name>
+      <x:name xml:lang="pl">Referencja WOMI</x:name>
+      <x:templates>
+        <x:template>
+          <ep:width>100</ep:width>
+          <ep:context>false</ep:context>
+          <ep:zoomable>no</ep:zoomable>
+          <ep:avatar>false</ep:avatar>
+          <ep:embedded>true</ep:embedded>
+          <ep:hide-caption>none</ep:hide-caption>
+        </x:template>
+      </x:templates>
+    </x:node>
+    <x:node match="ep:reference/ep:content">
+      <x:role>content</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">content</x:name>
+      <x:name xml:lang="pl">Tekst skojarzony</x:name>
+    </x:node>
+    <x:node match="ep:reference/ep:content/bib:entry">
+      <x:role>entry</x:role>
+      <x:name xml:lang="en">entry</x:name>
+      <x:name xml:lang="pl">Bibliografia</x:name>
+      <x:templates>
+        <x:template ep:show-in="inline-only"></x:template>
+      </x:templates>
+    </x:node>
+    <x:node match="ep:reference/@ep:id">
+      <x:role>id</x:role>
+      <x:lookup
+        url="html-extra/lister-dialog.html?width=970&amp;height=540"
+        forceLookup="true"
+        autoOpen="true"/>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:reference/@ep:instance-id">
+      <x:role>instance-id</x:role>
+      <x:name xml:lang="en">Instance Id</x:name>
+      <x:name xml:lang="pl">Id instancji</x:name>
+    </x:node>
+
+    <x:node match="ep:reference/@ep:width">
+      <x:role>width</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Width</x:name>
+      <x:name xml:lang="pl">Szerokość</x:name>
+    </x:node>
+    <x:node match="ep:reference/ep:width">
+      <x:role>width</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Width</x:name>
+      <x:name xml:lang="pl">Szerokość</x:name>
+    </x:node>
+    <x:node match="ep:reference/ep:context">
+      <x:role>context</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Context</x:name>
+      <x:name xml:lang="pl">Kontekst</x:name>
+    </x:node>
+    <x:node match="ep:reference/ep:reading-room">
+      <x:role>reading-room</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Reading room</x:name>
+      <x:name xml:lang="pl">Czytelnia</x:name>
+    </x:node>
+    <x:node match="ep:reference/ep:zoomable">
+      <x:role>zoomable</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Zoomable</x:name>
+      <x:name xml:lang="pl">Przybliżenie</x:name>
+    </x:node>
+    <x:node match="ep:reference/ep:avatar">
+      <x:role>avatar</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Avatar</x:name>
+      <x:name xml:lang="pl">Awatar</x:name>
+    </x:node>
+    <x:node match="ep:reference/ep:embedded">
+      <x:role>embedded</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Embedded</x:name>
+      <x:name xml:lang="pl">Osadzenie</x:name>
+    </x:node>
+    <x:node match="ep:reference/ep:hide-caption">
+      <x:role>hide-caption</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Hide caption</x:name>
+      <x:name xml:lang="pl">Ukryj przyciski</x:name>
+    </x:node>
+    <x:node match="ep:reference/ep:aside">
+      <x:role>aside</x:role>
+      <x:name xml:lang="en">Aside</x:name>
+      <x:name xml:lang="pl">Wypchnięte</x:name>
+      <x:enumeration value="left">
+          <x:name xml:lang="en">Left</x:name>
+          <x:name xml:lang="pl">Lewo</x:name>
+      </x:enumeration>
+      <x:enumeration value="right">
+          <x:name xml:lang="en">Right</x:name>
+          <x:name xml:lang="pl">Prawo</x:name>
+      </x:enumeration>
+    </x:node>
+    <x:node match="ep:reference/ep:disabled-alternative-reference">
+      <x:role>disabled-alternative-reference</x:role>
+      <x:name xml:lang="en">Disabled alternative reference</x:name>
+      <x:name xml:lang="pl">Odwołanie do alternatywny</x:name>
+    </x:node>
+    <x:node match="ep:reference/ep:disabled-alternative-reference/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Disabled alternative reference id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:reference/epe:author">
+      <x:role>author</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Author</x:name>
+      <x:name xml:lang="pl">Autor</x:name>
+    </x:node>
+    <x:node match="ep:reference/epe:license">
+      <x:role>license</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Licensce</x:name>
+      <x:name xml:lang="pl">Licencja</x:name>
+    </x:node>
+    <x:node match="ep:reference/epe:title">
+      <x:role>title</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Title</x:name>
+      <x:name xml:lang="pl">Tytuł</x:name>
+    </x:node>
+    <x:node match="ep:reference/epe:alternativeText">
+      <x:role>alternativeText</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Alternative text</x:name>
+      <x:name xml:lang="pl">Ukryj przyciski</x:name>
+    </x:node>
+    <x:node match="ep:reference/epe:womiType">
+      <x:role>womiType</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Womi type</x:name>
+      <x:name xml:lang="pl">Typ womi</x:name>
+    </x:node>
+    <x:node match="ep:reference/epe:engine">
+      <x:role>engine</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Engine</x:name>
+      <x:name xml:lang="pl">Silnik</x:name>
+    </x:node>
+    <x:node match="ep:reference/epe:StanWeryfikacji">
+      <x:role>verification</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Verification</x:name>
+      <x:name xml:lang="pl">Stan weryfikacji</x:name>
+    </x:node>
+
+    <x:node match="ep:biography-reference">
+      <x:role>biography-reference</x:role>
+      <x:name xml:lang="en">Biography-reference</x:name>
+      <x:name xml:lang="pl">Odwołanie do biografii</x:name>
+    </x:node>
+    <x:node match="ep:biography-reference/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:biography-reference/@ep:target-name">
+      <x:role>target-name</x:role>
+      <x:name xml:lang="en">Target name</x:name>
+      <x:name xml:lang="pl">Nazwa celu</x:name>
+    </x:node>
+    <x:node match="ep:biography-reference/@ep:local-reference">
+      <x:role>local-reference</x:role>
+      <x:name xml:lang="en">Local reference</x:name>
+      <x:name xml:lang="pl">Lokalna</x:name>
+    </x:node>
+
+    <x:node match="ep:source/ep:bibliography-reference">
+      <x:role>bibliography-reference</x:role>
+      <x:name xml:lang="en">Bibliography reference</x:name>
+      <x:name xml:lang="pl">Odwołanie do bibliografii w źródle</x:name>
+    </x:node>
+    <x:node match="ep:source/ep:bibliography-reference/@ep:local-reference">
+      <x:role>local-reference</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Local reference</x:name>
+      <x:name xml:lang="pl">Lokalna</x:name>
+    </x:node>
+
+    <x:node match="ep:bibliography-reference">
+      <x:role>bibliography-reference</x:role>
+      <x:name xml:lang="en">Bibliography reference</x:name>
+      <x:name xml:lang="pl">Odwołanie do bibliografii</x:name>
+    </x:node>
+    <x:node match="ep:bibliography-reference/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:bibliography-reference/@ep:target-name">
+      <x:role>target-name</x:role>
+      <x:name xml:lang="en">Target name</x:name>
+      <x:name xml:lang="pl">Nazwa celu</x:name>
+    </x:node>
+    <x:node match="ep:bibliography-reference/@ep:local-reference">
+      <x:role>local-reference</x:role>
+      <x:name xml:lang="en">Local reference</x:name>
+      <x:name xml:lang="pl">Lokalna</x:name>
+    </x:node>
+    <x:node match="ep:concept-reference">
+      <x:role>concept-reference</x:role>
+      <x:name xml:lang="en">Concept reference</x:name>
+      <x:name xml:lang="pl">Odwołanie do pojęcia</x:name>
+    </x:node>
+    <x:node match="ep:concept-reference/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:concept-reference/@ep:target-name">
+      <x:role>target-name</x:role>
+      <x:name xml:lang="en">Target name</x:name>
+      <x:name xml:lang="pl">Nazwa celu</x:name>
+    </x:node>
+    <x:node match="ep:concept-reference/@ep:local-reference">
+      <x:role>local-reference</x:role>
+      <x:name xml:lang="en">Local reference</x:name>
+      <x:name xml:lang="pl">Lokalna</x:name>
+    </x:node>
+    <x:node match="ep:event-reference">
+      <x:role>event-reference</x:role>
+      <x:name xml:lang="en">Event reference</x:name>
+      <x:name xml:lang="pl">Odwołanie do wydarzenia</x:name>
+    </x:node>
+    <x:node match="ep:event-reference/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:event-reference/@ep:target-name">
+      <x:role>target-name</x:role>
+      <x:name xml:lang="en">Target name</x:name>
+      <x:name xml:lang="pl">Nazwa celu</x:name>
+    </x:node>
+    <x:node match="ep:event-reference/@ep:local-reference">
+      <x:role>local-reference</x:role>
+      <x:name xml:lang="en">Local reference</x:name>
+      <x:name xml:lang="pl">Lokalna</x:name>
+    </x:node>
+    <x:node match="ep:tooltip-reference">
+      <x:role>tooltip-reference</x:role>
+      <x:name xml:lang="en">Tooltip reference</x:name>
+      <x:name xml:lang="pl">Odwołanie do dymka</x:name>
+    </x:node>
+    <x:node match="ep:tooltip-reference/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:tooltip-reference/@ep:target-name">
+      <x:role>target-name</x:role>
+      <x:name xml:lang="en">Target name</x:name>
+      <x:name xml:lang="pl">Nazwa celu</x:name>
+    </x:node>
+    <x:node match="ep:tooltip-reference/@ep:local-reference">
+      <x:role>local-reference</x:role>
+      <x:name xml:lang="en">Local reference</x:name>
+      <x:name xml:lang="pl">Lokalna</x:name>
+    </x:node>
+    <x:node match="ep:glossary-reference">
+      <x:role>glossary-reference</x:role>
+      <x:name xml:lang="en">Glossary-reference</x:name>
+      <x:name xml:lang="pl">Odwołanie do definicji</x:name>
+    </x:node>
+    <x:node match="ep:glossary-reference/@ep:id">
+      <x:role>id</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:glossary-reference/@ep:target-name">
+      <x:role>target-name</x:role>
+      <x:name xml:lang="en">Target name</x:name>
+      <x:name xml:lang="pl">Nazwa celu</x:name>
+    </x:node>
+    <x:node match="ep:glossary-reference/@ep:local-reference">
+      <x:role>local-reference</x:role>
+      <x:name xml:lang="en">Local reference</x:name>
+      <x:name xml:lang="pl">Lokalna</x:name>
+    </x:node>
+    <x:node match="ep:bookmark">
+      <x:role>bookmark</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Bookmark</x:name>
+      <x:name xml:lang="pl">Zakładka</x:name>
+    </x:node>
+	<x:node match="ep:bookmark/@ep:id">
+      <x:role>id</x:role>
+	    <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+	<x:node match="ep:bookmark/@ep:name">
+      <x:role>name</x:role>
+      <x:name xml:lang="en">name</x:name>
+      <x:name xml:lang="pl">Nazwa</x:name>
+    </x:node>
+    <x:node match="cn:code">
+      <x:role>code</x:role>
+      <x:name xml:lang="en">Code</x:name>
+      <x:name xml:lang="pl">Kod</x:name>
+    </x:node>
+
+    <x:node match="cn:code/@lang">
+      <x:role>lang</x:role>
+      <x:name xml:lang="en">lang</x:name>
+      <x:name xml:lang="pl">Jęzk programowania</x:name>
+    </x:node>
+
+    <x:node match="cn:quote">
+      <x:role>quote</x:role>
+      <x:name xml:lang="en">Quote</x:name>
+      <x:name xml:lang="pl">Cytat</x:name>
+      <x:templates>
+        <x:template>
+          <ep:license ep:url=""></ep:license>
+        </x:template>
+      </x:templates>
+    </x:node>
+    <x:node match="cn:quote/cn:label">
+      <x:role>label</x:role>
+      <x:name xml:lang="en">Label</x:name>
+      <x:name xml:lang="pl">Nazwa</x:name>
+       <x:placeholder>Tu wpisz tytuł</x:placeholder>
+    </x:node>
+    <x:node match="cn:quote/@id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="cn:quote/@ep:foldable">
+      <x:role>foldable</x:role>
+      <x:name xml:lang="en">foldable</x:name>
+      <x:name xml:lang="pl">Zwijalny</x:name>
+    </x:node>
+    <x:node match="cn:quote/@ep:content-status">
+      <x:role>content-status</x:role>
+      <x:name xml:lang="en">content-status</x:name>
+      <x:name xml:lang="pl">Status treści</x:name>
+    </x:node>
+    <x:node match="cn:quote/ep:author">
+      <x:role>author</x:role>
+      <x:name xml:lang="en">author</x:name>
+      <x:name xml:lang="pl">Autor</x:name>
+    </x:node>
+    <x:node match="cn:quote/ep:comment">
+      <x:role>comment</x:role>
+      <x:name xml:lang="en">comment</x:name>
+      <x:name xml:lang="pl">Komentarz</x:name>
+    </x:node>
+    <x:node match="cn:quote/ep:source">
+      <x:role>source</x:role>
+      <x:name xml:lang="en">source</x:name>
+      <x:name xml:lang="pl">Źródło</x:name>
+    </x:node>
+    <x:node match="cn:quote/ep:license">
+      <x:role>license</x:role>
+      <x:name xml:lang="en">license</x:name>
+      <x:name xml:lang="pl">Licencja</x:name>
+    </x:node>
+    <x:node match="cn:quote/ep:license-additional-info">
+      <x:role>license-additional-info</x:role>
+      <x:name xml:lang="en">license-additional-info</x:name>
+      <x:name xml:lang="pl">Dodatowe informacje licencyjne</x:name>
+    </x:node>
+	
+	<x:node match="epe:comment">
+      <x:role>comment</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Comment</x:name>
+      <x:name xml:lang="pl">Komentarz</x:name>
+    </x:node>
+    <x:node match="epe:comment/@epe:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="epe:review">
+      <x:role>review</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Review</x:name>
+      <x:name xml:lang="pl">Recenzja</x:name>
+    </x:node>
+    <x:node match="epe:review/@epe:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+
+    <x:node match="epe:comment/cn:para/epe:review">
+      <x:role>review</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">review</x:name>
+      <x:name xml:lang="pl">Recenzja</x:name>
+    </x:node>
+    <x:node match="epe:comment/@epe:comment-state">
+      <x:role>review-state</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">review-state</x:name>
+      <x:name xml:lang="pl">Status komentarza</x:name>
+    </x:node>
+    <x:node match="epe:comment/@epe:comment-author">
+      <x:role>review-author</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">review-author</x:name>
+      <x:name xml:lang="pl">Autor komentarza</x:name>
+    </x:node>
+    <x:node match="epe:comment/@epe:comment-date">
+      <x:role>review-date</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">review-date</x:name>
+      <x:name xml:lang="pl">Data komentarza</x:name>
+    </x:node>
+    <x:node match="epe:comment/cn:para/epe:review">
+      <x:role>review</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Review</x:name>
+      <x:name xml:lang="pl">Recenzja</x:name>
+    </x:node>
+
+
+    <x:node match="cn:table">
+      <x:role>table</x:role>
+      <x:name xml:lang="en">Table</x:name>
+      <x:name xml:lang="pl">Tabela</x:name>
+      <x:templates>
+        <x:template>
+          <title></title>
+          <tgroup cols="3">
+            <colspec colname="colA" colnum="1"/>
+            <colspec colname="colB" colnum="2"/>
+            <colspec colname="colC" colnum="3"/>
+            <tbody>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </x:template>
+      </x:templates>
+    </x:node>
+    <x:node match="cn:table/@id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="cn:table/@title">
+      <x:role>title</x:role>
+      <x:name xml:lang="en">title</x:name>
+      <x:name xml:lang="pl">Tytuł</x:name>
+      <x:placeholder>Tu wpisz tytuł</x:placeholder>
+    </x:node>
+    <x:node match="cn:table/@summary">
+      <x:role>summary</x:role>
+      <x:name xml:lang="en">Summary</x:name>
+      <x:name xml:lang="pl">Tekst alternatywny</x:name>
+    </x:node>
+    <x:node match="cn:table/@pgwide">
+      <x:role>pgwide</x:role>
+      <x:name xml:lang="en">Table width</x:name>
+      <x:name xml:lang="pl">Szerokość tabeli(%)</x:name>
+    </x:node>
+    <x:node match="cn:table/@style">
+      <x:role>style</x:role>
+      <x:name xml:lang="en">Style</x:name>
+      <x:name xml:lang="pl">Styl</x:name>
+    </x:node>
+    <x:node match="cn:tgroup">
+      <x:role>tablecolumncontainer</x:role>
+      <x:name xml:lang="en">Table group</x:name>
+      <x:name xml:lang="pl">Grupa tabeli</x:name>
+    </x:node>
+    <x:node match="cn:tgroup/@cols">
+      <x:role>tablecolumncount</x:role>
+      <x:name xml:lang="en">Table column count</x:name>
+      <x:name xml:lang="pl">Liczba kolumn</x:name>
+    </x:node>
+    <x:node match="cn:colspec">
+      <x:role>tablecolumnspec</x:role>
+      <x:name xml:lang="en">Table column specification</x:name>
+      <x:name xml:lang="pl">Opis kolumny</x:name>
+    </x:node>
+    <x:node match="cn:colspec/@colname">
+      <x:role>tablecolumnname</x:role>
+      <x:name xml:lang="en">Table column name</x:name>
+      <x:name xml:lang="pl">Nazwa kolumny</x:name>
+    </x:node>
+    <x:node match="cn:colspec/@colnum">
+      <x:role>tablecolumnnumber</x:role>
+      <x:name xml:lang="en">Table column number</x:name>
+      <x:name xml:lang="pl">Numer kolumny</x:name>
+    </x:node>
+    <x:node match="cn:colspec/@colwidth">
+      <x:role>tablecolumnwidth</x:role>
+      <x:name xml:lang="en">Table column width</x:name>
+      <x:name xml:lang="pl">Szerokość kolumny(%)</x:name>
+    </x:node>
+    <x:node match="cn:thead">
+      <x:role>tableheader</x:role>
+      <x:role>tablerowcontainer</x:role>
+      <x:name xml:lang="en">Table header</x:name>
+      <x:name xml:lang="pl">Nagłówek tabeli</x:name>
+    </x:node>
+    <x:node match="cn:tbody">
+      <x:role>tablebody</x:role>
+      <x:role>tablerowcontainer</x:role>
+      <x:name xml:lang="en">Table body</x:name>
+      <x:name xml:lang="pl">Ciało tabeli</x:name>
+    </x:node>
+
+    <x:node match="cn:row">
+      <x:role>tablerow</x:role>
+      <x:role>tablecellcontainer</x:role>
+      <x:name xml:lang="en">Table row</x:name>
+      <x:name xml:lang="pl">Wiersz tabeli</x:name>
+    </x:node>
+    <x:node match="cn:entry">
+      <x:role>tablecell</x:role>
+      <x:name xml:lang="en">Table body cell</x:name>
+      <x:name xml:lang="pl">Komórka ciała tabeli</x:name>
+
+       <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+    <x:node match="cn:tbody/cn:row/cn:entry">
+      <x:role>tablecell</x:role>
+      <x:name xml:lang="en">Table body cell</x:name>
+      <x:name xml:lang="pl">Komórka ciała tabeli</x:name>
+
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node> -->
+    <x:node match="cn:entry/@namest">
+      <x:role>cellstartcolumnname</x:role>
+      <x:name xml:lang="en">Colspan start</x:name>
+      <x:name xml:lang="pl">Scal w poziomie od</x:name>
+    </x:node>
+    <x:node match="cn:entry/@nameend">
+      <x:role>cellendcolumnname</x:role>
+      <x:name xml:lang="en">Colspan end</x:name>
+      <x:name xml:lang="pl">Scal w poziomie do</x:name>
+    </x:node>
+    <x:node match="cn:entry/@morerows">
+      <x:role>cellmorerows</x:role>
+      <x:name xml:lang="en">Rowspan</x:name>
+      <x:name xml:lang="pl">Scal w pionie</x:name>
+    </x:node>
+
+    <x:node match="ep:event">
+      <x:role>event</x:role>
+      <x:name xml:lang="en">Event</x:name>
+      <x:name xml:lang="pl">Wydarzenie</x:name>
+      <x:templates>
+        <x:template ep:glossary="false">
+          <ep:name><?start?></ep:name>
+          <ep:event-start>
+            <ep:date ep:type="date">
+              <ep:date-start>
+                <ep:year>1950</ep:year>
+                <ep:month>01</ep:month>
+                <ep:day>01</ep:day>
+              </ep:date-start>
+            </ep:date>
+          </ep:event-start>
+          <ep:event-end>
+            <ep:date ep:type="date">
+              <ep:date-start>
+                <ep:year>1950</ep:year>
+                <ep:month>01</ep:month>
+                <ep:day>01</ep:day>
+              </ep:date-start>
+            </ep:date>
+          </ep:event-end>
+        <ep:content></ep:content>
+        </x:template>
+      </x:templates>
+    </x:node>
+    <x:node match="ep:event/ep:content">
+      <x:role>content1</x:role>
+      <x:name xml:lang="en">content1</x:name>
+      <x:name xml:lang="pl">Zawartość</x:name>
+    </x:node>
+    <x:node match="ep:event/ep:sorting-key">
+      <x:role>sorting-key</x:role>
+      <x:name xml:lang="en">Sorting key</x:name>
+      <x:name xml:lang="pl">Klucz sortowania</x:name>
+    </x:node>
+    <x:node match="ep:event/@ep:glossary">
+      <x:role>glossary</x:role>
+      <x:name xml:lang="en">Glossary element</x:name>
+      <x:name xml:lang="pl">Element słownikowy</x:name>
+    </x:node>
+    <x:node match="ep:event/ep:name">
+      <x:role>name</x:role>
+      <x:name xml:lang="en">Name</x:name>
+      <x:name xml:lang="pl">Nazwa</x:name>
+      <x:placeholder>Tu wpisz nazwę wydarzenia</x:placeholder>
+    </x:node>
+    <x:node match="cn:rule">
+      <x:role>rule</x:role>
+      <x:name xml:lang="en">Rule</x:name>
+      <x:name xml:lang="pl">Reguła</x:name>
+    </x:node>
+    <x:node match="cn:rule/@type">
+      <x:role>type</x:role>
+      <x:name xml:lang="en">type</x:name>
+      <x:name xml:lang="pl">Typ</x:name>
+    </x:node>
+    <x:node match="cn:rule/@ep:glossary">
+      <x:role>glossary</x:role>
+      <x:name xml:lang="en">glossary</x:name>
+      <x:name xml:lang="pl">Element słownikowy</x:name>
+    </x:node>
+    <x:node match="cn:rule/@ep:presentation-variant">
+      <x:role>presentation-variant</x:role>
+      <x:name xml:lang="en">Presentation variant</x:name>
+      <x:name xml:lang="pl">Rodzaj prezentacji</x:name>
+    </x:node>
+    <x:node match="cn:proof">
+      <x:role>proof</x:role>
+      <x:name xml:lang="en">Proof</x:name>
+      <x:name xml:lang="pl">Dowód</x:name>
+    </x:node>
+    <x:node match="cn:statement">
+      <x:role>statement</x:role>
+      <x:name xml:lang="en">Statement</x:name>
+      <x:name xml:lang="pl">Reguła</x:name>
+    </x:node>
+    <x:node match="ep:technical-remarks">
+      <x:role>technical-remarks</x:role>
+      <x:name xml:lang="en">technical-remarks</x:name>
+      <x:name xml:lang="pl">Uwaga techniczna</x:name>
+    </x:node>
+
+    <x:node match="cn:link">
+      <x:role>link</x:role>
+      <x:name xml:lang="en">Link</x:name>
+      <x:name xml:lang="pl">Łącze</x:name>
+    </x:node>
+    <x:node match="cn:link/@target-id">
+      <x:role>link-target-id</x:role>
+      <x:name xml:lang="en">link-target-id</x:name>
+      <x:name xml:lang="pl">Id celu</x:name>
+    </x:node>
+    <x:node match="cn:link/@document">
+      <x:role>link-document</x:role>
+      <x:name xml:lang="en">link-document</x:name>
+      <x:name xml:lang="pl">Id modułu</x:name>
+    </x:node>
+    <x:node match="cn:link/@ep:collection-id">
+      <x:role>collection-id</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">collection-id</x:name>
+      <x:name xml:lang="pl">Id kolekcji</x:name>
+    </x:node>
+    <x:node match="cn:link/@ep:collection-version">
+      <x:role>collection-version</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">collection-version</x:name>
+      <x:name xml:lang="pl">Wersja kolekcji</x:name>
+    </x:node>
+    <x:node match="cn:link/@ep:collection-recipient">
+      <x:role>collection-recipient</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">collection-recipient</x:name>
+      <x:name xml:lang="pl">Odbiorca kolekcji</x:name>
+    </x:node>
+    <x:node match="cn:equation">
+      <x:role>equation</x:role>
+      <x:name xml:lang="en">Equation</x:name>
+      <x:name xml:lang="pl">Równanie</x:name>
+    </x:node>
+    <x:node match="ep:biography">
+      <x:role>biography</x:role>
+      <x:name xml:lang="en">Biography</x:name>
+      <x:name xml:lang="pl">Biogram</x:name>
+      <x:templates>
+        <x:template ep:glossary="false">
+          <ep:name><?start?></ep:name>
+          <ep:birth>
+            <ep:date ep:type="date">
+              <ep:date-start>
+                <ep:year>1950</ep:year>
+                <ep:month>01</ep:month>
+                <ep:day>01</ep:day>
+              </ep:date-start>
+            </ep:date>
+          </ep:birth>
+          <ep:death>
+            <ep:date ep:type="date">
+              <ep:date-start>
+                <ep:year>1950</ep:year>
+                <ep:month>01</ep:month>
+                <ep:day>01</ep:day>
+              </ep:date-start>
+            </ep:date>
+          </ep:death>
+        <ep:content></ep:content>
+        </x:template>
+      </x:templates>
+    </x:node>
+    <x:node match="ep:biography/ep:content">
+      <x:role>content2</x:role>
+      <x:name xml:lang="en">content2</x:name>
+      <x:name xml:lang="pl">Zawartość</x:name>
+    </x:node>
+    <x:node match="ep:biography/ep:name">
+      <x:role>name</x:role>
+      <x:name xml:lang="en">Name</x:name>
+      <x:name xml:lang="pl">Nazwa</x:name>
+      <x:placeholder>Tu wpisz imię i nazwisko</x:placeholder>
+    </x:node>
+    <x:node match="ep:biography/ep:sorting-key">
+      <x:role>sorting-key</x:role>
+      <x:name xml:lang="en">Sorting key</x:name>
+      <x:name xml:lang="pl">Klucz sortowania</x:name>
+    </x:node>
+    <x:node match="ep:biography/@ep:glossary">
+      <x:role>glossary</x:role>
+      <x:name xml:lang="en">Glossary element</x:name>
+      <x:name xml:lang="pl">Element słownikowy</x:name>
+    </x:node>
+    <x:node match="ep:tooltip">
+	   <x:name xml:lang="en">Tooltip</x:name>
+      <x:name xml:lang="pl">Dymek</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+      <x:templates>
+        <x:template color="green">
+            <ep:content><?start?></ep:content>
+        </x:template>
+      </x:templates>
+    </x:node>
+    <x:node match="ep:tooltip/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:tooltip/@ep:type">
+      <x:role>type</x:role>
+      <x:name xml:lang="en">Type</x:name>
+      <x:name xml:lang="pl">Typ</x:name>
+    </x:node>
+    <x:node match="ep:step">
+	  <x:role>may-split</x:role>
+	  <x:name xml:lang="en">Step</x:name>
+      <x:name xml:lang="pl">Krok</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+
+
+    <x:node match="ep:date">
+      <x:role>date</x:role>
+      <x:name xml:lang="en">date</x:name>
+      <x:name xml:lang="pl">Data</x:name>
+    </x:node>
+    <x:node match="ep:date/@ep:type">
+	  <x:uiGroup>disable</x:uiGroup>
+      <x:role>type</x:role>
+      <x:name xml:lang="en">type</x:name>
+      <x:name xml:lang="pl">Typ</x:name>
+    </x:node>
+
+
+    <x:node match="ep:date-start">
+	    <x:uiGroup>disable</x:uiGroup>
+      <x:role>hidden-from-ui</x:role>
+      <x:role>date-start</x:role>
+      <x:name xml:lang="en">date-start</x:name>
+      <x:name xml:lang="pl">Data narodzin</x:name>
+    </x:node>
+    <x:node match="ep:date-end">
+      <x:uiGroup>disable</x:uiGroup>
+      <x:role>date-end</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">date-end</x:name>
+      <x:name xml:lang="pl">Data zakończenia</x:name>
+    </x:node>
+
+    <x:node match="ep:day">
+	   <x:uiGroup>disable</x:uiGroup>
+     <x:role>hidden-from-ui</x:role>
+      <x:role>day</x:role>
+      <x:name xml:lang="en">day</x:name>
+      <x:name xml:lang="pl">Dzień</x:name>
+    </x:node>
+    <x:node match="ep:month">
+	   <x:uiGroup>disable</x:uiGroup>
+     <x:role>hidden-from-ui</x:role>
+      <x:role>month</x:role>
+      <x:name xml:lang="en">month</x:name>
+      <x:name xml:lang="pl">Miesiąc</x:name>
+    </x:node>
+    <x:node match="ep:year">
+      <x:uiGroup>disable</x:uiGroup>
+      <x:role>hidden-from-ui</x:role>
+      <x:role>year</x:role>
+      <x:name xml:lang="en">year</x:name>
+      <x:name xml:lang="pl">Rok</x:name>
+    </x:node>
+
+    <x:node match="ep:birth">
+      <x:role>birth</x:role>
+      <x:name xml:lang="en">birth</x:name>
+      <x:name xml:lang="pl">Narodziny</x:name>
+    </x:node>
+    <x:node match="ep:location">
+      <x:role>location</x:role>
+      <x:name xml:lang="en">birth</x:name>
+      <x:name xml:lang="pl">Miejsce</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+    <x:node match="ep:death">
+      <x:role>death</x:role>
+      <x:name xml:lang="en">death</x:name>
+      <x:name xml:lang="pl">Śmierć</x:name>
+    </x:node>
+    <x:node match="ep:event-start">
+      <x:role>event-start</x:role>
+      <x:name xml:lang="en">birth</x:name>
+      <x:name xml:lang="pl">Rozpoczęcie</x:name>
+    </x:node>
+    <x:node match="ep:event-end">
+      <x:role>event-end</x:role>
+      <x:name xml:lang="en">death</x:name>
+      <x:name xml:lang="pl">Zakończenie</x:name>
+    </x:node>
+
+    <x:node match="ep:content">
+      <x:role>content</x:role>
+      <x:name xml:lang="en">Content</x:name>
+      <x:name xml:lang="pl">Zawartość</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+    <x:node match="ep:content/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:content/@ep:format">
+      <x:role>format</x:role>
+      <x:name xml:lang="en">format</x:name>
+      <x:name xml:lang="pl">Format</x:name>
+    </x:node>
+
+    <x:node match="ep:biography/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="cn:emphasis/@effect">
+      <x:role>emphasis-effect</x:role>
+      <x:name xml:lang="en">Effect</x:name>
+      <x:name xml:lang="pl">Efekt</x:name>
+    </x:node>
+    <x:node match="cn:list">
+      <x:role>unorderedlist</x:role>
+      <x:name xml:lang="en">List</x:name>
+      <x:name xml:lang="pl">Lista</x:name>
+    </x:node>
+    <x:node match="cn:list/@id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+
+    <x:node match="cn:list/@mark-prefix">
+      <x:role>mark-prefix</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mark prefix</x:name>
+      <x:name xml:lang="pl">Prefiks</x:name>
+    </x:node>
+    <x:node match="cn:list/@mark-suffix">
+      <x:role>mark-suffix</x:role>
+      <x:name xml:lang="en">Mark suffix</x:name>
+      <x:name xml:lang="pl">Sufiks</x:name>
+      <x:templates>
+        <x:template mark-suffix=".">
+        </x:template>
+      </x:templates>
+    </x:node>
+    <x:node match="cn:list/@start-value">
+      <x:role>start-value</x:role>
+      <x:name xml:lang="en">Start value</x:name>
+      <x:name xml:lang="pl">Numeruj od</x:name>
+    </x:node>
+    <x:node match="cn:list/@list-type">
+      <x:role>type</x:role>
+      <x:name xml:lang="en">Type</x:name>
+      <x:name xml:lang="pl">Typ</x:name>
+    </x:node>
+    <x:node match="cn:list/@number-style">
+      <x:role>number-style</x:role>
+      <x:name xml:lang="en">Number style</x:name>
+      <x:name xml:lang="pl">Styl</x:name>
+    </x:node>
+    <x:node match="cn:list/@type">
+      <x:role>type</x:role>
+      <x:name xml:lang="en">Type</x:name>
+      <x:name xml:lang="pl">Typ</x:name>
+    </x:node>
+    <x:node match="cn:definition/cn:term">
+      <x:role>term</x:role>
+      <x:name xml:lang="en">Term</x:name>
+      <x:name xml:lang="pl">Termin</x:name>
+    </x:node>
+    <x:node match="cn:term">
+      <x:role>term-inline</x:role>
+      <x:name xml:lang="en">Term inline</x:name>
+      <x:name xml:lang="pl">Określenie</x:name>
+    </x:node>
+    <x:node match="cn:meaning">
+      <x:role>meaning</x:role>
+      <x:name xml:lang="en">Meaning</x:name>
+      <x:name xml:lang="pl">Znaczenie</x:name>
+    </x:node>
+    <x:node match="cn:title">
+      <x:role>title</x:role>
+      <x:name xml:lang="en">Title</x:name>
+      <x:name xml:lang="pl">Tytuł</x:name>
+      <x:placeholder>Tu wpisz tytuł</x:placeholder>
+    </x:node>
+    <x:node match="cn:content">
+      <x:role>content</x:role>
+      <x:name xml:lang="en">Content</x:name>
+      <x:name xml:lang="pl">Zawartość</x:name>
+    </x:node>
+    <x:node match="cn:foreign">
+      <x:role>foreign</x:role>
+      <x:name xml:lang="en">Foreign</x:name>
+      <x:name xml:lang="pl">Język obcy</x:name>
+    </x:node>
+    <x:node match="cn:definition">
+      <x:role>definition</x:role>
+      <x:name xml:lang="en">Definition</x:name>
+      <x:name xml:lang="pl">Definicja</x:name>
+    </x:node>
+    <x:node match="cn:definition/@ep:glossary">
+      <x:role>glossary</x:role>
+      <x:name xml:lang="en">glossary</x:name>
+      <x:name xml:lang="pl">Element słownikowy</x:name>
+    </x:node>
+    <x:node match="cn:definition/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="cn:definition/@ep:presentation-variant">
+      <x:role>presentation-variant</x:role>
+      <x:name xml:lang="en">Presentation variant</x:name>
+      <x:name xml:lang="pl">Rodzaj prezentacji</x:name>
+    </x:node>    
+    <x:node match="cn:definition/cn:meaning">
+      <x:role>definition</x:role>
+      <x:name xml:lang="en">Definition - meaning</x:name>
+      <x:name xml:lang="pl">Definicja - treść</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+    <x:node match="cn:definition/cn:term">
+      <x:role>meaning</x:role>
+      <x:name xml:lang="en">Term</x:name>
+      <x:name xml:lang="pl">Termin</x:name>
+      <x:placeholder>Tu wstaw termin/tytuł</x:placeholder>
+    </x:node>
+    <x:node match="cn:definition/ep:source">
+      <x:role>source</x:role>
+      <x:name xml:lang="en">Source</x:name>
+      <x:name xml:lang="pl">Źródło</x:name>
+    </x:node>
+    <x:node match="ep:concept">
+      <x:role>concept</x:role>
+      <x:name xml:lang="en">Concept</x:name>
+      <x:name xml:lang="pl">Pojęcie</x:name>
+    </x:node>
+    <x:node match="ep:concept/@ep:glossary">
+      <x:role>glossary</x:role>
+      <x:name xml:lang="en">glossary</x:name>
+      <x:name xml:lang="pl">Element słownikowy</x:name>
+    </x:node>
+    <x:node match="ep:concept/@ep:presentation-variant">
+      <x:role>presentation-variant</x:role>
+      <x:name xml:lang="en">Presentation variant</x:name>
+      <x:name xml:lang="pl">Rodzaj prezentacji</x:name>
+    </x:node>
+    <x:node match="ep:concept/cn:meaning">
+      <x:role>concept</x:role>
+      <x:name xml:lang="en">Concept - meaning</x:name>
+      <x:name xml:lang="pl">Pojęcie - treść</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+    <x:node match="ep:concept/cn:term">
+      <x:role>concept</x:role>
+      <x:name xml:lang="en">Term</x:name>
+      <x:name xml:lang="pl">Termin</x:name>
+      <x:placeholder>Tu wstaw termin/tytuł</x:placeholder>
+    </x:node>
+    <x:node match="ep:concept/cn:example">
+      <x:role>concept</x:role>
+      <x:name xml:lang="en">Example</x:name>
+      <x:name xml:lang="pl">Przykład</x:name>
+      <x:placeholder>Tu wstaw przykład</x:placeholder>
+    </x:node>
+      <x:node match="cn:example">
+      <x:role>example</x:role>
+      <x:name xml:lang="en">Example</x:name>
+      <x:name xml:lang="pl">Przykład</x:name>
+    </x:node>
+    <x:node match="ep:config">
+      <x:role>config</x:role>
+      <x:name xml:lang="en">config</x:name>
+      <x:name xml:lang="pl">Konfiguracja zadania</x:name>
+    </x:node>
+    <x:node match="ep:config/ep:behaviour">
+      <x:role>behaviour</x:role>
+      <x:name xml:lang="en">behaviour</x:name>
+      <x:name xml:lang="pl">Zachowanie</x:name>
+    </x:node>
+    <x:node match="ep:config/ep:presented-answers">
+      <x:role>presented-answers</x:role>
+      <x:name xml:lang="en">presented-answers</x:name>
+      <x:name xml:lang="pl">Wyświetlane</x:name>
+    </x:node>
+    <x:node match="ep:config/ep:correct-in-set">
+      <x:role>correct-in-set</x:role>
+      <x:name xml:lang="en">correct-in-set</x:name>
+      <x:name xml:lang="pl">Prawidłowe</x:name>
+    </x:node>
+    <x:node match="cn:problem">
+      <x:role>problem</x:role>
+      <x:name xml:lang="en">Problem</x:name>
+      <x:name xml:lang="pl">Problem</x:name>
+    </x:node>
+    <x:node match="cn:solution">
+      <x:role>solution</x:role>
+      <x:name xml:lang="en">solution</x:name>
+      <x:name xml:lang="pl">Odpowiedź</x:name>
+    </x:node>
+    <x:node match="cn:commentary">
+      <x:role>commentary</x:role>
+      <x:name xml:lang="en">commentary</x:name>
+      <x:name xml:lang="pl">Rozwiązanie</x:name>
+    </x:node>
+    <x:node match="cn:commentary/@type">
+      <x:role>commentary</x:role>
+      <x:name xml:lang="en">commentary</x:name>
+      <x:name xml:lang="pl">Typ</x:name>
+      <x:enumeration value="example">
+          <x:name xml:lang="en">example</x:name>
+          <x:name xml:lang="pl">przykładowe</x:name>
+       </x:enumeration> 
+    </x:node>
+    <x:node match="cn:newline">
+      <x:role>newline</x:role>
+      <x:role>linebreak</x:role>
+      <x:name xml:lang="en">newline</x:name>
+      <x:name xml:lang="pl">Nowa linia</x:name>
+    </x:node>
+    <x:node match="q:item">
+      <x:role>item</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">item</x:name>
+      <x:name xml:lang="pl">Quiz</x:name>
+    </x:node>
+    <x:node match="q:item/@id">
+      <x:role>id</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="q:item/@type">
+      <x:role>type</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">type</x:name>
+      <x:name xml:lang="pl">Rodzja pytania</x:name>
+    </x:node>
+    <x:node match="q:question">
+      <x:role>question</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">question</x:name>
+      <x:name xml:lang="pl">Pytanie</x:name>
+    </x:node>
+    <x:node match="q:question/@id">
+      <x:role>id</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="q:answer">
+      <x:role>answer</x:role>
+      <x:name xml:lang="en">answer</x:name>
+      <x:name xml:lang="pl">Odpowiedź</x:name>
+    </x:node>
+    <x:node match="q:answer/@id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+	<x:node match="q:answer/@epe:correct">
+      <x:name xml:lang="en">correct</x:name>
+      <x:name xml:lang="pl">Poprawna</x:name>
+    </x:node>
+    <x:node match="q:answer/@ep:in-set">
+      <x:role>in-set</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">in-set</x:name>
+      <x:name xml:lang="pl">W zbiorze</x:name>
+    </x:node>
+    <x:node match="q:response">
+      <x:role>response</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">response</x:name>
+      <x:name xml:lang="pl">Treść</x:name>
+    </x:node>
+    <x:node match="q:key">
+      <x:role>key</x:role>
+      <x:name xml:lang="en">key</x:name>
+      <x:name xml:lang="pl">Id prawidłowej odpowiedzi</x:name>
+    </x:node>
+    <x:node match="q:key/@answer">
+      <x:role>answer</x:role>
+      <x:name xml:lang="en">answer</x:name>
+      <x:name xml:lang="pl">Id</x:name>
+    </x:node>
+    <x:node match="q:feedback">
+      <x:role>feedback</x:role>
+      <x:name xml:lang="en">feedback</x:name>
+      <x:name xml:lang="pl">Wyjaśnienie</x:name>
+    </x:node>
+    <x:node match="q:hint">
+      <x:role>hint</x:role>
+      <x:name xml:lang="en">hint</x:name>
+      <x:name xml:lang="pl">Wskazówka</x:name>
+    </x:node>
+    <x:node match="ep:alternatives">
+      <x:role>alternatives</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">alternatives</x:name>
+      <x:name xml:lang="pl">Alternatywy</x:name>
+    </x:node>
+    <x:node match="ep:alternative">
+      <x:role>alternative</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">alternative</x:name>
+      <x:name xml:lang="pl">Alternatywa</x:name>
+    </x:node>
+	<x:node match="ep:alternative/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:formats">
+      <x:role>formats</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">formats</x:name>
+      <x:name xml:lang="pl">Formaty</x:name>
+    </x:node>
+    <x:node match="ep:alternative/ep:formats/ep:format">
+      <x:role>format</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">format</x:name>
+      <x:name xml:lang="pl">Format</x:name>
+    </x:node>
+	<x:node match="q:item/epe:set">
+      <x:name xml:lang="en">set</x:name>
+      <x:name xml:lang="pl">Zestaw odpowiedzi</x:name>
+    </x:node>
+
+    <x:node match="cn:exercise">
+      <x:role>exercise</x:role>
+      <x:name xml:lang="en">Exercise</x:name>
+      <x:name xml:lang="pl">Zadanie</x:name>
+      <x:placeholder>Wstaw treść zadania - WOMI lub problem/rozwiązanie</x:placeholder>
+    </x:node>
+    <x:node match="cn:exercise/@id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="cn:exercise/@ep:stretch">
+      <x:role>stretch</x:role>
+      <x:name xml:lang="en">stretch</x:name>
+      <x:name xml:lang="pl">Szerokość</x:name>
+    </x:node>
+    <x:node match="cn:exercise/@ep:foldable">
+      <x:role>foldable</x:role>
+      <x:name xml:lang="en">foldable</x:name>
+      <x:name xml:lang="pl">Zwijalne</x:name>
+    </x:node>
+    <x:node match="cn:exercise/@ep:content-status">
+      <x:role>content-status</x:role>
+      <x:name xml:lang="en">content-status</x:name>
+      <x:name xml:lang="pl">Status treści</x:name>
+    </x:node>
+    <x:node match="cn:exercise/@type">
+      <x:role>type</x:role>
+      <x:name xml:lang="en">typ</x:name>
+      <x:name xml:lang="pl">Typ</x:name>
+      <x:enumeration value="WOMI">
+          <x:name xml:lang="en">WOMI</x:name>
+          <x:name xml:lang="pl">WOMI</x:name>
+       </x:enumeration>
+      <x:enumeration value="common">
+          <x:name xml:lang="en">common</x:name>
+          <x:name xml:lang="pl">Zwykłe</x:name>
+       </x:enumeration>
+      <x:enumeration value="pair-work">
+          <x:name xml:lang="en">pair-work</x:name>
+          <x:name xml:lang="pl">Praca w parach</x:name>
+       </x:enumeration>
+      <x:enumeration value="groupwork">
+          <x:name xml:lang="en">groupwork</x:name>
+          <x:name xml:lang="pl">Praca w grupach</x:name>
+       </x:enumeration>
+      <x:enumeration value="game">
+          <x:name xml:lang="en">game</x:name>
+          <x:name xml:lang="pl">Gra</x:name>
+       </x:enumeration>
+      <x:enumeration value="witch">
+          <x:name xml:lang="en">witch</x:name>
+          <x:name xml:lang="pl">Czarownica</x:name>
+       </x:enumeration>
+      <x:enumeration value="gremlin">
+          <x:name xml:lang="en">gremlin</x:name>
+          <x:name xml:lang="pl">Chochlik</x:name>
+       </x:enumeration>
+      <x:enumeration value="reading">
+          <x:name xml:lang="en">reading</x:name>
+          <x:name xml:lang="pl">Czytanie ze zrozumieniem</x:name>
+       </x:enumeration>
+      <x:enumeration value="challenge:">
+          <x:name xml:lang="en">challenge:</x:name>
+          <x:name xml:lang="pl">Wyzwanie</x:name>
+       </x:enumeration>
+    </x:node>
+    <x:node match="cn:exercise/ep:effect-of-education">
+      <x:role>effect-of-education</x:role>
+      <x:name xml:lang="en">effect-of-education</x:name>
+      <x:name xml:lang="pl">Poziom trudności</x:name>
+    </x:node>
+    <x:node match="cn:exercise/@ep:context-dependent">
+      <x:role>context-dependent</x:role>
+      <x:name xml:lang="en">context-dependent</x:name>
+      <x:name xml:lang="pl">Zależny od kontekstu</x:name>
+    </x:node>
+    <x:node match="cn:exercise/@ep:interactivity">
+      <x:role>interactivity</x:role>
+      <x:name xml:lang="en">interactivity</x:name>
+      <x:name xml:lang="pl">Poziom interaktywności</x:name>
+    </x:node>
+    <x:node match="cn:exercise/@ep:on-paper">
+      <x:role>on-paper</x:role>
+      <x:name xml:lang="en">on-paper</x:name>
+      <x:name xml:lang="pl">Na papierze</x:name>
+    </x:node>
+    <x:node match="cn:exercise/@ep:presentation-variant">
+      <x:role>presentation-variant</x:role>
+      <x:name xml:lang="en">Presentation variant</x:name>
+      <x:name xml:lang="pl">Rodzaj prezentacji</x:name>
+    </x:node>
+    <x:node match="ep:experiment">
+      <x:role>experiment</x:role>
+      <x:name xml:lang="en">Experiment</x:name>
+      <x:name xml:lang="pl">Doświadczenie</x:name>
+    </x:node>
+    <x:node match="ep:experiment/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:experiment/@ep:supervised">
+      <x:role>supervised</x:role>
+      <x:name xml:lang="en">supervised</x:name>
+      <x:name xml:lang="pl">Nadzorowane</x:name>
+    </x:node>
+    <x:node match="ep:experiment/@ep:context-dependent">
+      <x:role>context-dependent</x:role>
+      <x:name xml:lang="en">context-dependent</x:name>
+      <x:name xml:lang="pl">Zależne od kontekstu</x:name>
+    </x:node>
+    <x:node match="ep:experiment/ep:objective">
+      <x:role>objective</x:role>
+      <x:name xml:lang="en">Objective</x:name>
+      <x:name xml:lang="pl">Cel</x:name>
+    </x:node>
+    <x:node match="ep:experiment/ep:problem">
+      <x:role>problem</x:role>
+      <x:name xml:lang="en">Problem</x:name>
+      <x:name xml:lang="pl">Problem</x:name>
+    </x:node>
+    <x:node match="ep:experiment/ep:hypothesis">
+      <x:role>hypothesis</x:role>
+      <x:name xml:lang="en">Hypothesis</x:name>
+      <x:name xml:lang="pl">Hipoteza</x:name>
+    </x:node>
+    <x:node match="ep:experiment/ep:instruments">
+      <x:role>instruments</x:role>
+      <x:name xml:lang="en">Instruments</x:name>
+      <x:name xml:lang="pl">Co będzie potrzebne</x:name>
+    </x:node>
+    <x:node match="ep:experiment/ep:instructions">
+      <x:role>instructions</x:role>
+      <x:name xml:lang="en">Instructions</x:name>
+      <x:name xml:lang="pl">Instrukcja</x:name>
+    </x:node>
+    <x:node match="ep:experiment/ep:conclusions">
+      <x:role>conclusions</x:role>
+      <x:name xml:lang="en">Conclusions</x:name>
+      <x:name xml:lang="pl">Podsumowanie</x:name>
+    </x:node>
+    <x:node match="ep:experiment/ep:demonstration">
+      <x:role>demonstration</x:role>
+      <x:name xml:lang="en">Demonstration</x:name>
+      <x:name xml:lang="pl">Demonstracja</x:name>
+    </x:node>
+
+    <x:node match="ep:observation">
+      <x:role>observation</x:role>
+      <x:name xml:lang="en">Observation</x:name>
+      <x:name xml:lang="pl">Obserwacja</x:name>
+    </x:node>
+    <x:node match="ep:observation/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:observation/@ep:supervised">
+      <x:role>supervised</x:role>
+      <x:name xml:lang="en">supervised</x:name>
+      <x:name xml:lang="pl">Nadzorowana</x:name>
+    </x:node>
+    <x:node match="ep:observation/@ep:context-dependent">
+      <x:role>context-dependent</x:role>
+      <x:name xml:lang="en">context-dependent</x:name>
+      <x:name xml:lang="pl">Zależna od kontekstu</x:name>
+    </x:node>
+    <x:node match="ep:observation/ep:objective">
+      <x:role>objective</x:role>
+      <x:name xml:lang="en">Objective</x:name>
+      <x:name xml:lang="pl">Cel</x:name>
+    </x:node>
+    <x:node match="ep:observation/ep:instruments">
+      <x:role>instruments</x:role>
+      <x:name xml:lang="en">Instruments</x:name>
+      <x:name xml:lang="pl">Co będzie potrzebne</x:name>
+    </x:node>
+    <x:node match="ep:observation/ep:instructions">
+      <x:role>instructions</x:role>
+      <x:name xml:lang="en">Instructions</x:name>
+      <x:name xml:lang="pl">Instrukcja</x:name>
+    </x:node>
+    <x:node match="ep:observation/ep:conclusions">
+      <x:role>conclusions</x:role>
+      <x:name xml:lang="en">Conclusions</x:name>
+      <x:name xml:lang="pl">Podsumowanie</x:name>
+    </x:node>
+		<x:node match="ep:observation/ep:demonstration">
+      <x:role>demonstration</x:role>
+      <x:name xml:lang="en">Demonstration</x:name>
+      <x:name xml:lang="pl">Demonstracja</x:name>
+    </x:node>
+    
+    <x:node match="ep:parameters">
+      <x:role>parameters</x:role>
+      <x:name xml:lang="en">parameters</x:name>
+      <x:name xml:lang="pl">Parametry</x:name>
+    </x:node>
+    <x:node match="ep:parameters/ep:columns">
+      <x:role>paramcolumns</x:role>
+      <x:uiGroup>disable</x:uiGroup>
+      <x:name xml:lang="en">Columns</x:name>
+      <x:name xml:lang="pl">Kolumny</x:name>
+    </x:node>
+    <x:node match="ep:parameters/ep:width">
+      <x:role>hidden-from-ui</x:role>
+      <x:role>width</x:role>
+      <!-- <x:uiGroup>disable</x:uiGroup> -->
+      <x:name xml:lang="en">width</x:name>
+      <x:name xml:lang="pl">Szerokość</x:name>
+    </x:node>
+    <x:node match="ep:parameters/ep:start-new-page">
+      <x:role>hidden-from-ui</x:role>
+      <x:role>start-new-page</x:role>
+      <x:name xml:lang="en">start-new-page</x:name>
+      <x:name xml:lang="pl">Nowa pagina</x:name>
+    </x:node>
+    <x:node match="ep:parameters/ep:role">
+      <x:name xml:lang="en">Role</x:name>
+      <x:name xml:lang="pl">Rola</x:name>
+    </x:node>
+    <x:node match="ep:parameters/ep:foldable">
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Foldable</x:name>
+      <x:name xml:lang="pl">Zwijalna</x:name>
+    </x:node>
+    <x:node match="ep:parameters/ep:stretch-title">
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Stretch title</x:name>
+      <x:name xml:lang="pl">Rozciągnij tytuł</x:name>
+    </x:node>
+    <x:node match="ep:parameters/ep:stretch">
+      <x:role>hidden-from-ui</x:role>
+      <x:role>stretch</x:role>
+      <x:name xml:lang="en">Stretch</x:name>
+      <x:name xml:lang="pl">Rozciągnij sekcję</x:name>
+      <x:enumeration value="full-width">
+          <x:name xml:lang="en">full-width</x:name>
+          <x:name xml:lang="pl">Pełna szerokość</x:name>
+       </x:enumeration>
+      <x:enumeration value="extended-width">
+          <x:name xml:lang="en">extended-width</x:name>
+          <x:name xml:lang="pl">Powiększona szerokość</x:name>
+       </x:enumeration>
+    </x:node>
+    <x:node match="ep:command">
+      <x:role>command</x:role>
+      <x:name xml:lang="en">Command</x:name>
+      <x:name xml:lang="pl">Polecenie</x:name>
+      <x:templates>
+        <x:template>
+          <problem></problem>
+        </x:template>
+      </x:templates>
+    </x:node>
+    <x:node match="ep:command/@ep:id">
+      <x:role>id</x:role>
+      <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:command/@ep:type">
+      <x:role>type</x:role>
+      <x:name xml:lang="en">Type</x:name>
+      <x:name xml:lang="pl">Typ</x:name>
+      <x:enumeration value="debate">
+          <x:name xml:lang="en">Debate</x:name>
+          <x:name xml:lang="pl">Debata</x:name>
+       </x:enumeration>
+    </x:node>
+    <x:node match="ep:command/@ep:presentation-variant">
+      <x:role>presentation-variant</x:role>
+      <x:name xml:lang="en">Presentation variant</x:name>
+      <x:name xml:lang="pl">Rodzaj prezentacji</x:name>
+    </x:node>
+    <x:node match="ep:gallery">
+      <x:role>gallery</x:role>
+      <x:name xml:lang="en">Gallery</x:name>
+      <x:name xml:lang="pl">Galeria</x:name>
+        <x:templates>
+            <x:template>
+              <title></title>
+            </x:template>
+        </x:templates>
+    </x:node>
+    <x:node match="ep:gallery/ep:content">
+      <x:role>content</x:role>
+      <x:name xml:lang="en">content</x:name>
+      <x:name xml:lang="pl">Tekst skojarzony</x:name>
+    </x:node>
+    <x:node match="ep:gallery/cn:title">
+      <x:role>title</x:role>
+      <x:name xml:lang="en">title</x:name>
+      <x:name xml:lang="pl">Tytuł</x:name>
+      <x:placeholder>Wstaw tytuł</x:placeholder>
+    </x:node>
+    <x:node match="ep:gallery/@ep:id">
+      <x:role>id</x:role>
+        <x:lookup
+                url="html-extra/womi-gallery-dialog.html"
+                forceLookup="true"
+                autoOpen="true"/>
+        <x:name xml:lang="en">Id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:gallery/@ep:start-on">
+      <x:role>start-on</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Start on</x:name>
+      <x:name xml:lang="pl">Zacznij od</x:name>
+    </x:node>
+    <x:node match="ep:gallery/@ep:thumbnails">
+      <x:role>thumbnails</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Thumbnails</x:name>
+      <x:name xml:lang="pl">Miniatury</x:name>
+    </x:node>
+    <x:node match="ep:gallery/@ep:titles">
+      <x:role>Titles</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">titles</x:name>
+      <x:name xml:lang="pl">Tytuły</x:name>
+    </x:node>
+    <x:node match="ep:gallery/@ep:format-contents">
+      <x:role>Format</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Format</x:name>
+      <x:name xml:lang="pl">Teksty skojarzone</x:name>
+    </x:node>
+    <x:node match="ep:gallery/@ep:miniatures-only">
+      <x:role>miniatures-only</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Miniatures-only</x:name>
+      <x:name xml:lang="pl">Tylko miniatury</x:name>
+    </x:node>
+    <x:node match="ep:gallery/@ep:view-width">
+      <x:role>view-width</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">View width</x:name>
+      <x:name xml:lang="pl">Szerokość widoku</x:name>
+    </x:node>
+    <x:node match="ep:gallery/@ep:view-height">
+      <x:role>view-height</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">View height</x:name>
+      <x:name xml:lang="pl">Wysokość widoku</x:name>
+    </x:node>
+    <x:node match="ep:gallery/@ep:playlist">
+      <x:role>playlist</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Playlist</x:name>
+      <x:name xml:lang="pl">Playlista</x:name>
+    </x:node>
+	<x:node match="ep:gallery/@ep:playlist">
+      <x:role>playlist</x:role>
+      <x:name xml:lang="en">Playlist</x:name>
+      <x:name xml:lang="pl">Playlista</x:name>
+    </x:node>
+	<x:node match="cn:item/cn:para">
+      <x:role>may-not-split</x:role>
+      <x:name xml:lang="en">Paragraph</x:name>
+      <x:name xml:lang="pl">Paragraf</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+	<x:node match="cn:item">
+      <x:role>may-split</x:role>
+	  <x:role>listitem</x:role>
+      <x:name xml:lang="en">Item</x:name>
+      <x:name xml:lang="pl">Element</x:name>
+    </x:node>
+	<x:node match="ep:step/cn:para">
+      <x:role>may-not-split</x:role>
+      <x:name xml:lang="en">Paragraph</x:name>
+      <x:name xml:lang="pl">Paragraf</x:name>
+      <x:placeholder>Tu wpisz treść</x:placeholder>
+    </x:node>
+
+    <x:node match="m:*">
+      <x:role>math</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:uiGroup>disable</x:uiGroup>
+      <x:name xml:lang="en">Mathml</x:name>
+      <x:name xml:lang="pl">Wyrażenie matematyczne</x:name>
+    </x:node>
+    <x:node match="m:math">
+      <x:role>math</x:role>
+      <x:name xml:lang="en">Mathml</x:name>
+      <x:name xml:lang="pl">Wyrażenie matematyczne</x:name>
+    </x:node>
+
+    <x:node match="m:math/@*">
+      <x:role>math</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mathml</x:name>
+      <x:name xml:lang="pl">Wyrażenie matematyczne</x:name>
+    </x:node>
+    <x:node match="m:TableRowExpression">
+      <x:role>TableRowExpression</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">TableRowExpression</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:TableRowExpression/@*">
+      <x:role>TableRowExpression</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">TableRowExpression</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:TableCellExpression">
+      <x:role>TableCellExpression</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">TableCellExpression</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:TableCellExpression/@*">
+      <x:role>TableCellExpression</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">TableCellExpression</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:TokenExpression">
+      <x:role>TokenExpression</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">TokenExpression</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:TokenExpression/@*">
+      <x:role>TokenExpression</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">TokenExpression</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mi">
+      <x:role>mi</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mi</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mi/@*">
+      <x:role>mi</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mi</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mn">
+      <x:role>mn</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mn</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mn/@*">
+      <x:role>mn</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mn</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mo">
+      <x:role>mo</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mo</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mo/@*">
+      <x:role>mo</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mo</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mtext">
+      <x:role>mtext</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mtext</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mtext/@*">
+      <x:role>mtext</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mtext</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mspace">
+      <x:role>mspace</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mspace</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mspace/@*">
+      <x:role>mspace</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mspace</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:ms">
+      <x:role>ms</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Ms</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:ms/@*">
+      <x:role>ms</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Ms</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mglyph">
+      <x:role>mglyph</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mglyph</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mglyph/@*">
+      <x:role>mglyph</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mglyph</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msline">
+      <x:role>msline</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msline</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msline/@*">
+      <x:role>msline</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msline</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:none">
+      <x:role>none</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">None</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:none/@*">
+      <x:role>none</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">None</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mprescripts">
+      <x:role>mprescripts</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mprescripts</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mprescripts/@*">
+      <x:role>mprescripts</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mprescripts</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:MalignExpression">
+      <x:role>MalignExpression</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">MalignExpression</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:MalignExpression/@*">
+      <x:role>MalignExpression</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">MalignExpression</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:malignmark">
+      <x:role>malignmark</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Malignmark</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:malignmark/@*">
+      <x:role>malignmark</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Malignmark</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:maligngroup">
+      <x:role>maligngroup</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Maligngroup</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:maligngroup/@*">
+      <x:role>maligngroup</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Maligngroup</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mrow">
+      <x:role>mrow</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mrow</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mrow/@*">
+      <x:role>mrow</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mrow</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mfrac">
+      <x:role>mfrac</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mfrac</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mfrac/@*">
+      <x:role>mfrac</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mfrac</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msqrt">
+      <x:role>msqrt</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msqrt</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msqrt/@*">
+      <x:role>msqrt</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msqrt</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mroot">
+      <x:role>mroot</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mroot</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mroot/@*">
+      <x:role>mroot</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mroot</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mstyle">
+      <x:role>mstyle</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mstyle</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mstyle/@*">
+      <x:role>mstyle</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mstyle</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:merror">
+      <x:role>merror</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Merror</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:merror/@*">
+      <x:role>merror</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Merror</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mpadded">
+      <x:role>mpadded</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mpadded</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mpadded/@*">
+      <x:role>mpadded</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mpadded</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mphantom">
+      <x:role>mphantom</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mphantom</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mphantom/@*">
+      <x:role>mphantom</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mphantom</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mfenced">
+      <x:role>mfenced</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mfenced</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mfenced/@*">
+      <x:role>mfenced</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mfenced</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:menclose">
+      <x:role>menclose</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Menclose</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:menclose/@*">
+      <x:role>menclose</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Menclose</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msub">
+      <x:role>msub</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msub</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msub/@*">
+      <x:role>msub</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msub</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msup">
+      <x:role>msup</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msup</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msup/@*">
+      <x:role>msup</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msup</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msubsup">
+      <x:role>msubsup</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msubsup</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msubsup/@*">
+      <x:role>msubsup</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msubsup</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:munder">
+      <x:role>munder</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Munder</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:munder/@*">
+      <x:role>munder</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Munder</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mover">
+      <x:role>mover</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mover</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mover/@*">
+      <x:role>mover</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mover</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:munderover">
+      <x:role>munderover</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Munderover</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:munderover/@*">
+      <x:role>munderover</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Munderover</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mmultiscripts">
+      <x:role>mmultiscripts</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mmultiscripts</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mmultiscripts/@*">
+      <x:role>mmultiscripts</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mmultiscripts</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mtable">
+      <x:role>mtable</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mtable</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mtable/@*">
+      <x:role>mtable</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mtable</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mlabeledtr">
+      <x:role>mlabeledtr</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mlabeledtr</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mlabeledtr/@*">
+      <x:role>mlabeledtr</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mlabeledtr</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mtr">
+      <x:role>mtr</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mtr</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mtr/@*">
+      <x:role>mtr</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mtr</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mtd">
+      <x:role>mtd</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mtd</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mtd/@*">
+      <x:role>mtd</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mtd</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mstack">
+      <x:role>mstack</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mstack</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mstack/@*">
+      <x:role>mstack</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mstack</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mlongdiv">
+      <x:role>mlongdiv</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mlongdiv</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mlongdiv/@*">
+      <x:role>mlongdiv</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mlongdiv</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msgroup">
+      <x:role>msgroup</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msgroup</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msgroup/@*">
+      <x:role>msgroup</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msgroup</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msrow">
+      <x:role>msrow</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msrow</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:msrow/@*">
+      <x:role>msrow</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Msrow</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mscarries">
+      <x:role>mscarries</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mscarries</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mscarries/@*">
+      <x:role>mscarries</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mscarries</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mscarry">
+      <x:role>mscarry</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mscarry</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mscarry/@*">
+      <x:role>mscarry</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mscarry</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:maction">
+      <x:role>maction</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Maction</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:maction/@*">
+      <x:role>maction</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Maction</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:bvar">
+      <x:role>bvar</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Bvar</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:bvar/@*">
+      <x:role>bvar</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Bvar</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sep">
+      <x:role>sep</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sep</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sep/@*">
+      <x:role>sep</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sep</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:PresentationExpression">
+      <x:role>PresentationExpression</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">PresentationExpression</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:PresentationExpression/@*">
+      <x:role>PresentationExpression</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">PresentationExpression</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:domainofapplication">
+      <x:role>domainofapplication</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Domainofapplication</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:domainofapplication/@*">
+      <x:role>domainofapplication</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Domainofapplication</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:condition">
+      <x:role>condition</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Condition</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:condition/@*">
+      <x:role>condition</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Condition</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:uplimit">
+      <x:role>uplimit</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Uplimit</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:uplimit/@*">
+      <x:role>uplimit</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Uplimit</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:lowlimit">
+      <x:role>lowlimit</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Lowlimit</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:lowlimit/@*">
+      <x:role>lowlimit</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Lowlimit</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:degree">
+      <x:role>degree</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Degree</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:degree/@*">
+      <x:role>degree</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Degree</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:momentabout">
+      <x:role>momentabout</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Momentabout</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:momentabout/@*">
+      <x:role>momentabout</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Momentabout</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:logbase">
+      <x:role>logbase</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Logbase</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:logbase/@*">
+      <x:role>logbase</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Logbase</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:piecewise">
+      <x:role>piecewise</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Piecewise</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:piecewise/@*">
+      <x:role>piecewise</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Piecewise</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:piece">
+      <x:role>piece</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Piece</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:piece/@*">
+      <x:role>piece</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Piece</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:otherwise">
+      <x:role>otherwise</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Otherwise</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:otherwise/@*">
+      <x:role>otherwise</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Otherwise</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:DeprecatedContExp">
+      <x:role>DeprecatedContExp</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">DeprecatedContExp</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:DeprecatedContExp/@*">
+      <x:role>DeprecatedContExp</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">DeprecatedContExp</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:reln">
+      <x:role>reln</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Reln</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:reln/@*">
+      <x:role>reln</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Reln</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:fn">
+      <x:role>fn</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Fn</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:fn/@*">
+      <x:role>fn</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Fn</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:declare">
+      <x:role>declare</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Declare</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:declare/@*">
+      <x:role>declare</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Declare</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:interval.class">
+      <x:role>interval.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Interval.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:interval.class/@*">
+      <x:role>interval.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Interval.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:interval">
+      <x:role>interval</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Interval</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:interval/@*">
+      <x:role>interval</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Interval</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-functional.class">
+      <x:role>unary-functional.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-functional.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-functional.class/@*">
+      <x:role>unary-functional.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-functional.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:inverse">
+      <x:role>inverse</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Inverse</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:inverse/@*">
+      <x:role>inverse</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Inverse</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:ident">
+      <x:role>ident</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Ident</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:ident/@*">
+      <x:role>ident</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Ident</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:domain">
+      <x:role>domain</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Domain</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:domain/@*">
+      <x:role>domain</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Domain</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:codomain">
+      <x:role>codomain</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Codomain</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:codomain/@*">
+      <x:role>codomain</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Codomain</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:image">
+      <x:role>image-mml</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Image</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:image/@*">
+      <x:role>image-mml</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Image</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:ln">
+      <x:role>ln</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Ln</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:ln/@*">
+      <x:role>ln</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Ln</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:log">
+      <x:role>log</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Log</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:log/@*">
+      <x:role>log</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Log</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:moment">
+      <x:role>moment</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Moment</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:moment/@*">
+      <x:role>moment</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Moment</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:lambda.class">
+      <x:role>lambda.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Lambda.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:lambda.class/@*">
+      <x:role>lambda.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Lambda.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:lambda">
+      <x:role>lambda</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Lambda</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:lambda/@*">
+      <x:role>lambda</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Lambda</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-functional.class">
+      <x:role>nary-functional.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-functional.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-functional.class/@*">
+      <x:role>nary-functional.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-functional.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:compose">
+      <x:role>compose</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Compose</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:compose/@*">
+      <x:role>compose</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Compose</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:quotient">
+      <x:role>quotient</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Quotient</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:quotient/@*">
+      <x:role>quotient</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Quotient</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:divide">
+      <x:role>divide</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Divide</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:divide/@*">
+      <x:role>divide</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Divide</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:minus">
+      <x:role>minus</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Minus</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:minus/@*">
+      <x:role>minus</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Minus</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:power">
+      <x:role>power</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Power</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:power/@*">
+      <x:role>power</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Power</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:rem">
+      <x:role>rem</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Rem</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:rem/@*">
+      <x:role>rem</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Rem</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:root">
+      <x:role>root</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Root</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:root/@*">
+      <x:role>root</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Root</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:factorial">
+      <x:role>factorial</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Factorial</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:factorial/@*">
+      <x:role>factorial</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Factorial</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:abs">
+      <x:role>abs</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Abs</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:abs/@*">
+      <x:role>abs</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Abs</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:conjugate">
+      <x:role>conjugate</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Conjugate</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:conjugate/@*">
+      <x:role>conjugate</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Conjugate</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arg">
+      <x:role>arg</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arg</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arg/@*">
+      <x:role>arg</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arg</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:real">
+      <x:role>real</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Real</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:real/@*">
+      <x:role>real</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Real</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:imaginary">
+      <x:role>imaginary</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Imaginary</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:imaginary/@*">
+      <x:role>imaginary</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Imaginary</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:floor">
+      <x:role>floor</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Floor</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:floor/@*">
+      <x:role>floor</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Floor</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:ceiling">
+      <x:role>ceiling</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Ceiling</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:ceiling/@*">
+      <x:role>ceiling</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Ceiling</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:exp">
+      <x:role>exp</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Exp</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:exp/@*">
+      <x:role>exp</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Exp</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-minmax.class">
+      <x:role>nary-minmax.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-minmax.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-minmax.class/@*">
+      <x:role>nary-minmax.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-minmax.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:max">
+      <x:role>max</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Max</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:max/@*">
+      <x:role>max</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Max</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:min">
+      <x:role>min</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Min</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:min/@*">
+      <x:role>min</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Min</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-arith.class">
+      <x:role>nary-arith.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-arith.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-arith.class/@*">
+      <x:role>nary-arith.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-arith.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:plus">
+      <x:role>plus</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Plus</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:plus/@*">
+      <x:role>plus</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Plus</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:times">
+      <x:role>times</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Times</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:times/@*">
+      <x:role>times</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Times</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:gcd">
+      <x:role>gcd</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Gcd</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:gcd/@*">
+      <x:role>gcd</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Gcd</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:lcm">
+      <x:role>lcm</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Lcm</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:lcm/@*">
+      <x:role>lcm</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Lcm</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-logical.class">
+      <x:role>nary-logical.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-logical.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-logical.class/@*">
+      <x:role>nary-logical.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-logical.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:and">
+      <x:role>and</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">And</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:and/@*">
+      <x:role>and</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">And</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:or">
+      <x:role>or</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Or</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:or/@*">
+      <x:role>or</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Or</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:xor">
+      <x:role>xor</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Xor</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:xor/@*">
+      <x:role>xor</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Xor</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-logical.class">
+      <x:role>unary-logical.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-logical.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-logical.class/@*">
+      <x:role>unary-logical.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-logical.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:not">
+      <x:role>not</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Not</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:not/@*">
+      <x:role>not</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Not</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:binary-logical.class">
+      <x:role>binary-logical.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Binary-logical.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:binary-logical.class/@*">
+      <x:role>binary-logical.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Binary-logical.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:implies">
+      <x:role>implies</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Implies</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:implies/@*">
+      <x:role>implies</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Implies</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:equivalent">
+      <x:role>equivalent</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Equivalent</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:equivalent/@*">
+      <x:role>equivalent</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Equivalent</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:quantifier.class">
+      <x:role>quantifier.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Quantifier.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:quantifier.class/@*">
+      <x:role>quantifier.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Quantifier.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:forall">
+      <x:role>forall</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Forall</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:forall/@*">
+      <x:role>forall</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Forall</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:exists">
+      <x:role>exists</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Exists</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:exists/@*">
+      <x:role>exists</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Exists</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-reln.class">
+      <x:role>nary-reln.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-reln.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-reln.class/@*">
+      <x:role>nary-reln.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-reln.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:eq">
+      <x:role>eq</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Eq</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:eq/@*">
+      <x:role>eq</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Eq</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:gt">
+      <x:role>gt</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Gt</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:gt/@*">
+      <x:role>gt</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Gt</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:lt">
+      <x:role>lt</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Lt</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:lt/@*">
+      <x:role>lt</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Lt</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:geq">
+      <x:role>geq</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Geq</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:geq/@*">
+      <x:role>geq</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Geq</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:leq">
+      <x:role>leq</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Leq</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:leq/@*">
+      <x:role>leq</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Leq</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:binary-reln.class">
+      <x:role>binary-reln.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Binary-reln.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:binary-reln.class/@*">
+      <x:role>binary-reln.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Binary-reln.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:neq">
+      <x:role>neq</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Neq</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:neq/@*">
+      <x:role>neq</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Neq</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:approx">
+      <x:role>approx</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Approx</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:approx/@*">
+      <x:role>approx</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Approx</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:factorof">
+      <x:role>factorof</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Factorof</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:factorof/@*">
+      <x:role>factorof</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Factorof</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:tendsto">
+      <x:role>tendsto</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Tendsto</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:tendsto/@*">
+      <x:role>tendsto</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Tendsto</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:int.class">
+      <x:role>int.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Int.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:int.class/@*">
+      <x:role>int.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Int.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:int">
+      <x:role>int</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Int</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:int/@*">
+      <x:role>int</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Int</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:Differential-Operator.class">
+      <x:role>Differential-Operator.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Differential-Operator.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:Differential-Operator.class/@*">
+      <x:role>Differential-Operator.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Differential-Operator.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:diff">
+      <x:role>diff</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Diff</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:diff/@*">
+      <x:role>diff</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Diff</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:partialdiff.class">
+      <x:role>partialdiff.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Partialdiff.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:partialdiff.class/@*">
+      <x:role>partialdiff.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Partialdiff.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:partialdiff">
+      <x:role>partialdiff</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Partialdiff</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:partialdiff/@*">
+      <x:role>partialdiff</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Partialdiff</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-veccalc.class">
+      <x:role>unary-veccalc.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-veccalc.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-veccalc.class/@*">
+      <x:role>unary-veccalc.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-veccalc.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:divergence">
+      <x:role>divergence</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Divergence</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:divergence/@*">
+      <x:role>divergence</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Divergence</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:grad">
+      <x:role>grad</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Grad</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:grad/@*">
+      <x:role>grad</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Grad</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:curl">
+      <x:role>curl</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Curl</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:curl/@*">
+      <x:role>curl</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Curl</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:laplacian">
+      <x:role>laplacian</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Laplacian</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:laplacian/@*">
+      <x:role>laplacian</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Laplacian</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-setlist-constructor.class">
+      <x:role>nary-setlist-constructor.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-setlist-constructor.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-setlist-constructor.class/@*">
+      <x:role>nary-setlist-constructor.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-setlist-constructor.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:set">
+      <x:role>set</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Set</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:set/@*">
+      <x:role>set</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Set</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:list">
+      <x:role>list</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">List</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:list/@*">
+      <x:role>list</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">List</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-set.class">
+      <x:role>nary-set.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-set.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-set.class/@*">
+      <x:role>nary-set.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-set.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:union">
+      <x:role>union</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Union</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:union/@*">
+      <x:role>union</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Union</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:intersect">
+      <x:role>intersect</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Intersect</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:intersect/@*">
+      <x:role>intersect</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Intersect</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cartesianproduct">
+      <x:role>cartesianproduct</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cartesianproduct</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cartesianproduct/@*">
+      <x:role>cartesianproduct</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cartesianproduct</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:binary-set.class">
+      <x:role>binary-set.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Binary-set.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:binary-set.class/@*">
+      <x:role>binary-set.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Binary-set.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:in">
+      <x:role>in</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">In</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:in/@*">
+      <x:role>in</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">In</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:notin">
+      <x:role>notin</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Notin</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:notin/@*">
+      <x:role>notin</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Notin</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:notsubset">
+      <x:role>notsubset</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Notsubset</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:notsubset/@*">
+      <x:role>notsubset</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Notsubset</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:notprsubset">
+      <x:role>notprsubset</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Notprsubset</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:notprsubset/@*">
+      <x:role>notprsubset</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Notprsubset</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:setdiff">
+      <x:role>setdiff</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Setdiff</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:setdiff/@*">
+      <x:role>setdiff</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Setdiff</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-set-reln.class">
+      <x:role>nary-set-reln.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-set-reln.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-set-reln.class/@*">
+      <x:role>nary-set-reln.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-set-reln.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:subset">
+      <x:role>subset</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Subset</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:subset/@*">
+      <x:role>subset</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Subset</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:prsubset">
+      <x:role>prsubset</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Prsubset</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:prsubset/@*">
+      <x:role>prsubset</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Prsubset</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-set.class">
+      <x:role>unary-set.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-set.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-set.class/@*">
+      <x:role>unary-set.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-set.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:card">
+      <x:role>card</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Card</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:card/@*">
+      <x:role>card</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Card</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sum.class">
+      <x:role>sum.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sum.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sum.class/@*">
+      <x:role>sum.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sum.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sum">
+      <x:role>sum</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sum</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sum/@*">
+      <x:role>sum</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sum</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:product.class">
+      <x:role>product.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Product.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:product.class/@*">
+      <x:role>product.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Product.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:product">
+      <x:role>product</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Product</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:product/@*">
+      <x:role>product</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Product</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:limit.class">
+      <x:role>limit.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Limit.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:limit.class/@*">
+      <x:role>limit.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Limit.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:limit">
+      <x:role>limit</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Limit</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:limit/@*">
+      <x:role>limit</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Limit</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-elementary.class">
+      <x:role>unary-elementary.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-elementary.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-elementary.class/@*">
+      <x:role>unary-elementary.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-elementary.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sin">
+      <x:role>sin</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sin</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sin/@*">
+      <x:role>sin</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sin</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cos">
+      <x:role>cos</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cos</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cos/@*">
+      <x:role>cos</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cos</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:tan">
+      <x:role>tan</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Tan</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:tan/@*">
+      <x:role>tan</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Tan</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sec">
+      <x:role>sec</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sec</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sec/@*">
+      <x:role>sec</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sec</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:csc">
+      <x:role>csc</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Csc</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:csc/@*">
+      <x:role>csc</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Csc</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cot">
+      <x:role>cot</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cot</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cot/@*">
+      <x:role>cot</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cot</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sinh">
+      <x:role>sinh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sinh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sinh/@*">
+      <x:role>sinh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sinh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cosh">
+      <x:role>cosh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cosh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cosh/@*">
+      <x:role>cosh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cosh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:tanh">
+      <x:role>tanh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Tanh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:tanh/@*">
+      <x:role>tanh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Tanh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sech">
+      <x:role>sech</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sech</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sech/@*">
+      <x:role>sech</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sech</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:csch">
+      <x:role>csch</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Csch</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:csch/@*">
+      <x:role>csch</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Csch</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:coth">
+      <x:role>coth</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Coth</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:coth/@*">
+      <x:role>coth</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Coth</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arcsin">
+      <x:role>arcsin</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arcsin</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arcsin/@*">
+      <x:role>arcsin</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arcsin</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccos">
+      <x:role>arccos</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccos</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccos/@*">
+      <x:role>arccos</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccos</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arctan">
+      <x:role>arctan</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arctan</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arctan/@*">
+      <x:role>arctan</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arctan</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccosh">
+      <x:role>arccosh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccosh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccosh/@*">
+      <x:role>arccosh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccosh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccot">
+      <x:role>arccot</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccot</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccot/@*">
+      <x:role>arccot</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccot</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccoth">
+      <x:role>arccoth</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccoth</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccoth/@*">
+      <x:role>arccoth</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccoth</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccsc">
+      <x:role>arccsc</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccsc</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccsc/@*">
+      <x:role>arccsc</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccsc</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccsch">
+      <x:role>arccsch</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccsch</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arccsch/@*">
+      <x:role>arccsch</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arccsch</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arcsec">
+      <x:role>arcsec</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arcsec</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arcsec/@*">
+      <x:role>arcsec</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arcsec</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arcsech">
+      <x:role>arcsech</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arcsech</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arcsech/@*">
+      <x:role>arcsech</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arcsech</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arcsinh">
+      <x:role>arcsinh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arcsinh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arcsinh/@*">
+      <x:role>arcsinh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arcsinh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arctanh">
+      <x:role>arctanh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arctanh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:arctanh/@*">
+      <x:role>arctanh</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Arctanh</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-stats.class">
+      <x:role>nary-stats.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-stats.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-stats.class/@*">
+      <x:role>nary-stats.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-stats.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mean">
+      <x:role>mean</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mean</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mean/@*">
+      <x:role>mean</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mean</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sdev">
+      <x:role>sdev</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sdev</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:sdev/@*">
+      <x:role>sdev</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Sdev</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:variance">
+      <x:role>variance</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Variance</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:variance/@*">
+      <x:role>variance</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Variance</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:median">
+      <x:role>median</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Median</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:median/@*">
+      <x:role>median</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Median</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mode">
+      <x:role>mode</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mode</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:mode/@*">
+      <x:role>mode</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Mode</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-constructor.class">
+      <x:role>nary-constructor.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-constructor.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-constructor.class/@*">
+      <x:role>nary-constructor.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-constructor.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:vector">
+      <x:role>vector</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Vector</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:vector/@*">
+      <x:role>vector</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Vector</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:matrix">
+      <x:role>matrix</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Matrix</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:matrix/@*">
+      <x:role>matrix</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Matrix</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:matrixrow">
+      <x:role>matrixrow</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Matrixrow</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:matrixrow/@*">
+      <x:role>matrixrow</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Matrixrow</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-linalg.class">
+      <x:role>unary-linalg.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-linalg.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:unary-linalg.class/@*">
+      <x:role>unary-linalg.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Unary-linalg.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:determinant">
+      <x:role>determinant</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Determinant</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:determinant/@*">
+      <x:role>determinant</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Determinant</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:transpose">
+      <x:role>transpose</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Transpose</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:transpose/@*">
+      <x:role>transpose</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Transpose</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-linalg.class">
+      <x:role>nary-linalg.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-linalg.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:nary-linalg.class/@*">
+      <x:role>nary-linalg.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Nary-linalg.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:selector">
+      <x:role>selector</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Selector</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:selector/@*">
+      <x:role>selector</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Selector</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:binary-linalg.class">
+      <x:role>binary-linalg.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Binary-linalg.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:binary-linalg.class/@*">
+      <x:role>binary-linalg.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Binary-linalg.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:vectorproduct">
+      <x:role>vectorproduct</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Vectorproduct</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:vectorproduct/@*">
+      <x:role>vectorproduct</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Vectorproduct</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:scalarproduct">
+      <x:role>scalarproduct</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Scalarproduct</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:scalarproduct/@*">
+      <x:role>scalarproduct</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Scalarproduct</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:outerproduct">
+      <x:role>outerproduct</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Outerproduct</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:outerproduct/@*">
+      <x:role>outerproduct</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Outerproduct</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:constant-set.class">
+      <x:role>constant-set.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Constant-set.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:constant-set.class/@*">
+      <x:role>constant-set.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Constant-set.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:integers">
+      <x:role>integers</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Integers</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:integers/@*">
+      <x:role>integers</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Integers</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:reals">
+      <x:role>reals</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Reals</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:reals/@*">
+      <x:role>reals</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Reals</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:rationals">
+      <x:role>rationals</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Rationals</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:rationals/@*">
+      <x:role>rationals</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Rationals</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:naturalnumbers">
+      <x:role>naturalnumbers</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Naturalnumbers</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:naturalnumbers/@*">
+      <x:role>naturalnumbers</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Naturalnumbers</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:complexes">
+      <x:role>complexes</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Complexes</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:complexes/@*">
+      <x:role>complexes</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Complexes</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:primes">
+      <x:role>primes</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Primes</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:primes/@*">
+      <x:role>primes</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Primes</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:emptyset">
+      <x:role>emptyset</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Emptyset</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:emptyset/@*">
+      <x:role>emptyset</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Emptyset</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:constant-arith.class">
+      <x:role>constant-arith.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Constant-arith.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:constant-arith.class/@*">
+      <x:role>constant-arith.class</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Constant-arith.class</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:exponentiale">
+      <x:role>exponentiale</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Exponentiale</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:exponentiale/@*">
+      <x:role>exponentiale</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Exponentiale</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:imaginaryi">
+      <x:role>imaginaryi</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Imaginaryi</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:imaginaryi/@*">
+      <x:role>imaginaryi</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Imaginaryi</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:notanumber">
+      <x:role>notanumber</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Notanumber</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:notanumber/@*">
+      <x:role>notanumber</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Notanumber</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:true">
+      <x:role>true</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">True</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:true/@*">
+      <x:role>true</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">True</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:false">
+      <x:role>false</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">False</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:false/@*">
+      <x:role>false</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">False</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:pi">
+      <x:role>pi</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Pi</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:pi/@*">
+      <x:role>pi</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Pi</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:eulergamma">
+      <x:role>eulergamma</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Eulergamma</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:eulergamma/@*">
+      <x:role>eulergamma</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Eulergamma</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:infinity">
+      <x:role>infinity</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Infinity</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:infinity/@*">
+      <x:role>infinity</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Infinity</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node><x:node match="m:cn">
+      <x:role>cn</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cn</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cn/@*">
+      <x:role>cn</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cn</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:semantics">
+      <x:role>semantics</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Semantics</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:semantics/@*">
+      <x:role>semantics</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Semantics</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:semantics">
+      <x:role>semantics</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Semantics</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:semantics/@*">
+      <x:role>semantics</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Semantics</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:ci">
+      <x:role>ci</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Ci</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:ci/@*">
+      <x:role>ci</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Ci</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:csymbol">
+      <x:role>csymbol</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Csymbol</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:csymbol/@*">
+      <x:role>csymbol</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Csymbol</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:apply">
+      <x:role>apply</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Apply</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:apply/@*">
+      <x:role>apply</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Apply</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:bind">
+      <x:role>bind</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Bind</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:bind/@*">
+      <x:role>bind</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Bind</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:share">
+      <x:role>share</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Share</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:share/@*">
+      <x:role>share</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Share</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cerror">
+      <x:role>cerror</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cerror</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cerror/@*">
+      <x:role>cerror</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cerror</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cbytes">
+      <x:role>cbytes</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cbytes</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cbytes/@*">
+      <x:role>cbytes</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cbytes</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cs">
+      <x:role>cs</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cs</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+   <x:node match="m:cs/@*">
+      <x:role>cs</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Cs</x:name>
+      <x:name xml:lang="pl">Mathml</x:name>
+   </x:node>
+    
+
+    <x:node match="cn:metadata">
+       <x:role>metadata</x:role>
+       <x:name xml:lang="en">Metadata</x:name>
+       <x:name xml:lang="pl">Metadane</x:name>
+    </x:node>
+
+    <x:node match="md:content-id">
+       <x:role>content-id</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Content-id</x:name>
+       <x:name xml:lang="pl">Identyfikator modułu</x:name>
+    </x:node>
+
+    <x:node match="md:repository">
+       <x:role>repository</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Repository</x:name>
+       <x:name xml:lang="pl">Repozytorium</x:name>
+    </x:node>
+
+    <x:node match="md:version">
+       <x:role>version</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Version</x:name>
+       <x:name xml:lang="pl">Wersja</x:name>
+    </x:node>
+
+    <x:node match="ep:origin-id">
+       <x:role>origin-id</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">origin-id</x:name>
+       <x:name xml:lang="pl">origin-id</x:name>
+    </x:node>
+
+    <x:node match="ep:origin-version">
+       <x:role>origin-version</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">origin-version</x:name>
+       <x:name xml:lang="pl">origin-version</x:name>
+    </x:node>
+
+    <x:node match="md:created">
+       <x:role>created</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Created</x:name>
+       <x:name xml:lang="pl">Data utworzenia</x:name>
+    </x:node>
+
+    <x:node match="md:revised">
+       <x:role>revised</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Revised</x:name>
+       <x:name xml:lang="pl">Data modyfikacji</x:name>
+    </x:node>
+
+    <x:node match="md:title">
+       <x:role>title</x:role>
+       <x:name xml:lang="en">Title</x:name>
+       <x:name xml:lang="pl">Tytuł</x:name>
+    </x:node>
+
+    <x:node match="md:language">
+       <x:role>language</x:role>
+       <x:name xml:lang="en">Language</x:name>
+       <x:name xml:lang="pl">Język</x:name>
+    </x:node>
+
+    <x:node match="md:license">
+       <x:role>license</x:role>
+       <x:name xml:lang="en">License</x:name>
+       <x:name xml:lang="pl">Licencja</x:name>
+    </x:node>
+
+    <x:node match="md:license/@url">
+       <x:role>url</x:role>
+       <x:name xml:lang="en">Url</x:name>
+       <x:name xml:lang="pl">Adres</x:name>
+    </x:node>
+
+    <x:node match="md:presentationTitle">
+       <x:role>presentationTitle</x:role>
+       <x:name xml:lang="en">presentationTitle</x:name>
+       <x:name xml:lang="pl">Tytuł do wyświetlenia</x:name>
+    </x:node>
+
+    <x:node match="md:actors">
+       <x:role>actors</x:role>
+       <x:name xml:lang="en">Actors</x:name>
+       <x:name xml:lang="pl">Aktorzy</x:name>
+    </x:node>
+
+    <x:node match="md:person">
+       <x:role>person</x:role>
+       <x:name xml:lang="en">Person</x:name>
+       <x:name xml:lang="pl">Osoba</x:name>
+    </x:node>
+
+    <x:node match="md:person/@userid">
+       <x:role>userid</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">userid</x:name>
+       <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+
+    <x:node match="md:fullname">
+       <x:role>fullname</x:role>
+       <x:name xml:lang="en">Fullname</x:name>
+       <x:name xml:lang="pl">Pełne imię i nazwisko</x:name>
+       <x:placeholder>Tu wpisz imię i nazwisko</x:placeholder>
+    </x:node>
+
+    <x:node match="md:firstname">
+	   <x:uiGroup>disable</x:uiGroup>
+	   <x:role>hidden-from-ui</x:role>
+       <x:role>firstname</x:role>
+       <x:name xml:lang="en">Firstname</x:name>
+       <x:name xml:lang="pl">Imię</x:name>
+       <x:placeholder>Tu wpisz imię</x:placeholder>
+    </x:node>
+
+    <x:node match="md:surname">
+	   <x:uiGroup>disable</x:uiGroup>
+       <x:role>hidden-from-ui</x:role>
+       <x:role>surname</x:role>
+       <x:name xml:lang="en">Surname</x:name>
+       <x:name xml:lang="pl">Nazwisko</x:name>
+       <x:placeholder>Tu wpisz nazwisko</x:placeholder>
+    </x:node>
+
+    <x:node match="md:email">
+       <x:role>email</x:role>
+       <x:name xml:lang="en">Email</x:name>
+       <x:name xml:lang="pl">E-mail</x:name>
+       <x:placeholder>Tu wpisz e-mail</x:placeholder>
+    </x:node>
+
+    <x:node match="md:roles">
+       <x:role>roles</x:role>
+       <x:name xml:lang="en">Roles</x:name>
+       <x:name xml:lang="pl">Role</x:name>
+    </x:node>
+
+    <x:node match="md:role">
+       <x:role>role</x:role>
+       <x:name xml:lang="en">Role</x:name>
+       <x:name xml:lang="pl">Rola</x:name>
+    </x:node>
+
+    <x:node match="md:keyword">
+       <x:role>keyword</x:role>
+       <x:name xml:lang="en">Keyword</x:name>
+       <x:name xml:lang="pl">Słowo kluczowe</x:name>
+       <x:placeholder>Tu wpisz słowo kluczowe</x:placeholder>
+    </x:node>
+
+    <x:node match="md:keywordlist">
+       <x:role>keywordlist</x:role>
+       <x:name xml:lang="en">Keywordlist</x:name>
+       <x:name xml:lang="pl">Słowa kluczowe</x:name>
+    </x:node>
+
+    <x:node match="md:abstract">
+       <x:role>abstract</x:role>
+       <x:name xml:lang="en">Abstract</x:name>
+       <x:name xml:lang="pl">Abstrakt</x:name>
+    </x:node>
+
+    <x:node match="ep:e-textbook-module">
+       <x:role>e-textbook-module</x:role>
+       <x:name xml:lang="en">E-textbook-module</x:name>
+       <x:name xml:lang="pl">Moduł e-podręcznika</x:name>
+    </x:node>
+
+    <x:node match="ep:e-textbook-module/@ep:recipient">
+       <x:role>recipient</x:role>
+       <x:name xml:lang="en">Recipient</x:name>
+       <x:name xml:lang="pl">Odbiorca</x:name>
+    </x:node>
+
+    <x:node match="ep:e-textbook-module/@ep:content-status">
+       <x:role>content-status</x:role>
+       <x:name xml:lang="en">Content-status</x:name>
+       <x:name xml:lang="pl">Status treści</x:name>
+    </x:node>
+
+    <x:node match="ep:generated-type">
+       <x:role>generated-type</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Generated-type</x:name>
+       <x:name xml:lang="pl">Generowany typ</x:name>
+    </x:node>
+
+    <x:node match="ep:core-curriculum-entries">
+       <x:role>core-curriculum-entries</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Core-curriculum-entries</x:name>
+       <x:name xml:lang="pl">Punkty podstawy programowej</x:name>
+    </x:node>
+
+    <x:node match="ep:presentation">
+       <x:role>presentation</x:role>
+       <x:name xml:lang="en">Presentation</x:name>
+       <x:name xml:lang="pl">Prezentacja</x:name>
+    </x:node>
+
+    <x:node match="ep:numbering">
+       <x:role>numbering</x:role>
+       <x:name xml:lang="en">Numbering</x:name>
+       <x:name xml:lang="pl">Numerowanie</x:name>
+
+       <x:enumeration value="skip">
+          <x:name xml:lang="en">skip</x:name>
+          <x:name xml:lang="pl">pomiń</x:name>
+       </x:enumeration> 
+    </x:node>
+
+    <x:node match="ep:type">
+       <x:role>type</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Type</x:name>
+       <x:name xml:lang="pl">Typ</x:name>
+    </x:node>
+
+    <x:node match="ep:template">
+       <x:role>template</x:role>
+       <x:name xml:lang="en">Template</x:name>
+       <x:name xml:lang="pl">Szablon</x:name>
+       <x:enumeration value="linear">
+          <x:name xml:lang="en">linear</x:name>
+          <x:name xml:lang="pl">liniowy</x:name>
+       </x:enumeration> 
+    </x:node>
+    
+    <x:node match="ep:core-curriculum-entry">
+       <x:role>core-curriculum-entry</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Core curriculum entry</x:name>
+       <x:name xml:lang="pl">Podstawa programowa</x:name>
+    </x:node>
+    <x:node match="ep:core-curriculum-stage">
+       <x:role>core-curriculum-stage</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Stage</x:name>
+       <x:name xml:lang="pl">Etap</x:name>
+    </x:node>
+    <x:node match="ep:core-curriculum-subject">
+       <x:role>core-curriculum-subject</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Subject</x:name>
+       <x:name xml:lang="pl">Przedmiot</x:name>
+    </x:node>
+    <x:node match="ep:core-curriculum-school">
+       <x:role>core-curriculum-school</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">School</x:name>
+       <x:name xml:lang="pl">Szkoła</x:name>
+    </x:node>
+    <x:node match="ep:core-curriculum-version">
+       <x:role>core-curriculum-version</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Version</x:name>
+       <x:name xml:lang="pl">Wersja</x:name>
+    </x:node>
+    <x:node match="ep:core-curriculum-ability">
+       <x:role>core-curriculum-ability</x:role>
+       <x:role>hidden-from-ui</x:role>
+       <x:name xml:lang="en">Ability</x:name>
+       <x:name xml:lang="pl">Umiejętność</x:name>
+    </x:node>
+    <x:node match="ep:core-curriculum-stage/@ep:key">
+       <x:role>key</x:role>
+       <x:role>hidden-from-ui</x:role>
+    </x:node>
+    <x:node match="ep:core-curriculum-subject/@ep:key">
+       <x:role>key</x:role>
+       <x:role>hidden-from-ui</x:role>
+    </x:node>
+    <x:node match="ep:core-curriculum-school/@ep:key">
+       <x:role>key</x:role>
+       <x:role>hidden-from-ui</x:role>
+    </x:node>
+    <x:node match="ep:core-curriculum-version/@ep:key">
+       <x:role>key</x:role>
+       <x:role>hidden-from-ui</x:role>
+    </x:node>
+    <x:node match="ep:core-curriculum-ability/@ep:key">
+       <x:role>key</x:role>
+       <x:role>hidden-from-ui</x:role>
+    </x:node>
+    <x:node match="ep:core-curriculum-ability/@ep:core-curriculum-main">
+       <x:role>core-curriculum-main</x:role>
+       <x:role>hidden-from-ui</x:role>
+    </x:node>
+    
+    <x:node match="bib:entry/@ep:target-name">
+			<x:role>target-name</x:role>
+			<x:name xml:lang="en">Target-name</x:name>
+			<x:name xml:lang="pl">Nazwa celu</x:name>
+		</x:node>
+		<x:node match="bib:entry/@ep:show-in">
+			<x:role>show-in</x:role>
+			<x:name xml:lang="en">Show-in</x:name>
+			<x:name xml:lang="pl">Pokaż w</x:name>
+		</x:node>
+    
+		<x:node match="bib:entry">
+			<x:role>entry</x:role>
+			<x:name xml:lang="en">Entry</x:name>
+			<x:name xml:lang="pl">Wpis bibliograficzny</x:name>
+		</x:node>
+		<x:node match="bib:article">
+			<x:role>article</x:role>
+			<x:name xml:lang="en">Article</x:name>
+			<x:name xml:lang="pl">Artykuł</x:name>
+		</x:node>
+		<x:node match="bib:manual">
+			<x:role>manual</x:role>
+			<x:name xml:lang="en">Manual</x:name>
+			<x:name xml:lang="pl">Ustawa</x:name>
+		</x:node>
+		<x:node match="bib:misc">
+			<x:role>misc</x:role>
+			<x:name xml:lang="en">Misc</x:name>
+			<x:name xml:lang="pl">Źródła internetowe</x:name>
+		</x:node>
+		<x:node match="bib:incollection">
+			<x:role>incollection</x:role>
+			<x:name xml:lang="en">Incollection</x:name>
+			<x:name xml:lang="pl">Książka</x:name>
+		</x:node>
+    <x:node match="bib:incollectionFree">
+      <x:role>incollectionFree</x:role>
+      <x:name xml:lang="en">Incollection free</x:name>
+      <x:name xml:lang="pl">Wpis własny</x:name>
+    </x:node>
+		<x:node match="bib:unpublished">
+			<x:role>unpublished</x:role>
+			<x:name xml:lang="en">Unpublished</x:name>
+			<x:name xml:lang="pl">Sprawozdanie</x:name>
+		</x:node>
+    <x:node match="ep:bibliographyPattern">
+      <x:role>bibliographyPattern</x:role>
+      <x:name xml:lang="en">Bibliography pattern</x:name>
+      <x:name xml:lang="pl">Wzór bibliografii</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:author">
+      <x:role>author</x:role>
+      <x:name xml:lang="en">Author</x:name>
+      <x:name xml:lang="pl">Autor</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:title">
+      <x:role>title</x:role>
+      <x:name xml:lang="en">title</x:name>
+      <x:name xml:lang="pl">Tytuł fragmentu</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:booktitle">
+      <x:role>booktitle</x:role>
+      <x:name xml:lang="en">booktitle</x:name>
+      <x:name xml:lang="pl">Tytuł</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:address">
+      <x:role>address</x:role>
+      <x:name xml:lang="en">address</x:name>
+      <x:name xml:lang="pl">Miejsce publikacji</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:year">
+      <x:role>year</x:role>
+      <x:name xml:lang="en">year</x:name>
+      <x:name xml:lang="pl">Rok publikacji</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:key">
+      <x:role>key</x:role>
+      <x:name xml:lang="en">key</x:name>
+      <x:name xml:lang="pl">Dane publikacji</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:edition">
+      <x:role>edition</x:role>
+      <x:name xml:lang="en">edition</x:name>
+      <x:name xml:lang="pl">Edycja</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:organization">
+      <x:role>organization</x:role>
+      <x:name xml:lang="en">organization</x:name>
+      <x:name xml:lang="pl">Typ aktu prawnego</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:series">
+      <x:role>series</x:role>
+      <x:name xml:lang="en">series</x:name>
+      <x:name xml:lang="pl">Seria wydawnicza</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:editor">
+      <x:role>editor</x:role>
+      <x:name xml:lang="en">editor</x:name>
+      <x:name xml:lang="pl">Tłumacze</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:publisher">
+      <x:role>publisher</x:role>
+      <x:name xml:lang="en">publisher</x:name>
+      <x:name xml:lang="pl">Wydawca</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:number">
+      <x:role>number</x:role>
+      <x:name xml:lang="en">number</x:name>
+      <x:name xml:lang="pl">Numer wydania</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:journal">
+      <x:role>journal</x:role>
+      <x:name xml:lang="en">journal</x:name>
+      <x:name xml:lang="pl">Czasopismo</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:note">
+      <x:role>note</x:role>
+      <x:name xml:lang="en">note</x:name>
+      <x:name xml:lang="pl">Data dostępu</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:howpublished">
+      <x:role>howpublished</x:role>
+      <x:name xml:lang="en">howpublished</x:name>
+      <x:name xml:lang="pl">Adres strony</x:name>
+    </x:node>
+    <x:node match="ep:bibliographyPattern/ep:pages">
+      <x:role>pages</x:role>
+      <x:name xml:lang="en">pages</x:name>
+      <x:name xml:lang="pl">Zakres stron</x:name>
+    </x:node>
+		<x:node match="bib:author">
+			<x:role>author</x:role>
+			<x:name xml:lang="en">Author</x:name>
+			<x:name xml:lang="pl">Autorzy</x:name>
+			<x:placeholder>Tu wstaw autorów</x:placeholder>
+		</x:node>
+		<x:node match="bib:title">
+			<x:role>title</x:role>
+			<x:name xml:lang="en">Title</x:name>
+			<x:name xml:lang="pl">Tytuł</x:name>
+			<x:placeholder>Tu wstaw tytuł</x:placeholder>
+		</x:node>
+		<x:node match="bib:incollection/bib:title">
+			<x:role>title</x:role>
+			<x:name xml:lang="en">Title</x:name>
+			<x:name xml:lang="pl">Tytuł fragmentu</x:name>
+			<x:placeholder>Tu wstaw tytuł fragmentu</x:placeholder>
+		</x:node>
+		<x:node match="bib:journal">
+			<x:role>journal</x:role>
+			<x:name xml:lang="en">Journal</x:name>
+			<x:name xml:lang="pl">Czasopismo</x:name>
+			<x:placeholder>Tu wstaw czasopismo</x:placeholder>
+		</x:node>
+		<x:node match="bib:year">
+			<x:role>year</x:role>
+			<x:name xml:lang="en">Year</x:name>
+			<x:name xml:lang="pl">Rok publikacji</x:name>
+			<x:placeholder>Tu wstaw rok publikacji</x:placeholder>
+		</x:node>
+		<x:node match="bib:number">
+			<x:role>number</x:role>
+			<x:name xml:lang="en">Number</x:name>
+			<x:name xml:lang="pl">Numer wydania</x:name>
+			<x:placeholder>Tu wstaw numer wydania</x:placeholder>
+		</x:node>
+		<x:node match="bib:booktitle">
+			<x:role>booktitle</x:role>
+			<x:name xml:lang="en">Booktitle</x:name>
+			<x:name xml:lang="pl">Tytuł książki</x:name>
+			<x:placeholder>Tu wstaw tytuł książki</x:placeholder>
+		</x:node>
+		<x:node match="bib:publisher">
+			<x:role>publisher</x:role>
+			<x:role>hidden-from-ui</x:role>
+			<x:name xml:lang="en">Publisher</x:name>
+			<x:name xml:lang="pl">Wydawca</x:name>
+			<x:placeholder>Tu wstaw wydawce</x:placeholder>
+		</x:node>
+		<x:node match="bib:address">
+			<x:role>address</x:role>
+			<x:name xml:lang="en">Address</x:name>
+			<x:name xml:lang="pl">Miejsce publikacji</x:name>
+			<x:placeholder>Tu wstaw miejsce publikacji</x:placeholder>
+		</x:node>
+		<x:node match="bib:editor">
+			<x:role>editor</x:role>
+			<x:name xml:lang="en">Editor</x:name>
+			<x:name xml:lang="pl">Tłumacze</x:name>
+			<x:placeholder>Tu wstaw tłumaczy</x:placeholder>
+		</x:node>
+		<x:node match="bib:pages">
+			<x:role>pages</x:role>
+			<x:name xml:lang="en">Pages</x:name>
+			<x:name xml:lang="pl">Zakres stron</x:name>
+			<x:placeholder>Tu wstaw zakres stron</x:placeholder>
+		</x:node>
+		<x:node match="bib:note">
+			<x:role>bibnote</x:role>
+			<x:name xml:lang="en">Note</x:name>
+			<x:name xml:lang="pl">Data dostępu</x:name>
+			<x:placeholder>Tu wstaw datę dostępu (dd/MM/YYYY)</x:placeholder>
+		</x:node>
+		<x:node match="bib:unpublished/bib:note">
+			<x:role>note</x:role>
+			<x:role>hidden-from-ui</x:role>
+			<x:name xml:lang="en">Note</x:name>
+			<x:name xml:lang="pl">Data dostępu</x:name>
+		</x:node>
+		<x:node match="bib:organization">
+			<x:role>organization</x:role>
+			<x:name xml:lang="en">Organization</x:name>
+			<x:name xml:lang="pl">Typ aktu prawnego</x:name>
+			<x:placeholder>Tu wstaw typ aktu prawnego</x:placeholder>
+		</x:node>
+		<x:node match="bib:edition">
+			<x:role>edition</x:role>
+			<x:name xml:lang="en">Edition</x:name>
+			<x:name xml:lang="pl">Redakcja</x:name>
+			<x:placeholder>Tu wstaw redakcję</x:placeholder>
+		</x:node>
+		<x:node match="bib:manual/bib:edition">
+			<x:role>edition</x:role>
+			<x:name xml:lang="en">Edition</x:name>
+			<x:name xml:lang="pl">Data publikacji</x:name>
+			<x:placeholder>Tu wstaw data publikacji (dd/MM/YYYY)</x:placeholder>
+		</x:node>
+		<x:node match="bib:key">
+			<x:role>key</x:role>
+			<x:name xml:lang="en">Key</x:name>
+			<x:name xml:lang="pl">Dane publikacji</x:name>
+			<x:placeholder>Tu wstaw dane publikacji</x:placeholder>
+		</x:node>
+		<x:node match="bib:howpublished">
+			<x:role>howpublished</x:role>
+			<x:name xml:lang="en">Howpublished</x:name>
+			<x:name xml:lang="pl">Adres strony</x:name>
+			<x:placeholder>Tu wstaw adres strony</x:placeholder>
+		</x:node>
+		<x:node match="bib:series">
+			<x:role>series</x:role>
+			<x:name xml:lang="en">Series</x:name>
+			<x:name xml:lang="pl">Seria wydawnicza</x:name>
+			<x:placeholder>Tu wstaw serie wydawniczą</x:placeholder>
+		</x:node>
+		<x:node match="ep:fold-point">
+			<x:role>hidden-from-ui</x:role>
+			<x:name xml:lang="en">Fold point</x:name>
+			<x:name xml:lang="pl">Punkt zwijania</x:name>
+		</x:node>
+		<x:node match="ep:fold-point/@ep:id">
+			<x:role>id</x:role>
+			<x:role>hidden-from-ui</x:role>
+			<x:name xml:lang="en">id</x:name>
+			<x:name xml:lang="pl">Identyfikator</x:name>
+		</x:node>
+    <x:node match="ep:zebra-point">
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">Fold point</x:name>
+      <x:name xml:lang="pl">Punkt zebry</x:name>
+    </x:node>
+    <x:node match="ep:zebra-point/@ep:id">
+      <x:role>id</x:role>
+      <x:role>hidden-from-ui</x:role>
+      <x:name xml:lang="en">id</x:name>
+      <x:name xml:lang="pl">Identyfikator</x:name>
+    </x:node>
+    <x:node match="ep:references">
+			<x:role>references</x:role>
+			<x:name xml:lang="en">References</x:name>
+			<x:name xml:lang="pl">Powiązania modułu z WOMI</x:name>
+		</x:node>
+		<x:node match="ep:module-header">
+			<x:role>module-header</x:role>
+			<x:name xml:lang="en">Module-header</x:name>
+			<x:name xml:lang="pl">Nagłówek</x:name>
+		</x:node>
+		<x:node match="ep:play-and-learn">
+			<x:role>play-and-learn</x:role>
+			<x:name xml:lang="en">Play-and-learn</x:name>
+			<x:name xml:lang="pl">Baw się i ucz</x:name>
+		</x:node>
+		<x:node match="ep:external">
+			<x:role>external</x:role>
+			<x:name xml:lang="en">External</x:name>
+			<x:name xml:lang="pl">KZD</x:name>
+		</x:node>
+		<x:node match="ep:module-header/@ep:title-presentation">
+			<x:role>title-presentation</x:role>
+			<x:name xml:lang="en">Title-presentation</x:name>
+			<x:name xml:lang="pl">Prezentacja tytułu</x:name>
+		</x:node>
+    <x:node match="ep:module-header/@ep:title-presentation">
+      <x:role>title-presentation</x:role>
+      <x:name xml:lang="en">Title-presentation</x:name>
+      <x:name xml:lang="pl">Prezentacja tytułu</x:name>
+    </x:node>
+    <x:node match="ep:module-header/@ep:title-position">
+      <x:role>title-position</x:role>
+      <x:name xml:lang="en">Title-position</x:name>
+      <x:name xml:lang="pl">Pozycja tytułu</x:name>
+    </x:node>
+		<x:node match="ep:nbsp">
+			<x:role>nbsp</x:role>
+			<x:name xml:lang="en">nbsp</x:name>
+			<x:name xml:lang="pl">Twarda spacja</x:name>
+		</x:node>
+		<x:node match="ep:tab">
+			<x:role>tab</x:role>
+			<x:name xml:lang="en">Tabular</x:name>
+			<x:name xml:lang="pl">Tabulator</x:name>
+		</x:node>
+		<x:node match="ep:work-area">
+			<x:role>work-area</x:role>
+			<x:name xml:lang="en">Work Area</x:name>
+			<x:name xml:lang="pl">Pytanie otwarte</x:name>
+		</x:node>
+
+  </x:nodeConfig>
+  
+  <x:miscellaneous>
+    <x:debugMode>false</x:debugMode>
+  </x:miscellaneous>
+
+  <x:overlay xmlns="http://xopus.com/2009/lui">
+    <toolbar-button
+         iconsrc="icons/showReviewPanel.gif"
+         command="showReviewsCommand"
+         after="ShowChangesButton"
+         id="showReviewsCommand"/>
+		 
+	<toolbar-button
+         iconsrc="icons/insertReview.gif"
+         command="insertReviewCommand"
+         after="showReviewsCommand"
+         id="insertReviewCommand"/>
+		 
+    <toolbar-button
+         iconsrc="icons/icon-metadata.svg"
+         command="metadataViewCommand"
+         after="insertReviewCommand"
+         id="metadataViewCommand"/>
+         
+    <toolbar-button
+         iconsrc="icons/icon-service-dialog.svg"
+         command="serviceDialogCommand"
+         after="metadataViewCommand"
+         id="serviceDialogCommand"/>
+		 
+	<toolbar-button
+         iconsrc="icons/icon-swap.svg"
+         command="conceptDefinitionSwapCommand"
+         after="serviceDialogCommand"
+         id="conceptDefinitionSwapCommand"/>
+		 
+    <toolbar-button
+         iconsrc="icons/addBookmark.gif"
+         command="addBookmarkCommand"
+         after="conceptDefinitionSwapCommand"
+         id="addBookmarkCommand"/>
+		 
+	<toolbar-button
+         iconsrc="icons/icon-addfoldpoint.svg"
+         command="addFoldPointCommand"
+         after="addBookmarkCommand"
+         id="addFoldPointCommand"/>    
+  <toolbar-button
+         iconsrc="icons/icon-zebra-add.svg"
+         command="addZebraPointCommand"
+         after="addFoldPointCommand"
+         id="addZebraPointCommand"/>
+ 	<toolbar-button
+         iconsrc="icons/icon-special-characters.svg"
+         command="whiteSpaceViewCommand"
+         after="addZebraPointCommand"
+         id="whiteSpaceViewCommand"/>
+
+  </x:overlay>
+ 
+</x:config>
